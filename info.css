@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  margin: 20px;
+  background-color: rgb(190, 190, 190);
 }
 
 * {
@@ -8,9 +9,50 @@ body {
 
 [class*="col-"] {
     float: left;
-    padding: 10px;
 }
 
-.col-12 {
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.col-8 {
+  display: grid;
   background: darkGrey;
+  width: 66.66%;
+  height: 710px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.numbertext {
+  bottom: 0px;
+  text-align: center;
+}
+
+.col-8 p {
+  margin: 20px;
+  background-color: rgba(250, 250, 250, 0.2);
+  text-align: left;
+}
+
+.col-4 {
+  display: grid;
+  background: lightGrey;
+  width: 33.33%;
+  height: 710px;
+
+}
+
+
+
+
+@media only screen and (max-width: 768px) { /*mobile-phones */
+
+    [class*="col-"] {
+        width: 100%;
+    }
 }
