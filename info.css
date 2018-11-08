@@ -17,11 +17,36 @@ body {
   margin: auto;
 }
 
-.col-8 {
+.mySlides  {
+    display: none;
+    margin-bottom: 50px;
+}
+
+.col-12 {
   display: grid;
   background: darkGrey;
-  width: 66.66%;
+  width: 100%;
   height: 710px;
+  margin-left: auto;
+
+}
+
+.col-2 {
+  background: darkGrey;
+  width: 16.66%;
+  position: auto;
+  display: grid;
+}
+
+.dot {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-grid;
+  margin: 50px;
+  position: auto;
+  text-align: center;
 }
 
 h1 {
@@ -33,20 +58,34 @@ h1 {
   text-align: center;
 }
 
-.col-8 p {
-  margin: 20px;
+.col-12 p {
   background-color: rgba(250, 250, 250, 0.2);
   text-align: left;
+  margin: 50px;
+  padding: 20px;
 }
 
-.col-4 {
-  display: grid;
-  background: lightGrey;
-  width: 33.33%;
-  height: 710px;
 
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
 }
 
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
 
 
@@ -54,5 +93,23 @@ h1 {
 
     [class*="col-"] {
         width: 100%;
+    }
+
+    .dot {
+      height: 75px;
+      width: 75px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-grid;
+      margin: 50px;
+      position: auto;
+    }
+
+    .col-12 p {
+      background-color: rgba(250, 250, 250, 0.2);
+      text-align: left;
+      margin: 50px;
+      padding: 20px;
+      text-overflow: inherit;
     }
 }
