@@ -1,0 +1,25 @@
+@import "~quill/dist/quill.core.css";
+
+#heading {
+  display: block;
+  border: 1px solid grey;
+  font-size: 48px;
+  text-align: center;
+  padding-top: 20px;
+  max-width: 750px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  display: block;
+  border: 1px solid grey;
+  font-size: 24px;
+  padding-top: 20px;
+  max-width: 750px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
