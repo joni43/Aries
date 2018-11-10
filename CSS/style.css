@@ -1,3 +1,33 @@
-#editor {
-    background-color: whitesmoke;
+/* css/style.css */
+
+/* Row 1 */
+.box1 {
+    flex:1;
+    order:1;
+    display:flex;
+    align-items: center;
+}
+
+.box2 {
+    flex:1;
+    order:2;
+}
+
+.heading-select {
+    margin: 20px;
+}
+
+.h1 {
+    font-size: 2em; margin: .67em 0;
+    color: blue;
+}
+
+.h2 {
+    font-size: 1.5em; margin: .75em 0;
+    color:orange;
+}
+
+.h3 {
+    font-size: 1.17em; margin: .83em 0;
+    color: green;
 }

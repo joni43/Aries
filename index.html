@@ -6,42 +6,42 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Quill Text Editor</title>
+        <title>FD Text Edit Demo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Stylesheets -->
-        <!-- Bootstrap -->
+		<!-- Bootstrap CSS & Bootstrap javaScript -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- Quill -->
-        <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
-        <!-- Local  -->
-        <link rel="stylesheet" href="CSS/style.css">               
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<!-- Project CSS files -->
+		<!-- Last in order to overwrite other stylesheets -->
+        <link rel="stylesheet" href="css/style.css">
+
     </head>
+
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
             <section>
-                <div class="flex-row">
-                    <!-- En tom div som "fylls på" med editor-objektet som skapas av Quill-konstruktorn. -->
-                    <div id="editor"></div>
+                <div class="d-flex flex-row" id="flex-row-1">
+                    <div class="box1">
+                        <textarea name="heading" id="heading" cols="40" rows="1" placeholder="Skriv din rubrik här..."></textarea>      
+                        <button onclick="functionH1()">H1</button>
+                        <button onclick="functionH2()">H2</button>
+                        <button onclick="functionH3()">H3</button>>
+                    </div>
                 </div>
-                <div class="flex-row">
-                    <!-- Skapar en knapp med bootstrap-klass och kör funktionen saveNote() när den klickas -->
-                    <button class="btn btn-primary submit" onclick="saveNote()">Log to Console</button>
-                </div>
+                <div class="d-flex flex-row" id="flex-row-2">
+                    <div class="box2">
+                        <textarea name="content" id="content" cols="90" rows="5" placeholder="Skriv något här..."></textarea>        
+                    </div> 
+                </div>                         
             </section>
         </div>
-        
-        
 
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!-- Quill JS -->
-        <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
-        <!-- Local JS -->
-        <script src="javascript/javascript.js" async defer></script>
+        <script src="javascript/main.js" async defer></script>
     </body>
 </html>
