@@ -32,13 +32,13 @@ body {
   .HolyGrail-nav {
     /* put the nav on the left */
     order: -1;
-    background-color: rgb(118, 190, 118);
+    background-color: rgb(71, 160, 71);
   }
 .HolyGrail2-nav {
     /* put the nav on the left */
     order: -2;
     flex:1;
-    background-color: rgb(9, 71, 9);
+    background-color: rgb(71, 160, 71);
   }
 
   html {
@@ -84,20 +84,8 @@ body {
   background-color : #dbd830;
 
 }
-.text {
-    background-color: rgb(241, 241, 241);
-}
-#text1 {
-  font-size: 13px;
-  margin: 0px;
-  overflow:hidden;
-  padding: 20px;
-  height: 30px;
-  background-color: white;
-  border-radius: 5px;
-  border: 10px solid white;
-  margin-top:10px;
-}
+
+
 .img {
   width: 100px;
 }
@@ -106,15 +94,16 @@ body {
 /* Add you own css or copy it from the theme stylesheet
  */
 
-#Div1 {
+ #newnotes {
   font-size: 13px;
   margin: 0px;
+  color: black;
   overflow:hidden;
   padding: 20px;
   height: 30px;
   background-color: white;
   border-radius: 5px;
-  border: 10px solid white;
+  border: 10px solid rgb(19, 66, 18);
   margin-top:10px;
 }
 #save {

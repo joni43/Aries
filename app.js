@@ -9,62 +9,78 @@ var notes = [
 ]
 */
 
+
+// const button = document.querySelector('.mrbutton')
+// const div = document.createElement('div')
+
+// let justTextContent = document.getElementById('text1')
+// let save = document.getElementById('save')
+
+// document.getElementsByClassName('ql-editor')[0].getAttribute('data-id')
+
+
+
 var editor = new Quill("#editor", {
   theme: "snow"
-})
+});
+class QuireEditor {
 
-const button = document.querySelector('.mrbutton')
-const div = document.createElement('div')
+  constructor() {
 
-let justTextContent = document.getElementById('text1')
-let save = document.getElementById('save')
-// document.getElementsByClassName('ql-editor')[0].classList.add("data-id=2")
-// document.getElementsByClassName('ql-editor')[0].getAttribute('data-id')
-window.onload = function () {
-  document.getElementsByClassName('ql-editor')[0].innerHTML = localStorage.getItem('note')
-  console.log(localStorage.getItem('note'))
+    window.onload = function load () {
+
+      updateView()
+    }
+    document.getElementById("save").addEventListener("click", function() {
+      let t = loadNotes();
+      let note = t;
+      console.log(t);
+      note.push(newNote(note));
+      saveNotes(note);
+      updateView()
+
+    })
+
+
+    let loadNotes = function() {
+      let storedNote = JSON.parse(window.localStorage.getItem("newNote")) || [];
+      window.localStorage.setItem("newNote", JSON.stringify(storedNote));
+
+      return storedNote;
+      // return JSON.parse(localStorage.getItem('newNote') ? localStorage.getItem('newNote') : '[]');
+    };
+    let newNote = function(notes) {
+      let newNote = {};
+      newNote.content = editor.getText() + notes.length;
+      return newNote;
+    };
+    let saveNotes = function(rec) {
+      localStorage.setItem("newNote", JSON.stringify(rec));
+    }
+
+    let updateView = function() {
+      console.log('twice?!')
+      let recipes = loadNotes();
+      document.getElementById("text1").innerHTML = "<h1>Stored notes</h1>";
+      recipes.forEach(r => {
+        let newDiv = document.createElement("div");
+        let newP = document.createElement("p");
+        //   let newTitle = document.createTextNode(r.title);
+        let newIng = document.createTextNode(r.content);
+        newDiv.setAttribute('data-id', r.id);
+
+        newDiv.appendChild(newP);
+        newDiv.appendChild(newIng);
+        newDiv.setAttribute('id', 'newnotes')
+
+        let currentSection = document.getElementById("notes");
+        currentSection.appendChild(newDiv);
+      });
+    };
+  }
 }
-save.addEventListener('click', function () {
-  var delta = editor.getContents()
-  createElement()
+let quireEditor = new QuireEditor();
 
-  // window.localStorage.setItem('delta', JSON.stringify(delta))
-  console.log('TestDELTA', delta)
-  let ls = JSON.parse(window.localStorage.getItem('delta'))
-  console.log('TEST', ls)
-})
 
-editor.on('text-change', function () {
-  let delta = editor.getContents()
-  let text = editor.getText()
-  // let justHtml = editor.root.innerHTML
 
-  //console.log(JSON.stringify(delta))
-  console.log(document.getElementsByClassName('ql-editor')[0].innerHTML)
-  localStorage.setItem('note', document.getElementsByClassName('ql-editor')[0].innerHTML)
-  console.log(text)
-  justTextContent.innerHTML = text
-})
 
-// set on load for testing
-//  window.localStorage.setItem(this.delta, JSON.stringify(this.delta));
-//     save.addEventListener('click', function() {
-//       var ls = JSON.parse(window.localStorage.getItem(this.delta));
-//       console.log('TEST', ls)
-//     })
-
-function createElement () {
-  // create a new div element
-  let newDiv = document.createElement('div')
-
-  // and give it some content
-  let newContent = editor.container.innerText
-
-  // add the text node to the newly created div
-  newDiv.append(newContent)
-
-  // add the newly created element and its content into the DOM
-  let currentDiv = document.getElementById('text1')
-  newDiv.setAttribute('id', 'Div1')
-  currentDiv.parentNode.insertBefore(newDiv, currentDiv)
-}
