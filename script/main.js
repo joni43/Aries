@@ -35,3 +35,9 @@ saveBtn.onclick = function(){
     }
 
 
+    //Quills
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+      });
+
+    

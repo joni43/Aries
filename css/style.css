@@ -131,7 +131,7 @@ font-size: 40px;
 #text-editor{
     width: 100%;
     height: 100%;
-    background-color:rgb(247, 247, 247);   
+    background-color:rgb(221, 221, 221);   
 }
 
 #text-editor h3{
@@ -154,6 +154,12 @@ font-size: 40px;
     
 
 }
+
+#editor{
+
+    height: 80%;
+    background-color: white;
+}
 textarea{
     resize: none;
     width: 98%;
@@ -163,7 +169,7 @@ textarea{
 /*doucument-handler section*/
 #document-handler{
     width: 100%;
-    background-color:rgb(184, 184, 184);
+    background-color:rgb(170, 170, 170);
 }
 
 #document-handler-container{
