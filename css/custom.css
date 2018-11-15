@@ -1,0 +1,35 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+a.toggle {
+    cursor: pointer;
+    color: blue;
+
+}
+
+.remove {
+    color: red;
+    margin-left: 20px;
+
+}
+
+.save-note {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    background: lightblue;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+textarea {
+    border-bottom: 2px dotted black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
