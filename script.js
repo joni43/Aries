@@ -1,75 +1,87 @@
-// localStorage detection
-function supportsLocalStorage() {
-    return typeof(Storage)!== 'undefined';
+/*
+var notes = [
+  {
+    id: 0,
+    title: 'Matlistan',
+    favourite: false,
+    content: '<stringify delta from quill>'
   }
-  
-  // Run the support check
-  if (!supportsLocalStorage()) {
-    // No HTML5 localStorage Support
-  } else {
-    // HTML5 localStorage Support
+]
+*/
+
+
+// const button = document.querySelector('.mrbutton')
+// const div = document.createElement('div')
+
+// let justTextContent = document.getElementById('text1')
+// let save = document.getElementById('save')
+
+// document.getElementsByClassName('ql-editor')[0].getAttribute('data-id')
+
+
+
+var editor = new Quill("#editor", {
+  theme: "snow"
+});
+class QuireEditor {
+
+  constructor() {
+    this.loadNotes()
   }
-  
-  localStorage.setItem('display_name', 'somevalue');
-  var quill = new Quill('#editor-container', {
-    modules: {
-      toolbar: [
-        ['bold', 'italic', 'underline', 'strike'],
-          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'indent': '-1'}, { 'indent': '+1' }],  
-        ['link', 'blockquote', 'image'],
-        [{ list: 'ordered' }, { list: 'bullet' }],
-         [{ 'align': [] }],
-  
-    ['clean']
-      ]
-    },
-    placeholder: 'Begin writing your story here...',
-    theme: 'snow'
-  });
-  // Store accumulated changes
-  var change = new Delta();
-  quill.on('text-change', function(delta) {
-    change = change.compose(delta);
-  });
-  
-  // Save periodically
-  setInterval(function() {
-    if (change.length() > 0) {
-      console.log('Saving changes', change);
-      /* 
-      Send partial changes
-      $.post('/your-endpoint', { 
-        partial: JSON.stringify(change) 
-      });
-      
-      Send entire document
-      $.post('/your-endpoint', { 
-        doc: JSON.stringify(quill.getContents())
-      });
-      */
-      change = new Delta();
+    window.onload = function load () {
+      updateView()
     }
-  }, 5*1000);
-  
-  // Check for unsaved data
-  window.onbeforeunload = function() {
-    if (change.length() > 0) {
-      return 'There are unsaved changes. Are you sure you want to leave?';
+    // document.getElementById("save").addEventListener("click",() => {
+    //   let t = loadNotes();
+    //   let note = t;
+    //   console.log(t);
+    //   note.push(newNote(note));
+    //   saveNotes(note);
+    //   updateView()
+
+    // })
+
+
+     loadNotes () {
+       console.log('lol')
+      let storedNote = JSON.parse(window.localStorage.getItem("newNote")) || [];
+      window.localStorage.setItem("newNote", JSON.stringify(storedNote));
+
+      return storedNote;
+      // return JSON.parse(localStorage.getItem('newNote') ? localStorage.getItem('newNote') : '[]');
     }
+    let newNote = function(notes) {
+      let newNote = {};
+      newNote.content = editor.getText() + notes.length;
+      return newNote;
+    };
+    let saveNotes = function(rec) {
+      localStorage.setItem("newNote", JSON.stringify(rec));
+    }
+
+    let updateView = function() {
+      console.log('twice?!')
+      let notes = loadNotes();
+      document.getElementById("text1").innerHTML = "<h1>Stored notes</h1>";
+      notes.forEach(r => {
+        let newDiv = document.createElement("div");
+        let newP = document.createElement("p");
+        //   let newTitle = document.createTextNode(r.title);
+        let newIng = document.createTextNode(r.content);
+        newDiv.setAttribute('data-id', r.id);
+
+        newDiv.appendChild(newP);
+        newDiv.appendChild(newIng);
+        newDiv.setAttribute('id', 'newnotes')
+
+        let currentSection = document.getElementById("notes");
+        currentSection.appendChild(newDiv);
+      });
+    };
   }
-  
-  var form = document.querySelector('form');
-  form.onsubmit = function() {
-    // Populate hidden form on submit
-    var about = document.querySelector('input[name=about]');
-    about.value = JSON.stringify(quill.getContents());
-    
-    console.log("Submitted", $(form).serialize(), $(form).serializeArray());
-    
-    document.forms["myform"].submit();
-    // No back end to actually submit to!
-    alert('Open the console to see the submit data!')
-    return false;
-  };
-  
+
+let quireEditor = new QuireEditor();
+
+
+
+
