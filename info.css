@@ -12,6 +12,7 @@ body {
     float: left;
 }
 
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -39,6 +40,9 @@ body {
   height: 710px;
   margin-left: auto;
   border-radius: 0px 20px 20px 0px;
+  box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                  -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                      box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
 
 }
 
@@ -48,22 +52,51 @@ body {
   margin-left: 0;
   height: 710px;
   border-radius: 20px 0px 0px 20px;
+  box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                  -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                      box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
   height: 100px;
   width: 100px;
+  font-family: 'Shadows Into Light';
+  font-size: 24px;
   background-color: white;
   border-radius: 50%;
-  display: inline-grid;
-  margin: 50px;
-  position: auto;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  padding: 30px;
+}
+
+#menu-btn {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.8);
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 h1 {
   text-align: center;
   position: relative;
+  font-family: 'Shadows Into Light';
+  font-style: oblique;
+  letter-spacing: 2px;
+  font-size: 48px;
   top: 15%;
 }
 
@@ -90,13 +123,13 @@ h1 {
 .prev, .next {
   cursor: pointer;
   position: absolute;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
   top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
   color: black;
-  font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
@@ -117,6 +150,8 @@ h1 {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
+
+
 .active, .dot:hover {
   background-color: #717171;
 }
@@ -136,6 +171,10 @@ h1 {
       position: auto;
     }
 
+    #menu-btn {
+      max-width: 100%;
+    }
+
     .slideshow-container {
       width: 50%;
     }
@@ -143,16 +182,11 @@ h1 {
     .mySlides  {
         display: none;
         margin-bottom: 50px;
-        max-height: 100%;
-        max-width: 100%;
+        max-width: 50%;
     }
 
     .mySlides.fade p {
-      max-width: 25%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-
-
+      max-width: 50%;
     }
 
     .col-4 {
