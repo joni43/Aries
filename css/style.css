@@ -137,26 +137,17 @@ font-size: 40px;
 #text-editor h3{
     font-family: 'Roboto', sans-serif;
     margin-bottom:6px;  
-
 }
 #textarea-container{
-  
     margin:40px 3% 0 3%;
     height: 90%;
-    
-
 }
-#inp-document-text
-{
-
+#inp-document-text{
     margin-top:20px;
     margin-bottom: 20px;
-    
-
 }
 
 #editor{
-
     height: 80%;
     background-color: white;
 }
@@ -180,22 +171,24 @@ textarea{
     
   
 }
+
 .document-handler-item{  
     padding: 0;
     margin-left:10px;
     margin-top: 15px;
     width: 115px;
 }
+
 .document-handler-item i{
     font-size: 25px;
     color: rgb(44, 44, 44);
     margin-left:10px;
 }
+
 table{
     margin:0;
     padding: 0;
     border:0;
-    
 }
 
 .under-icon{
@@ -205,18 +198,59 @@ table{
 }
 
 .img-document{
- width: 110px;
+    width: 110px;
+    content: url(/Aries/components/document.png);
 }
+
 .img-document:hover{
     width: 110px;
     cursor: pointer;
-   }
+    content: url(/Aries/components/documentHover.png);
+}
+
+.img-document-add{
+    width: 110px;
+    content: url(/Aries/components/documentplus.png);
+}
+.img-document-add:hover{
+    width: 110px;
+    cursor: pointer;
+    content: url(/Aries/components/documentplusHover.png);
+
+    
+}
+.item-title{
+
+    margin-left: 4px;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.fa-trash-alt{
+    color: rgb(202, 0, 0);
+    cursor: pointer;
+    font-size: 22px !important;
+    float: right;
+    margin-right: 8px;
+    
+}
+
+.fa-star{
+    color: rgb(241, 238, 6);
+    cursor: pointer;
+    font-size: 22px !important;
+    float: left;
+    margin-left: 4px !important;
+    
+}
 .fa-trash-alt:hover{
-  color: rgb(202, 0, 0);
-  cursor: pointer;
+    color: rgb(202, 0, 0);
+    cursor: pointer;
+    
 }
 
 .fa-star:hover{
     color: rgb(241, 238, 6);
     cursor: pointer;
-  }
+}

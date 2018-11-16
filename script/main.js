@@ -1,6 +1,7 @@
 
 //buttons
 var saveBtn = document.getElementById("btn-save");
+var btnItalic = document.getElementById("btn-italic");
 
 
 
@@ -27,6 +28,10 @@ saveBtn.onclick = function(){
     location.reload();
 };
 
+btnItalic.onclick = function(){
+    
+}
+
     for (var i = 0; i < localStorage.length; i++){
 
     const key = localStorage.key(i);
@@ -37,6 +42,10 @@ saveBtn.onclick = function(){
 
     //Quills
     var quill = new Quill('#editor', {
+        modules:{
+        toolbar:false
+
+        },
         theme: 'snow'
       });
 
