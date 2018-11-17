@@ -2,6 +2,7 @@
 //buttons
 const saveBtn = document.getElementById("btn-save");
 const btnItalic = document.getElementById("btn-italic");
+const newdocumentBtn = document.getElementById("new-document-btn")
 
 
 
@@ -76,6 +77,12 @@ saveBtn.onclick = function()
         inpTitleKey.value ="";
         inpDocumentText.value="";
         location.reload();
+}
+
+newdocumentBtn.onclick = function()
+{
+    inpTitleKey.value ="";
+    location.reload(); 
 }
 
 //loops the local storage 
