@@ -232,7 +232,7 @@ table{
     cursor: pointer;
     font-size: 22px !important;
     float: right;
-    margin-right: 8px;
+    margin: 5px 10px 0px 0px;
     
 }
 
@@ -241,7 +241,7 @@ table{
     cursor: pointer;
     font-size: 22px !important;
     float: left;
-    margin-left: 4px !important;
+    margin: 5px 4px !important;
     
 }
 .fa-trash-alt:hover{
