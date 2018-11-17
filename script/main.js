@@ -26,7 +26,7 @@ today = mm + '/' + dd + '/' + yyyy;
 
 //functions
 
- //Create a document item
+ //Creates a document item
 function createDocumentItem(title,dDate)
 {
 
@@ -59,9 +59,9 @@ function createDocumentItem(title,dDate)
 
     document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
 }
-  
-    saveBtn.onclick = function()
-    {
+//Saves the document
+saveBtn.onclick = function()
+{
         const key = inpTitleKey.value;
         const value = "";
 
@@ -76,22 +76,22 @@ function createDocumentItem(title,dDate)
         inpTitleKey.value ="";
         inpDocumentText.value="";
         location.reload();
-    };
+}
 
-
-    for (var i = 0; i < localStorage.length; i++)
-    {
+//loops the local storage 
+for (var i = 0; i < localStorage.length; i++)
+{
         const key = localStorage.key(i);
         createDocumentItem(key,today);
-    }
+}
 
 
-    //Quills
-    var quill = new Quill('#editor', 
+//Quills -Added this one here to experiment
+var quill = new Quill('#editor', 
+{
+    modules:
     {
-        modules:
-        {
-        toolbar:true},theme: 'snow'
-    });
+    toolbar:true},theme: 'snow'
+});
 
     

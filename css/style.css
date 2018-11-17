@@ -167,9 +167,7 @@ textarea{
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
-    margin:10px 2% 0 7%;
-    
-  
+    margin:10px 2% 0 7%; 
 }
 
 .document-handler-item{  
@@ -180,21 +178,7 @@ textarea{
 }
 
 .document-handler-item i{
-    font-size: 25px;
     color: rgb(44, 44, 44);
-    margin-left:10px;
-}
-
-table{
-    margin:0;
-    padding: 0;
-    border:0;
-}
-
-.under-icon{
-    padding: 0;
-    margin: 0;
-    text-align: center;
 }
 
 .img-document{
