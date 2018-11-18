@@ -1,4 +1,17 @@
+/* 
+Exempel saved document:
+    {
+        id:'0'
+        title: 'My first document'
+        content: 'my content'
+        date created: '2018-11-18'
+        favorite: 'true/false'
+    }
 
+*/
+
+window.onload = function ()
+{
 //buttons
 const saveBtn = document.getElementById("btn-save");
 const btnItalic = document.getElementById("btn-italic");
@@ -8,7 +21,6 @@ const newdocumentBtn = document.getElementById("new-document-btn")
 
 //Variables
 const inpTitleKey = document.getElementById("inp-title-Key");
-const inpDocumentText = document.getElementById("inp-document-text");
 
 //Gets the date
 var today = new Date();
@@ -25,7 +37,17 @@ if (mm<10){
 today = mm + '/' + dd + '/' + yyyy;
 
 
-//functions
+//Functions
+
+//Makes Title shorter and adds ...
+function shortTitle(title)
+{
+    if (title.length > 8)
+        {
+            title = title.slice(0,8) + "..."; 
+        }
+    return title;
+}
 
  //Creates a document item
 function createDocumentItem(title,dDate)
@@ -61,15 +83,7 @@ function createDocumentItem(title,dDate)
     document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
 }
 
-//Make Title shorter
-function shortTitle(title)
-{
-    if (title.length > 8)
-        {
-            title = title.slice(0,8) + "..."; 
-        }
-    return title;
-}
+
 
 //Saves the document
 saveBtn.onclick = function()
@@ -98,19 +112,15 @@ newdocumentBtn.onclick = function()
     location.reload(); 
 }
 
-//Deletes a saved document - Working on this one not finished (Stavros)
-function deleteDocument(documentTitle)
-{
-    localStorage.removeItem(documentTitle);
-}
+
+//loops the local storage
 
 
 
-//loops the local storage 
 for (var i = 0; i < localStorage.length; i++)
 {
-        const key = localStorage.key(i);
-        createDocumentItem(key,today);
+    const key = localStorage.key(i);
+    createDocumentItem(key,today);
 }
 
 
@@ -122,4 +132,88 @@ var quill = new Quill('#editor',
     toolbar:true},theme: 'snow'
 });
 
+} 
+
+
+
+
+
+
+
+
+
+/*
+//Laboration Area//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+//Deletes a saved document - Working on this one not finished (Stavros)
+
+
+    const newdocumentBtn = document.getElementById("new-document-btn");
+
+    newdocumentBtn.onclick = function()
+    {
+        
+        let documents = loadDocuments();
+        documents.push(newDocument(getAvailID(documents)));
+        saveDocuments(documents);
+    } 
     
+
+}
+
+function loadDocuments()
+{
+    return JSON.parse(localStorage.getItem('documents'));
+
+}
+
+function getAvailID(doc)
+{
+    if (doc.length > 0)
+    {
+        return (Math.max(...doc.map(d => d.id),0) + 1 );
+    }
+    else
+    {
+        return 0;
+    }
+
+}
+function saveDocuments(doc)
+{
+    localStorage.setItem('documents',JSON.stringify(doc));
+
+}
+
+function updateView()
+{
+
+
+}
+
+function deleteDocument()
+{
+    localStorage.setItem('documents',JSON.stringify([]));
+
+}
+function newDocument ()
+{
+    let newDocument = {};
+    newDocument.title = 'ewe';
+    newDocument.content = 'wee';
+    newDocument.date = 'wewe';
+    newDocument.favorite = 'wewe';
+    return newDocument;
+
+}
+
+
+
+
+//Laboration Area//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+*/
+
