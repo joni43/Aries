@@ -22,7 +22,6 @@ class QuireEditor {
 
   loadNotes () {
     let storedNote = localStorage.getItem('newNote')
-
     if (!storedNote) storedNote = '[]'
     localStorage.setItem('newNote', storedNote)
     return JSON.parse(storedNote)
