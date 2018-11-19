@@ -2,51 +2,88 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Quill Text Editor 0.2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Merge 0.5</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Stylesheets -->
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <!-- Quill -->
-        <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
-        <!-- Local  -->
-        <link rel="stylesheet" href="CSS/style.css">
-                
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="container">
-            <section>
-                <div class="flex-row">
-                    <!-- Form för rubrik -->
-                    <form action="" id="heading">
-                        <input class="form-control" type="text" id="heading" placeholder="Rubrik">
-                    </form>
-                    <!-- En tom div som "fylls på" med editor-objektet som skapas av Quill-konstruktorn. -->
-                    <div clasS="" id="editor-container"></div>
-                </div>
-                <div class="flex-row">
-                    <!-- Skapar en knapp med bootstrap-klass och kör funktionen saveNote() när den klickas -->
-                    <button class="btn btn-primary submit" onclick="saveNote()">Log to Console</button>
-                </div>
-            </section>
-        </div>
-        
-        
+<!-- Stylesheets -->
+<!-- Google Fonts API -->
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- Quill -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- Local CSS  -->
+<link rel="stylesheet" href="css/style.css">
+</head>
 
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!-- Quill JS -->
-        <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
-        <!-- Local JS -->
-        <script src="javascript/javascript.js" async defer></script>
-    </body>
+<body>
+    <main>
+        <!--Nav for hamburger menu and app tools-->
+        <nav>
+            <div id="tool-menu-container">
+                <!--here comes the hamburger menu, dont get hungry =)-->
+                <div class="tool-menu-item" id="hamburger-menu">
+                    <div id="hamburger-container">
+                        <div class="hamburger-line" id="hamburger-top"></div>
+                        <div class="hamburger-line" id="hamburger-middle"></div>
+                        <div class="hamburger-line" id="hamburger-bottom"></div>
+                    </div>
+                </div>
+                <!--here comes the logo-->
+                <div id="tool-menu-logo" class="tool-menu-item">Queri 1.0</div>
+                <!--here comes the editor buttons-->
+                <div class="tool-menu-item" id="btn-italic">I</div>
+                <div class="tool-menu-item" id="btn-underline">U</div>
+                <div class="tool-menu-item" id="btn-bold">B</div>
+                <div class="tool-menu-item" id="btn-dot-list"><i class="fas fa-list-ul"></i></div>
+                <div class="tool-menu-item" id="btn-number-list"><i class="fas fa-list-ol"></i></div>
+                <div class="tool-menu-item-empty"></div>
+                <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div> 
+            </div>
+            <!-- Temp development button to clear local storage -->
+            <div id="nukeButtonContainer">
+                <button type="button" class="btn btn-danger" onclick="nukeLocalStorage()">Nuke Local Storage!<br>(Development button)</button>
+            </div>
+        </nav>
+
+        <section>
+            <!-- Form for heading -->
+            <form>
+                <input class="form-control" type="text" id="inp-title-Key" placeholder="Rubrik">
+            </form>
+            <!-- An empty div that's "filled" with content from the Quill constructior -->
+            <div id="textarea-container">
+                <div id="editor"></div>
+            </div>           
+        </section>
+
+        <!--Section for document handler-->
+        <section id="document-handler">
+            <div id="document-handler-container">
+                <div class="document-handler-item">
+                    <div class="item-title">New...</div>
+                    <div id="new-document-btn" class="img-document-add"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>,
+    <!-- Local JS -->
+    <script src="script/main.js"></script>
+    <script src="script/quill.js" async defer></script>
+
+
+</body>
 </html>
+
+
