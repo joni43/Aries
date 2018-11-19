@@ -18,6 +18,10 @@ const btnItalic = document.getElementById("btn-italic");
 const newdocumentBtn = document.getElementById("new-document-btn")
 
 
+//objects
+
+var documentObject = {};
+
 
 //Variables
 const inpTitleKey = document.getElementById("inp-title-Key");
