@@ -1,0 +1,135 @@
+/* html {}
+
+body {}
+
+div {}
+
+form {}
+
+input {}
+
+textarea {}
+
+ul {}
+
+li {}
+
+a {}
+
+button {}
+
+
+#form {}
+
+#noteTitle {}
+
+#noteBody {}
+
+#submitButton {}
+
+#noteList {}
+
+#myNotes {}
+
+#noteContent {}
+
+
+li.note-list-line
+div.wholenote{}
+a.star{}
+a.favorite{}
+a.toggle{}
+a.remove-button{}
+h2.note-title{}
+h2.todays-date{}
+
+.note-body{};
+ */
+li {
+    margin: 20px auto;
+}
+
+#submitButton {
+    margin: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 30px;
+}
+
+button {
+    margin: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 30px;
+}
+
+input {
+    margin-top: 0;
+}
+
+h3 {
+    margin: 10px 0 auto;
+    ;
+}
+
+li a {
+    padding: 10px 20px;
+    border: 1px solid black;
+    margin: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+
+#noteContent {
+    border: 1px solid black;
+    border-top: none;
+    border-bottom: none;
+    height: 100%;
+    padding: 150px;
+}
+
+#noteBody {
+    height: 100px;
+}
+
+.wholenote {
+    display: flex;
+}
+
+.wholenote .star {
+    background: black;
+    color: white;
+}
+
+.wholenote .favorite {
+    background: yellow;
+    color: black;
+}
+
+.wholenote .star,
+.wholenote .favorite,
+.wholenote .remove-button,
+.wholenote.toggle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.wholenote .toggle {
+    font-size: 30px;
+}
+
+.content {
+    display: flex;
+
+}
+
+
+.container {
+    margin: 0 auto;
+}
