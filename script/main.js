@@ -14,13 +14,20 @@ window.onload = function ()
 {
 //buttons
 const saveBtn = document.getElementById("btn-save");
-const btnItalic = document.getElementById("btn-italic");
 const newdocumentBtn = document.getElementById("new-document-btn")
 
 
-//objects
+//object constructor
 
-var documentObject = {};
+function DocumentObject(id,title,content,createdDate,favorite){
+    let newDocument = { };
+    newDocument.id = id;
+    newDocument.title = title;
+    newDocument.content = content;
+    newDocument.createdDate = createdDate;
+    newDocument.favorite = favorite;
+    return newDocument;
+};
 
 
 //Variables
@@ -42,6 +49,8 @@ today = mm + '/' + dd + '/' + yyyy;
 
 
 //Functions
+
+
 
 //Makes Title shorter and adds ...
 function shortTitle(title)
@@ -92,14 +101,14 @@ function createDocumentItem(title,dDate)
 //Saves the document
 saveBtn.onclick = function()
 {
+    let contentValue = quill.getContents();
     let key = inpTitleKey.value;
-    const value = "";
+       
 
-    key = shortTitle(key);
+
     
     if(key){
-        localStorage.setItem(key,value);
-        createDocumentItem(key,today);
+        localStorage.setItem(key,JSON.stringify(DocumentObject("id",key,contentValue,today,"favorite")));
     }
     else{
         alert("Ange dokument titel!");
@@ -124,7 +133,7 @@ newdocumentBtn.onclick = function()
 for (var i = 0; i < localStorage.length; i++)
 {
     const key = localStorage.key(i);
-    createDocumentItem(key,today);
+    createDocumentItem(shortTitle(key),today);
 }
 
 
@@ -135,6 +144,11 @@ var quill = new Quill('#editor',
     {
     toolbar:true},theme: 'snow'
 });
+
+//Quills sets content do texteditor
+quill.setContents([
+{insert:'hello'}
+]);
 
 } 
 
