@@ -100,15 +100,12 @@ function createDocumentItem(title,dDate)
 
 //Saves the document
 saveBtn.onclick = function()
-{
+{                      //here we get the content from the editor!
     let contentValue = quill.getContents();
-    let key = inpTitleKey.value;
+    let titleKey = inpTitleKey.value;
        
-
-
-    
-    if(key){
-        localStorage.setItem(key,JSON.stringify(DocumentObject("id",key,contentValue,today,"favorite")));
+    if(titleKey){
+        localStorage.setItem(titleKey,JSON.stringify(DocumentObject("id",titleKey,contentValue,today,"favorite")));
     }
     else{
         alert("Ange dokument titel!");
@@ -144,11 +141,6 @@ var quill = new Quill('#editor',
     {
     toolbar:true},theme: 'snow'
 });
-
-//Quills sets content do texteditor
-quill.setContents([
-{insert:'hello'}
-]);
 
 } 
 
