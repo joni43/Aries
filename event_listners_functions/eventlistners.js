@@ -1,18 +1,17 @@
 const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
-const localMockArray = mockLocalStorage();
-console.log(localMockArray)
 
 
-
+checkLocalStorage()
 
 window.onload = function () {
 
+
     noteList.addEventListener('click', function () {
-
-
         if (event.target.tagName == 'I') {
 
+            //Create a search key to locate the right object in local storage
+            let searchKey = parseInt(event.target.parentElement.parentElement.id);
 
             if (event.target.classList.contains('fa-star')) {
                 if (event.target.classList.contains('far')) {
@@ -20,9 +19,8 @@ window.onload = function () {
                 } else if (event.target.classList.contains('fas')) {
                     event.target.className = 'far fa-star'
                 }
+                toggleFavorite(searchKey);
 
-
-                toggleFavorite();
             } else if (event.target.classList.contains('fa-folder') || event.target.classList.contains('fa-folder-open')) {
                 if (event.target.className === 'fas fa-folder') {
                     event.target.className = 'fas fa-folder-open';
@@ -46,13 +44,20 @@ window.onload = function () {
 
 }
 
+//CHeck local storage if empty then add MockData else parse the the local storage array
+function checkLocalStorage() {
+    let getLocalStorage = localStorage.getItem('notes');
+    parseLocalStorage = JSON.parse(getLocalStorage);
+    if (!getLocalStorage) {
+        let parseLocalStorage = mockLocalStorage();
+        localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
+        window.location.reload();
+    }
+    return parseLocalStorage;
+}
 //Gets the date of today and formats it to mm/dd/yyyy , put new Date() in the funtion
-<<<<<<< HEAD
-function today (date) {
-=======
+
 function today(date) {
-    console.log(date);
->>>>>>> ba82a0786e4efe5ba48aca713b0f08d14f197cd8
     var dd = date.getDate();
     var mm = date.getMonth() + 1;
     var yyyy = date.getFullYear();
@@ -75,9 +80,28 @@ function shortTitle(title) {
     return title;
 }
 
+//By using th key kind the object in the localstorage array and return the new value to the local storage
+function toggleFavorite(key) {
 
-function toggleFavorite() {
-    console.log('Favorite Toggle')
+    let findNote = scanArray(key, parseLocalStorage);
+
+    if (!findNote.Favorite) {
+        findNote.Favorite = true;
+
+    } else {
+        findNote.Favorite = false;
+
+    }
+    localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
+}
+
+//Scan array for object and if found return it
+function scanArray(key, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id === key) {
+            return array[i];
+        }
+    }
 }
 
 function toggleDocument() {
@@ -99,13 +123,14 @@ function submitForm() {
     return formValue
 };
 
-function mockLocalStorage() {
 
+
+function mockLocalStorage() {
     let mockLocalStorage = [{
             id: 1,
             noteTitle: 'Title 1',
             noteBody: 'Body 1',
-            Favorite: true,
+            Favorite: false,
             date: '25-08-1987'
 
         },
@@ -129,22 +154,22 @@ function mockLocalStorage() {
             id: 32,
             noteTitle: 'Title 32',
             noteBody: 'Body 32',
-            Favorite: true,
+            Favorite: false,
             date: '25-08-1987'
 
         },
         {
-            id: 1000,
+            id: 10000,
             noteTitle: 'Title 1000',
             noteBody: 'Body 1000',
-            Favorite: true,
+            Favorite: false,
             date: '25-08-1987'
 
         }, {
             id: 2,
             noteTitle: 'Title 2',
             noteBody: 'Body 2',
-            Favorite: true,
+            Favorite: false,
             date: '25-08-1987'
 
         }
