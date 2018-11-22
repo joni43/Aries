@@ -22,7 +22,7 @@ function today (date){
     if (mm<10){
         mm = '0' + mm;
     }
-    date = mm + '/' + dd + '/' + yyyy;
+    date = dd + '/' + mm + '/' + yyyy;
     return date;
 }
 
@@ -31,15 +31,7 @@ function today (date){
 
 //object constructor
 
-function DocumentObject(id,title,content,createdDate,favorite){
-    let newDocument = { };
-    newDocument.id = id;
-    newDocument.title = title;
-    newDocument.content = content;
-    newDocument.createdDate = createdDate;
-    newDocument.favorite = favorite;
-    return newDocument;
-};
+
 
 //Functions
 
@@ -85,20 +77,27 @@ function createDocumentItem(title,dDate)
     divDocumentHandlerItem.appendChild(iconTrashCan);
 
     document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
-}
+    }   
 
+    function submitForm() {
+    let formValue = {};
+    formValue.id = "nothing right now";
+    formValue.inputTitleValue = inputTitle.value;
+    formValue.textaareaValue = quill.getContents(); //here we get the content from the editor!
+    formValue.dateValue = today(new Date);
+    formValue.favorite = "nothing right now";
+    return formValue
+    };
 
-
-//Saves the document
-saveBtn.onclick = function()
-{                      //here we get the content from the editor!
-    let contentValue = quill.getContents();
+    //Saves the document
+    saveBtn.onclick = function()
+    {                      
+    
     let titleKey = inputTitle.value;
      
-    
     //just looking so the title is not empty and puts things in the localStorage
     if(titleKey){            //we should put 'documents' here and make just one array of this tha takes object! --not finished id is missing and value for favorite
-        localStorage.setItem(titleKey,JSON.stringify(DocumentObject("id",titleKey,contentValue,today(new Date),"favorite")));
+        localStorage.setItem(titleKey,JSON.stringify(submitForm()));
     }
     else{
         alert("Ange dokument titel!");
@@ -106,7 +105,7 @@ saveBtn.onclick = function()
     
     inputTitle.value ="";
     location.reload();
-}
+    }
 
     //New dokument clears the title and the text editor text
     newdocumentBtn.onclick = function()

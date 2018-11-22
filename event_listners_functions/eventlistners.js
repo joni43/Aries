@@ -47,7 +47,6 @@ window.onload = function () {
 
 //Gets the date of today and formats it to mm/dd/yyyy , put new Date() in the funtion
 function today (date) {
-    console.log(date);
     var dd = date.getDate();
     var mm = date.getMonth() +1;
     var yyyy= date.getFullYear();
