@@ -1,4 +1,5 @@
 const noteList = document.querySelector('#noteList');
+const noteForm = document.querySelector('#form');
 window.onload = function () {
 
     noteList.addEventListener('click', function () {
@@ -32,8 +33,13 @@ window.onload = function () {
 
         }
     })
+    noteForm.addEventListener('submit', function () {
+        let formObject = submitForm();
+        return console.log(formObject);
+    })
 
 }
+
 
 function toggleFavorite() {
     console.log('Favorite Toggle')
@@ -46,3 +52,10 @@ function toggleDocument() {
 function removeDocument() {
     console.log('Document Remove')
 }
+
+function submitForm() {
+    let formValue = {};
+    formValue.inputValue = noteForm.querySelector('#formInput').value;
+    formValue.textaareaValue = noteForm.querySelector('#formTextarea').value;
+    return formValue
+};
