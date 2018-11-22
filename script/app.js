@@ -7,10 +7,9 @@ const saveBtn = document.getElementById("btn-save");
 const newdocumentBtn = document.getElementById("new-document-btn");
 
 //Variables
-const inpTitleKey = document.getElementById("inp-title-Key");
+const inputTitle = document.getElementById("inputTitle");
 
 //Gets the date of today and formats it
-
 function today (date){
     console.log(date);
     var dd = date.getDate();
@@ -94,7 +93,7 @@ function createDocumentItem(title,dDate)
 saveBtn.onclick = function()
 {                      //here we get the content from the editor!
     let contentValue = quill.getContents();
-    let titleKey = inpTitleKey.value;
+    let titleKey = inputTitle.value;
      
     
     //just looking so the title is not empty and puts things in the localStorage
@@ -105,14 +104,14 @@ saveBtn.onclick = function()
         alert("Ange dokument titel!");
     }
     
-    inpTitleKey.value ="";
+    inputTitle.value ="";
     location.reload();
 }
 
     //New dokument clears the title and the text editor text
     newdocumentBtn.onclick = function()
     {
-        inpTitleKey.value ="";
+        inputTitle.value ="";
         location.reload(); 
     }
 

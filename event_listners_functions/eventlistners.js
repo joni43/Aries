@@ -58,11 +58,11 @@ function today (date) {
     if (mm<10){
         mm = '0' + mm;
     }
-    date = mm + '/' + dd + '/' + yyyy;
+    date = dd + '/' + mm + '/' + yyyy;
     return date;
 }
 
-//Makes Title shorter and adds ... in the end , use this one when the title is written over the note icon.
+//Makes Title shorter and adds ... in the end , use this one when the title is written over the document icon.
 function shortTitle(title)
 {
     if (title.length > 8)
