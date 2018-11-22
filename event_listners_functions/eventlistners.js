@@ -1,5 +1,10 @@
+
 const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
+
+
+
+
 window.onload = function () {
 
     noteList.addEventListener('click', function () {
@@ -40,6 +45,23 @@ window.onload = function () {
 
 }
 
+//Gets the date of today and formats it to mm/dd/yyyy , put new Date() in the funtion
+function today (date) {
+    console.log(date);
+    var dd = date.getDate();
+    var mm = date.getMonth() +1;
+    var yyyy= date.getFullYear();
+    
+    if (dd<10){
+        dd = '0' + dd;
+    }
+    if (mm<10){
+        mm = '0' + mm;
+    }
+    date = mm + '/' + dd + '/' + yyyy;
+    return date;
+}
+
 
 function toggleFavorite() {
     console.log('Favorite Toggle')
@@ -55,7 +77,8 @@ function removeDocument() {
 
 function submitForm() {
     let formValue = {};
-    formValue.inputValue = noteForm.querySelector('#formInput').value;
+    formValue.inputTitleValue = noteForm.querySelector('#formInput').value;
     formValue.textaareaValue = noteForm.querySelector('#formTextarea').value;
+    formValue.dateValue = today(new Date);
     return formValue
 };
