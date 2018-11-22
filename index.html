@@ -1,59 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
-    <title>Document</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>01merge minimal</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Stylesheets -->
+<!-- Google Fonts API -->
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- Quill -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- Local CSS  -->
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <body class="HolyGrail">
+    <main>
+        <!--Nav for hamburger menu and app tools-->
+        <nav>
+            <div id="tool-menu-container">
+                <!--here comes the hamburger menu, dont get hungry =)-->
+                <div class="tool-menu-item" id="hamburger-menu">
+                    <div id="hamburger-container">
+                        <div class="hamburger-line" id="hamburger-top"></div>
+                        <div class="hamburger-line" id="hamburger-middle"></div>
+                        <div class="hamburger-line" id="hamburger-bottom"></div>
+                    </div>
+                </div>
+                <!--here comes the logo-->
+                <div id="tool-menu-logo" class="tool-menu-item">Queri 1.0</div>
+                <!--here comes the editor buttons-->
+                <div class="tool-menu-item" id="btn-italic">I</div>
+                <div class="tool-menu-item" id="btn-underline">U</div>
+                <div class="tool-menu-item" id="btn-bold">B</div>
+                <div class="tool-menu-item" id="btn-dot-list"><i class="fas fa-list-ul"></i></div>
+                <div class="tool-menu-item" id="btn-number-list"><i class="fas fa-list-ol"></i></div>
+                <div class="tool-menu-item-empty"></div>
+                <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div> 
+            </div>
+        </nav>
 
-        <header></header>
-        <div class="HolyGrail-body">
-          <main class="HolyGrail-content">
+        <section>
+            <!-- Form for heading -->
+            <form>
+                <input class="form-control" type="text" id="" placeholder="Rubrik">
+            </form>
+            <!-- An empty div that's "filled" with content from the Quill constructior -->
+            <div id="textarea-container">
                 <div id="editor"></div>
-
-
-            </main>
-
-          <nav class="HolyGrail-nav">
-              <button id="save">Skapa en anteckning</button>
-              <!-- <div class="text">
-                <h1>My first note </h1>
-                <p> first note bla bla</p>
-        </div>
-<section id="notes">
-            <h1>Saved Notes</h1>
+            </div>           
         </section>
+    </main>
 
-        <div class="text">
-                <h1>My second note </h1>
-                <p> first note bla bla</p>
-        </div> -->
-        <div id="text1">
-
-
-        </div>
-        <section id="notes">
-
-        </section>
-          </nav>
-          <nav class="HolyGrail2-nav">
-              <img src="images.jpeg" class="img">
-          </nav>
-
-        </div>
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>,
+    <!-- Local JS -->
+    <script src="script/quill.js" async defer></script>
 
 
-        <footer>…</footer>
-      </body>
-      <script>
-
-          </script>
-      <script src="app.js"></script>
 </body>
 </html>
+
+
