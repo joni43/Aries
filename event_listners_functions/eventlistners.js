@@ -62,6 +62,16 @@ function today (date) {
     return date;
 }
 
+//Makes Title shorter and adds ... in the end , use this one when the title is written over the note icon.
+function shortTitle(title)
+{
+    if (title.length > 8)
+        {
+            title = title.slice(0,8) + "..."; 
+        }
+    return title;
+}
+
 
 function toggleFavorite() {
     console.log('Favorite Toggle')
@@ -77,8 +87,11 @@ function removeDocument() {
 
 function submitForm() {
     let formValue = {};
+    formValue.id = "nothing right now";
     formValue.inputTitleValue = noteForm.querySelector('#formInput').value;
     formValue.textaareaValue = noteForm.querySelector('#formTextarea').value;
     formValue.dateValue = today(new Date);
+    formValue.favorite = "nothing right now";
+
     return formValue
 };
