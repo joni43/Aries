@@ -8,7 +8,6 @@ let parsedLocalStorageArray = checkLocalStorage();
 let newID = createNewID(parsedLocalStorageArray);
 window.onload = function () {
 
-
     noteList.addEventListener('click', function () {
         if (event.target.tagName == 'I') {
 
@@ -33,7 +32,9 @@ window.onload = function () {
 
                 toggleDocument();
             } else if (event.target.classList.contains('fa-trash-alt')) {
-                removeDocument();
+                removeDocument(searchKey);
+                console.log(event.target.parentElement.parentElement)
+                event.target.parentElement.parentElement.remove()
             }
 
 
@@ -71,16 +72,15 @@ function checkLocalStorage() {
         // return null;
     }
     getLocalStorage = JSON.parse(localStorage.getItem('notes'));
+    //Sort the array after either key of choice
+
     getLocalStorage.sort(arraySorter('id'));
     createNote(getLocalStorage);
     return getLocalStorage;
 }
 
-
-
 function createNote(array) {
 
-    //Sort the array after either key of choice
 
     //Create the note with the array from local storage
     for (let i = 0; i < array.length; i++) {
@@ -209,10 +209,15 @@ function toggleDocument() {
 }
 
 function removeDocument(key) {
+    console.log(key)
     let noteToRemove = scanArray(key, parsedLocalStorageArray);
+    console.log(noteToRemove)
 
-    parsedLocalStorageArray.splice(parsedLocalStorageArray.indexOf(noteToRemove, 1))
-    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray));
+    //noteToRemove = {}
+    console.log(parsedLocalStorageArray)
+    parsedLocalStorageArray.splice(parsedLocalStorageArray.indexOf(noteToRemove), 1)
+    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
+    event.preventDefault()
 }
 
 function submitForm() {
