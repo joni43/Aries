@@ -2,8 +2,10 @@ const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
 
 //Array from local storage
-let parsedLocalStorageArray = checkLocalStorage()
-createNote(parsedLocalStorageArray);
+let parsedLocalStorageArray = checkLocalStorage();
+
+//Use this if you want to create a new id
+let newID = createNewID(parsedLocalStorageArray);
 window.onload = function () {
 
 
@@ -38,21 +40,40 @@ window.onload = function () {
         }
     })
     noteForm.addEventListener('submit', function () {
+
         let formObject = submitForm();
-        return console.log(formObject);
+        return formObject;
     })
 
 }
+
+function createNewID(array) {
+    let newID;
+    if (array === null) {
+        newID = 1;
+    } else {
+        array.reverse();
+        newID = array.slice(-1)[0].id + 1
+    }
+    return newID;
+}
+
 //CHeck local storage if empty then add MockData else parse the the local storage array
 function checkLocalStorage() {
-    let getLocalStorage = localStorage.getItem('notes');
-    parseLocalStorage = JSON.parse(getLocalStorage);
-    if (!getLocalStorage) {
-        let parseLocalStorage = mockLocalStorage();
-        localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
-        window.location.reload();
+
+    let getLocalStorage;
+    if (localStorage !== null) {
+
+        //Try functions with mock 
+        getLocalStorage = mockLocalStorage()
+
+        //Try functions without mock
+        // return null;
     }
-    return parseLocalStorage;
+    getLocalStorage = JSON.parse(localStorage.getItem('notes'));
+    getLocalStorage.sort(arraySorter('id'));
+    createNote(getLocalStorage);
+    return getLocalStorage;
 }
 
 
@@ -60,7 +81,6 @@ function checkLocalStorage() {
 function createNote(array) {
 
     //Sort the array after either key of choice
-    array.sort(arraySorter('id'));
 
     //Create the note with the array from local storage
     for (let i = 0; i < array.length; i++) {
@@ -115,7 +135,6 @@ function createNote(array) {
 
 //Sort after key
 function arraySorter(key) {
-    console.log(key)
     let sortOrder = 1;
     if (key[0] === "-") {
         sortOrder = -1;
@@ -189,8 +208,11 @@ function toggleDocument() {
     console.log('Document Toggle');
 }
 
-function removeDocument() {
-    console.log('Document Remove')
+function removeDocument(key) {
+    let noteToRemove = scanArray(key, parsedLocalStorageArray);
+
+    parsedLocalStorageArray.splice(parsedLocalStorageArray.indexOf(noteToRemove, 1))
+    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray));
 }
 
 function submitForm() {
@@ -255,6 +277,6 @@ function mockLocalStorage() {
 
         }
     ]
-    return mockLocalStorage;
+    localStorage.setItem('notes', JSON.stringify(mockLocalStorage))
 
 }
