@@ -1,9 +1,9 @@
 const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
 
-
-checkLocalStorage()
-
+//Array from local storage
+let parsedLocalStorageArray = checkLocalStorage()
+createNote(parsedLocalStorageArray);
 window.onload = function () {
 
 
@@ -44,6 +44,58 @@ window.onload = function () {
 
 }
 
+function createNote(array) {
+
+
+    for (let i = 0; i < array.length; i++) {
+        let favoritebuttonIcon = document.createElement('i');
+        let favoriteButton = document.createElement('a');
+        let openButton = document.createElement('a');
+        let openButtonIcon = document.createElement('i');
+        let titleSpan = document.createElement('span');
+        let dateSpan = document.createElement('span');
+        let removeButton = document.createElement('a');
+        let removeButtonIcon = document.createElement('i')
+        let listWithID = document.createElement('li');
+        id = array[i].id
+        title = array[i].noteTitle
+        body = array[i].noteBody
+        favorite = array[i].favorite
+        date = array[i].date
+
+        favoriteButton.className = 'favorite';
+        if (favorite) {
+            favoritebuttonIcon.className = 'fas fa-star'
+        } else {
+            favoritebuttonIcon.className = 'far fa-star'
+        }
+        openButton.className = 'openDocument';
+        openButtonIcon.className = 'fas fa-folder';
+
+        titleSpan.className = 'title'
+        titleSpan.textContent = title + ' ';
+
+        dateSpan.className = 'date';
+        dateSpan.textContent = ' ' + date;
+
+        removeButton.className = 'remove';
+        removeButtonIcon.className = 'fas fa-trash-alt'
+
+        listWithID.id = id;
+
+        favoriteButton.appendChild(favoritebuttonIcon);
+        openButton.appendChild(openButtonIcon);
+        removeButton.appendChild(removeButtonIcon);
+
+        listWithID.appendChild(favoriteButton)
+        listWithID.appendChild(openButton)
+        listWithID.appendChild(titleSpan)
+        listWithID.appendChild(dateSpan)
+        listWithID.appendChild(removeButton)
+
+        noteList.appendChild(listWithID);
+    }
+}
 //CHeck local storage if empty then add MockData else parse the the local storage array
 function checkLocalStorage() {
     let getLocalStorage = localStorage.getItem('notes');
@@ -83,16 +135,16 @@ function shortTitle(title) {
 //By using th key kind the object in the localstorage array and return the new value to the local storage
 function toggleFavorite(key) {
 
-    let findNote = scanArray(key, parseLocalStorage);
+    let findNote = scanArray(key, parsedLocalStorageArray);
 
-    if (!findNote.Favorite) {
-        findNote.Favorite = true;
+    if (!findNote.favorite) {
+        findNote.favorite = true;
 
     } else {
-        findNote.Favorite = false;
+        findNote.favorite = false;
 
     }
-    localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
+    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray));
 }
 
 //Scan array for object and if found return it
@@ -130,7 +182,7 @@ function mockLocalStorage() {
             id: 1,
             noteTitle: 'Title 1',
             noteBody: 'Body 1',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         },
@@ -138,7 +190,7 @@ function mockLocalStorage() {
             id: 10,
             noteTitle: 'Title 10',
             noteBody: 'Body 10',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         },
@@ -146,7 +198,7 @@ function mockLocalStorage() {
             id: 5,
             noteTitle: 'Title 5',
             noteBody: 'Body 4',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         },
@@ -154,7 +206,7 @@ function mockLocalStorage() {
             id: 32,
             noteTitle: 'Title 32',
             noteBody: 'Body 32',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         },
@@ -162,14 +214,14 @@ function mockLocalStorage() {
             id: 10000,
             noteTitle: 'Title 1000',
             noteBody: 'Body 1000',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         }, {
             id: 2,
             noteTitle: 'Title 2',
             noteBody: 'Body 2',
-            Favorite: false,
+            favorite: false,
             date: '25-08-1987'
 
         }
