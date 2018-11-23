@@ -43,10 +43,26 @@ window.onload = function () {
     })
 
 }
+//CHeck local storage if empty then add MockData else parse the the local storage array
+function checkLocalStorage() {
+    let getLocalStorage = localStorage.getItem('notes');
+    parseLocalStorage = JSON.parse(getLocalStorage);
+    if (!getLocalStorage) {
+        let parseLocalStorage = mockLocalStorage();
+        localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
+        window.location.reload();
+    }
+    return parseLocalStorage;
+}
+
+
 
 function createNote(array) {
 
+    //Sort the array after either key of choice
+    array.sort(arraySorter('id'));
 
+    //Create the note with the array from local storage
     for (let i = 0; i < array.length; i++) {
         let favoritebuttonIcon = document.createElement('i');
         let favoriteButton = document.createElement('a');
@@ -96,17 +112,30 @@ function createNote(array) {
         noteList.appendChild(listWithID);
     }
 }
-//CHeck local storage if empty then add MockData else parse the the local storage array
-function checkLocalStorage() {
-    let getLocalStorage = localStorage.getItem('notes');
-    parseLocalStorage = JSON.parse(getLocalStorage);
-    if (!getLocalStorage) {
-        let parseLocalStorage = mockLocalStorage();
-        localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
-        window.location.reload();
+
+//Sort after key
+function arraySorter(key) {
+    console.log(key)
+    let sortOrder = 1;
+    if (key[0] === "-") {
+        sortOrder = -1;
+        key = key.substring(1);
+
     }
-    return parseLocalStorage;
+    return function (x, y) {
+
+        let sortRestult;
+        if (x[key] > y[key]) {
+            sortRestult = -1;
+        } else if (x[key] < y[key]) {
+            sortRestult = 1;
+        } else {
+            sortRestult = 0;
+        }
+        return sortRestult * sortOrder
+    }
 }
+
 //Gets the date of today and formats it to mm/dd/yyyy , put new Date() in the funtion
 
 function today(date) {
@@ -183,7 +212,7 @@ function mockLocalStorage() {
             noteTitle: 'Title 1',
             noteBody: 'Body 1',
             favorite: false,
-            date: '25-08-1987'
+            date: '12-02-2007'
 
         },
         {
@@ -199,7 +228,7 @@ function mockLocalStorage() {
             noteTitle: 'Title 5',
             noteBody: 'Body 4',
             favorite: false,
-            date: '25-08-1987'
+            date: '13-12-1999'
 
         },
         {
@@ -207,7 +236,7 @@ function mockLocalStorage() {
             noteTitle: 'Title 32',
             noteBody: 'Body 32',
             favorite: false,
-            date: '25-08-1987'
+            date: '21-05-2017'
 
         },
         {
@@ -215,14 +244,14 @@ function mockLocalStorage() {
             noteTitle: 'Title 1000',
             noteBody: 'Body 1000',
             favorite: false,
-            date: '25-08-1987'
+            date: '05-05-1917'
 
         }, {
             id: 2,
             noteTitle: 'Title 2',
             noteBody: 'Body 2',
             favorite: false,
-            date: '25-08-1987'
+            date: '11-11-2111'
 
         }
     ]
