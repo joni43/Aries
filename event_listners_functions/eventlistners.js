@@ -1,8 +1,8 @@
 const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
 
-
-checkLocalStorage()
+//Array from local storage
+let parsedLocalStorageArray = checkLocalStorage()
 
 window.onload = function () {
 
@@ -83,7 +83,7 @@ function shortTitle(title) {
 //By using th key kind the object in the localstorage array and return the new value to the local storage
 function toggleFavorite(key) {
 
-    let findNote = scanArray(key, parseLocalStorage);
+    let findNote = scanArray(key, parsedLocalStorageArray);
 
     if (!findNote.Favorite) {
         findNote.Favorite = true;
@@ -92,7 +92,7 @@ function toggleFavorite(key) {
         findNote.Favorite = false;
 
     }
-    localStorage.setItem('notes', JSON.stringify(parseLocalStorage));
+    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray));
 }
 
 //Scan array for object and if found return it
