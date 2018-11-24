@@ -160,23 +160,23 @@ font-size: 40px;
 
 .img-document{
     width: 110px;
-    content: url(/Aries/components/document.png);
+    content: url(/components/document.png);
 }
 
 .img-document:hover{
     width: 110px;
     cursor: pointer;
-    content: url(/Aries/components/documentHover.png);
+    content: url(/components/documentHover.png);
 }
 
 .img-document-add{
     width: 110px;
-    content: url(/Aries/components/documentplus.png);
+    content: url(/components/documentplus.png);
 }
 .img-document-add:hover{
     width: 110px;
     cursor: pointer;
-    content: url(/Aries/components/documentplusHover.png);
+    content: url(/components/documentplusHover.png);
 
     
 }

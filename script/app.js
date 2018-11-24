@@ -1,6 +1,6 @@
 window.onload = function ()
 {
-
+    
 
 //buttons
 const saveBtn = document.getElementById("btn-save");
@@ -9,8 +9,16 @@ const newdocumentBtn = document.getElementById("new-document-btn");
 //Variables
 const inputTitle = document.getElementById("inputTitle");
 
+//Array
+var noteArray =[];
+
+
 
 //Functions
+
+
+
+
 
  //Makes Title shorter and adds ...
     function shortTitle(title)
@@ -38,6 +46,7 @@ const inputTitle = document.getElementById("inputTitle");
         date = dd + '/' + mm + '/' + yyyy;
         return date;
     }
+
 
  //Creates a document item
     function createDocumentItem(title,dDate)
@@ -73,6 +82,10 @@ const inputTitle = document.getElementById("inputTitle");
         document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
     }   
 
+
+
+
+
     function submitForm() {
         let formValue = {};
         formValue.id = "nothing right now";
@@ -96,8 +109,12 @@ const inputTitle = document.getElementById("inputTitle");
     let titleKey = inputTitle.value;
      
     //just looking so the title is not empty and puts things in the localStorage
-    if(titleKey){            //we should put 'documents' here and make just one array of this tha takes object! --not finished id is missing and value for favorite
-        localStorage.setItem(titleKey,JSON.stringify(submitForm()));
+    if(titleKey){ 
+        
+        noteArray.push('test'+1);  
+        console.log(noteArray);        
+        localStorage.setItem('notes',JSON.stringify(noteArray));
+        
     }
     else{
         alert("Ange dokument titel!");
@@ -117,5 +134,7 @@ const inputTitle = document.getElementById("inputTitle");
         createDocumentItem(shortTitle(key),today(new Date()));
     }
 
+
+ 
 } 
 

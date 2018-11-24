@@ -59,7 +59,7 @@ function createNewID(array) {
     return newID;
 }
 
-//CHeck local storage if empty then add MockData else parse the the local storage array
+//Check local storage if empty then add MockData else parse the the local storage array
 function checkLocalStorage() {
 
     let getLocalStorage;
