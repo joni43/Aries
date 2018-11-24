@@ -48,6 +48,8 @@ window.onload = function () {
 
         parsedLocalStorageArray.push(formObject)
         localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
+        let updatedNotes = checkLocalStorage();
+
         this.reset()
 
 

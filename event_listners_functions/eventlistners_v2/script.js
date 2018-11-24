@@ -8,8 +8,8 @@ window.onload = function () {
 
     noteForm.addEventListener('submit', function () {
         saveNote();
-        this.reset();
-        window.location.reload();
+
+        createNote(noteArray);
     })
 
     noteList.addEventListener('click', function () {
@@ -112,6 +112,7 @@ function getLocalStorage() {
 }
 
 function createNote(array) {
+    noteList.innerHTML = '';
     for (let i = 0; i < array.length; i++) {
 
         id = array[i].id;
