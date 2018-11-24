@@ -98,11 +98,21 @@ function findObject(key, array) {
     }
 }
 
+function createID() {
+    let newID;
+    if (localStorage.length === 0) {
+        newID = 1;
+    } else {
+        let arrayLastID = noteArray[noteArray.length - 1].id;
+        arrayLastID++;
+        newID = arrayLastID
+    }
+    return newID;
+}
+
 function saveNote() {
-    console.log('save')
     let newNote = {};
-    let randomNumber = Math.floor(Math.random() * 1000) + 1;
-    newNote.id = randomNumber;
+    newNote.id = createID();
     newNote.title = document.querySelector('#noteTitle').value;
     newNote.body = document.querySelector('#noteBody').value;
     newNote.favorite = false;
