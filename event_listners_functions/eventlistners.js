@@ -1,12 +1,17 @@
 const noteList = document.querySelector('#noteList');
 const noteForm = document.querySelector('#form');
 
+
+
 //Array from local storage
 let parsedLocalStorageArray = checkLocalStorage();
 
 //Use this if you want to create a new id
-let newID = createNewID(parsedLocalStorageArray);
+//let newID ;
 window.onload = function () {
+
+
+    createNote(parsedLocalStorageArray);
 
     noteList.addEventListener('click', function () {
         if (event.target.tagName == 'I') {
@@ -20,7 +25,7 @@ window.onload = function () {
                 } else if (event.target.classList.contains('fas')) {
                     event.target.className = 'far fa-star'
                 }
-                toggleFavorite(searchKey);
+                toggleFavorite(searchKey, parsedLocalStorageArray);
 
             } else if (event.target.classList.contains('fa-folder') || event.target.classList.contains('fa-folder-open')) {
                 if (event.target.className === 'fas fa-folder') {
@@ -33,27 +38,52 @@ window.onload = function () {
                 toggleDocument();
             } else if (event.target.classList.contains('fa-trash-alt')) {
                 removeDocument(searchKey);
-                console.log(event.target.parentElement.parentElement)
                 event.target.parentElement.parentElement.remove()
             }
-
-
         }
     })
     noteForm.addEventListener('submit', function () {
+        let formObject = submitForm(parsedLocalStorageArray);
 
-        let formObject = submitForm();
-        return formObject;
+
+        parsedLocalStorageArray.push(formObject)
+        localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
+        this.reset()
+        window.location.reload()
     })
 
 }
+//By using th key kind the object in the localstorage array and return the new value to the local storage
+function toggleFavorite(key, array) {
+
+    let findNote = scanArray(key, array);
+
+    if (!findNote.favorite) {
+        findNote.favorite = true;
+
+    } else {
+        findNote.favorite = false;
+    }
+    localStorage.setItem('notes', JSON.stringify(array));
+}
+
+function submitForm(array) {
+    let formValue = {};
+    let newID = createNewID(array);
+    formValue.id = newID;
+    formValue.inputTitleValue = noteForm.querySelector('#formInput').value;
+    formValue.textaareaValue = noteForm.querySelector('#formTextarea').value;
+    formValue.dateValue = today(new Date);
+    formValue.favorite = false;
+
+    return formValue
+};
 
 function createNewID(array) {
     let newID;
-    if (array === null) {
+    if (array == 0) {
         newID = 1;
     } else {
-        array.reverse();
         newID = array.slice(-1)[0].id + 1
     }
     return newID;
@@ -63,24 +93,27 @@ function createNewID(array) {
 function checkLocalStorage() {
 
     let getLocalStorage;
-    if (localStorage !== null) {
 
-        //Try functions with mock 
-        getLocalStorage = mockLocalStorage()
+    if (localStorage) {
 
-        //Try functions without mock
-        // return null;
+        let tempParseArray = localStorage.getItem('notes');
+        getLocalStorage = JSON.parse(tempParseArray);
+        //Sort the array after either key of choice
+
+        if (getLocalStorage !== null) {
+
+            return getLocalStorage /* .sort(arraySorter('id')); */
+        } else {
+
+            getLocalStorage = []
+            return getLocalStorage;
+        }
+
     }
-    getLocalStorage = JSON.parse(localStorage.getItem('notes'));
-    //Sort the array after either key of choice
 
-    getLocalStorage.sort(arraySorter('id'));
-    createNote(getLocalStorage);
-    return getLocalStorage;
 }
 
 function createNote(array) {
-
 
     //Create the note with the array from local storage
     for (let i = 0; i < array.length; i++) {
@@ -94,10 +127,10 @@ function createNote(array) {
         let removeButtonIcon = document.createElement('i')
         let listWithID = document.createElement('li');
         id = array[i].id
-        title = array[i].noteTitle
-        body = array[i].noteBody
+        title = array[i].inputTitleValue
+        body = array[i].textaareaValue
         favorite = array[i].favorite
-        date = array[i].date
+        date = array[i].dateValue
 
         favoriteButton.className = 'favorite';
         if (favorite) {
@@ -109,7 +142,7 @@ function createNote(array) {
         openButtonIcon.className = 'fas fa-folder';
 
         titleSpan.className = 'title'
-        titleSpan.textContent = title + ' ';
+        titleSpan.textContent = title;
 
         dateSpan.className = 'date';
         dateSpan.textContent = ' ' + date;
@@ -131,6 +164,7 @@ function createNote(array) {
 
         noteList.appendChild(listWithID);
     }
+
 }
 
 //Sort after key
@@ -180,20 +214,7 @@ function shortTitle(title) {
     return title;
 }
 
-//By using th key kind the object in the localstorage array and return the new value to the local storage
-function toggleFavorite(key) {
 
-    let findNote = scanArray(key, parsedLocalStorageArray);
-
-    if (!findNote.favorite) {
-        findNote.favorite = true;
-
-    } else {
-        findNote.favorite = false;
-
-    }
-    localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray));
-}
 
 //Scan array for object and if found return it
 function scanArray(key, array) {
@@ -209,27 +230,12 @@ function toggleDocument() {
 }
 
 function removeDocument(key) {
-    console.log(key)
     let noteToRemove = scanArray(key, parsedLocalStorageArray);
-    console.log(noteToRemove)
 
-    //noteToRemove = {}
-    console.log(parsedLocalStorageArray)
     parsedLocalStorageArray.splice(parsedLocalStorageArray.indexOf(noteToRemove), 1)
     localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
     event.preventDefault()
 }
-
-function submitForm() {
-    let formValue = {};
-    formValue.id = "nothing right now";
-    formValue.inputTitleValue = noteForm.querySelector('#formInput').value;
-    formValue.textaareaValue = noteForm.querySelector('#formTextarea').value;
-    formValue.dateValue = today(new Date);
-    formValue.favorite = "nothing right now";
-
-    return formValue
-};
 
 
 
