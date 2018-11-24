@@ -21,8 +21,8 @@ window.onload = function () {
                 event.target.className = 'far fa-star'
             }
 
-            let noteToFavorite = findObject(event.target.parentElement.parentElement.id, noteArray)
-            toggleFavorite(noteToFavorite, noteArray)
+            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray)
+            toggleNote(noteToView.id, noteViewer.childNodes);
 
         } else if (event.target.parentElement.className === 'folder-button') {
 
@@ -33,7 +33,7 @@ window.onload = function () {
             }
 
             let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray)
-            toggleNote(noteToView, noteViewer.childNodes);
+            toggleNote(noteToView.id, noteViewer.childNodes);
 
         } else if (event.target.parentElement.className === 'trash-button') {
 
@@ -46,8 +46,17 @@ window.onload = function () {
 
 }
 
-function toggleNote(object, array) {
-
+function toggleNote(key, array) {
+    for (let i = 0; i < array.length; i++) {
+        let parsedID = parseInt(array[i].id);
+        if (key === parsedID) {
+            if (array[i].style.display === 'none') {
+                array[i].style.display = 'block'
+            } else {
+                array[i].style.display = 'none';
+            }
+        }
+    }
 }
 
 function toggleFavorite(object, array) {
@@ -147,7 +156,7 @@ function createNote(array) {
         bodyDiv.id = id;
         bodyDiv.className = 'body-div';
         bodyDiv.textContent = body;
-        //bodyDiv.style.display = 'none';
+        bodyDiv.style.display = 'none';
 
         starButton.appendChild(starIcon);
         folderButton.appendChild(folderIcon);
