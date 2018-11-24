@@ -49,10 +49,13 @@ window.onload = function () {
         parsedLocalStorageArray.push(formObject)
         localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
         this.reset()
-        window.location.reload()
+
+
     })
 
 }
+
+
 //By using th key kind the object in the localstorage array and return the new value to the local storage
 function toggleFavorite(key, array) {
 
