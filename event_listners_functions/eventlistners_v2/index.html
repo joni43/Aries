@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <title>Eventlistners</title>
+</head>
+
+<body>
+    <h1>Eventlistners 2</h1>
+    <hr>
+    <div class="content">
+        <div class="container">
+            <form action="#" id="form">
+                <span>Title: </span><input type="text" id="noteTitle" placeholder="Title">
+                <br>
+                <br>
+                <span>Body: </span><textarea id="noteBody" cols="30" rows="10"></textarea>
+                <br><br>
+                <input type="submit" id="submitNote" value="Submit">
+            </form>
+            <hr>
+            <h3>List</h3>
+            <ul id="noteList"></ul>
+        </div>
+        <div class="container">
+            <h3>Viewer</h3>
+            <div id="noteViewer"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
