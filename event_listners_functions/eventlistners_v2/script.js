@@ -10,6 +10,7 @@ window.onload = function () {
         saveNote();
 
         createNote(noteArray);
+        this.reset()
     })
 
     noteList.addEventListener('click', function () {
