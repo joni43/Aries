@@ -137,20 +137,11 @@ function getLocalStorage() {
 
             document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
             
-            trashcanButton.onclick = function()
-            {
-                alert(id);
-            }
-        
-            starButton.onclick = function()
-            {
-                alert("121");
-            }
 
         }
     }   
 
-   
+    
     
    
     //Saves the note 
