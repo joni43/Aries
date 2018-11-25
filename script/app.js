@@ -5,27 +5,35 @@ window.onload = function ()
 const saveBtn = document.getElementById("btn-save");
 const newdocumentBtn = document.getElementById("new-document-btn");
 
-//Variables
+
 const inputTitle = document.getElementById("inputTitle");
 let noteArray = getLocalStorage();
 
 createNote(noteArray);
+  
    
     //Saves the document
     saveBtn.onclick = function()
     {                      
-    
         saveNote();
-
         createNote(noteArray);
-        this.reset();
         clearForm();
-    
     }
 
 
 //Functions
 
+function createID() {
+    let newID;
+    if (localStorage.length === 0) {
+        newID = 1;
+    } else {
+        let arrayLastID = noteArray[noteArray.length - 1].id;
+        arrayLastID++;
+        newID = arrayLastID
+    }
+    return newID;
+}
 function getLocalStorage() {
     let noteArray;
     if (localStorage.length === 0) {
@@ -50,7 +58,7 @@ function getLocalStorage() {
 
     //Gets the date of today and formats it
     function today (date){
-        console.log(date);
+        
         var dd = date.getDate();
         var mm = date.getMonth() +1;
         var yyyy= date.getFullYear();
@@ -65,6 +73,15 @@ function getLocalStorage() {
         return date;
     }
 
+    function toggleFavorite(object, array) {
+        if (object.favorite === false) {
+            object.favorite = true;
+        } else {
+            object.favorite = false;
+        }
+        setLocalStorage(array);
+    }
+
 
  //Creates a document item
     function createNote(array)
@@ -73,7 +90,7 @@ function getLocalStorage() {
         {
             id = array[i].id;
             title = array[i].title;
-            body = array[i].body;
+            textContent = array[i].textContent;
             favorite = array[i].favorite;
             date = array[i].date;
 
@@ -81,36 +98,65 @@ function getLocalStorage() {
             let divDocumentImage = document.createElement('div');
             let divDocumentTitle = document.createElement('div');
             let divDocumentTime = document.createElement('div');
-            let documentTitle = document.createTextNode(title);
+            let documentTitle = document.createTextNode(shortTitle(title));
             let documentTime = document.createTextNode(date);
-            let iconTrashCan = document.createElement('i');
-            let iconStar = document.createElement('i');
+            let trashcanIcon = document.createElement('i');
+            let trashcanButton = document.createElement('a');
+            let starIcon = document.createElement('i');
+            let starButton = document.createElement('a');
         
 
             divDocumentHandlerItem.className="document-handler-item";
             divDocumentTitle.className="item-title";
             divDocumentTime.className="item-time";
             divDocumentImage.className ="img-document";
-            iconStar.className ="fas fa-star";
-            iconTrashCan.className="fas fa-trash-alt";
+
+            starIcon.className ="fas fa-star";
+            if (favorite) {
+                starIcon.className = 'fas fa-star';
+                starIcon.style.color ='yellow';
+            } else {
+                starIcon.className = 'far fa-star';
+            }
+
+            trashcanIcon.className="fas fa-trash-alt";
         
             divDocumentTitle.appendChild(documentTitle);
             divDocumentTime.appendChild(documentTime);
 
             divDocumentHandlerItem.appendChild(divDocumentTitle);
-            divDocumentHandlerItem.appendChild(iconStar);
+            
+            starButton.appendChild(starIcon);
+            divDocumentHandlerItem.appendChild(starButton);
+
             divDocumentHandlerItem.appendChild(divDocumentImage);
 
             divDocumentHandlerItem.appendChild(divDocumentTime);
-            divDocumentHandlerItem.appendChild(iconTrashCan);
+            trashcanButton.appendChild(trashcanIcon);
+            divDocumentHandlerItem.appendChild(trashcanButton);
 
             document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
+            
+            trashcanButton.onclick = function()
+            {
+                alert(id);
+            }
+        
+            starButton.onclick = function()
+            {
+                alert("121");
+            }
+
         }
     }   
 
+   
+    
+   
+    //Saves the note 
     function saveNote() {
         let newNote = {};
-        newNote.id = "nothing right now";
+        newNote.id = createID();
         newNote.title = inputTitle.value;
         newNote.textContent = quill.getContents(); //here we get the content from the editor!
         newNote.date = today(new Date);
