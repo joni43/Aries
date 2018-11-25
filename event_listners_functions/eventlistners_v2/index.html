@@ -26,9 +26,17 @@
             </form>
             <hr>
             <h3>List</h3>
-            <ul id="noteList"></ul>
+            <div id="listContainer">
+                <ul id="favoriteList"></ul>
+                <ul id="noteList"></ul>
+            </div>
+
         </div>
         <div class="container">
+            <form id="searchBar">
+                <span>Search</span><input type="text" id="searchNote"><input type="submit" value="submit">
+
+            </form>
             <h3>Viewer</h3>
             <div id="noteViewer"></div>
         </div>

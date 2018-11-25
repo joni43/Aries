@@ -1,12 +1,23 @@
 //Variables to select places i html
 let noteList = document.querySelector('#noteList');
+let favoriteList = document.querySelector('#favoriteList')
+let listContainer = document.querySelector("#listContainer")
 let noteViewer = document.querySelector('#noteViewer');
 let noteForm = document.querySelector('#form');
+let searchBar = document.querySelector("#searchBar");
 
 //Declare load and create clocal storage
 let noteArray = getLocalStorage();
 createNote(noteArray)
 window.onload = function () {
+
+    searchBar.addEventListener('submit', function () {
+        event.preventDefault()
+        this.reset()
+        let searchKey = document.querySelector("#searchNote").value;
+        searchNote(searchKey);
+
+    })
 
 
     //Create new note after submit
@@ -17,7 +28,7 @@ window.onload = function () {
         this.reset()
     })
 
-    noteList.addEventListener('click', function () {
+    listContainer.addEventListener('click', function () {
         //Change the statis and icon of the favorite star
         if (event.target.parentElement.className === 'star-button') {
 
@@ -53,6 +64,12 @@ window.onload = function () {
     })
 
 }
+
+function searchNote(key) {
+
+
+}
+
 //Change the key from string to number to compare it with corresponding object
 function toggleNote(key, array) {
     for (let i = 0; i < array.length; i++) {
@@ -91,11 +108,13 @@ function toggleFavorite(key) {
         key.favorite = false;
     }
     setLocalStorage(noteArray);
+    this.location.reload()
 }
 //Take out the object from the array and save local storage
 function removeNote(object, array) {
     array.splice(array.indexOf(object), 1)
     setLocalStorage(array)
+
 }
 
 //Search function to find the right object by compareing id with the array
@@ -111,7 +130,7 @@ function findObject(key, array) {
 //Create new id but scanning the array
 function createID() {
     let newID;
-    if (localStorage.length === 0) {
+    if (localStorage.length === 0 || noteArray.length === 0) {
         newID = 1;
     } else {
         let arrayLastID = noteArray[noteArray.length - 1].id;
@@ -205,10 +224,16 @@ function createNote(array) {
         li.appendChild(titleSpan);
         li.appendChild(dateSpan);
         li.appendChild(trashButton);
+        console.log(favorite)
+        if (favorite) {
+            favoriteList.appendChild(li)
+        } else {
+            noteList.appendChild(li);
+        }
 
-        noteList.appendChild(li);
         noteViewer.appendChild(bodyDiv)
     }
+
 }
 
 //Function for debugging
