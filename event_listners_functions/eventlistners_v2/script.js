@@ -1,5 +1,7 @@
 //Variables to select places i html
 let noteList = document.querySelector('#noteList');
+let favoriteList = document.querySelector('#favoriteList')
+let listContainer = document.querySelector("#listContainer")
 let noteViewer = document.querySelector('#noteViewer');
 let noteForm = document.querySelector('#form');
 let searchBar = document.querySelector("#searchBar");
@@ -26,7 +28,7 @@ window.onload = function () {
         this.reset()
     })
 
-    noteList.addEventListener('click', function () {
+    listContainer.addEventListener('click', function () {
         //Change the statis and icon of the favorite star
         if (event.target.parentElement.className === 'star-button') {
 
@@ -106,6 +108,7 @@ function toggleFavorite(key) {
         key.favorite = false;
     }
     setLocalStorage(noteArray);
+    this.location.reload()
 }
 //Take out the object from the array and save local storage
 function removeNote(object, array) {
@@ -221,10 +224,16 @@ function createNote(array) {
         li.appendChild(titleSpan);
         li.appendChild(dateSpan);
         li.appendChild(trashButton);
+        console.log(favorite)
+        if (favorite) {
+            favoriteList.appendChild(li)
+        } else {
+            noteList.appendChild(li);
+        }
 
-        noteList.appendChild(li);
         noteViewer.appendChild(bodyDiv)
     }
+
 }
 
 //Function for debugging
