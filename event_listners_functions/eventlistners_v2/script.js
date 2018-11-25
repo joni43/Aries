@@ -2,11 +2,20 @@
 let noteList = document.querySelector('#noteList');
 let noteViewer = document.querySelector('#noteViewer');
 let noteForm = document.querySelector('#form');
+let searchBar = document.querySelector("#searchBar");
 
 //Declare load and create clocal storage
 let noteArray = getLocalStorage();
 createNote(noteArray)
 window.onload = function () {
+
+    searchBar.addEventListener('submit', function () {
+        event.preventDefault()
+        this.reset()
+        let searchKey = document.querySelector("#searchNote").value;
+        searchNote(searchKey);
+
+    })
 
 
     //Create new note after submit
@@ -53,6 +62,12 @@ window.onload = function () {
     })
 
 }
+
+function searchNote(key) {
+
+
+}
+
 //Change the key from string to number to compare it with corresponding object
 function toggleNote(key, array) {
     for (let i = 0; i < array.length; i++) {
@@ -111,7 +126,7 @@ function findObject(key, array) {
 //Create new id but scanning the array
 function createID() {
     let newID;
-    if (localStorage.length === 0) {
+    if (localStorage.length === 0 || localStorage !== undefined) {
         newID = 1;
     } else {
         let arrayLastID = noteArray[noteArray.length - 1].id;
