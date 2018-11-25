@@ -111,6 +111,7 @@ function toggleFavorite(key) {
 function removeNote(object, array) {
     array.splice(array.indexOf(object), 1)
     setLocalStorage(array)
+
 }
 
 //Search function to find the right object by compareing id with the array
@@ -126,7 +127,7 @@ function findObject(key, array) {
 //Create new id but scanning the array
 function createID() {
     let newID;
-    if (localStorage.length === 0 || localStorage !== undefined) {
+    if (localStorage.length === 0 || noteArray.length === 0) {
         newID = 1;
     } else {
         let arrayLastID = noteArray[noteArray.length - 1].id;
