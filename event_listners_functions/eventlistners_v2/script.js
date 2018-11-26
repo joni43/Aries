@@ -20,13 +20,7 @@ window.onload = function () {
     })
 
 
-    //Create new note after submit
-    noteForm.addEventListener('submit', function () {
-        //Save inputs, create the note on page and empty fpr,
-        saveNote();
-        createNote(noteArray);
-        this.reset()
-    })
+    
 
     listContainer.addEventListener('click', function () {
         //Change the statis and icon of the favorite star
@@ -38,7 +32,7 @@ window.onload = function () {
                 event.target.className = 'far fa-star'
             }
 
-            //Declare a note by first finding the right boject and then change it's value
+            //Declare a note by first finding the right object and then change it's value
             let noteToFavorite = findObject(event.target.parentElement.parentElement.id, noteArray)
             toggleFavorite(noteToFavorite, noteViewer.childNodes);
 
@@ -49,13 +43,13 @@ window.onload = function () {
             } else {
                 event.target.className = 'fas fa-folder'
             }
-            //Declare a note by first finding the right boject and then change it's value
+            //Declare a note by first finding the right object and then change it's value
             let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray)
             toggleNote(noteToView.id, noteViewer.childNodes);
 
         } else if (event.target.parentElement.className === 'trash-button') {
 
-            //Declare a note by first finding the right boject and then remove it from the main array
+            //Declare a note by first finding the right object and then remove it from the main array
             let noteToRemove = findObject(event.target.parentElement.parentElement.id, noteArray);
             removeNote(noteToRemove, noteArray)
             event.target.parentElement.parentElement.remove();
@@ -84,38 +78,9 @@ function toggleNote(key, array) {
     }
 }
 
-//Get todays date
-function today(date) {
-    var dd = date.getDate();
-    var mm = date.getMonth() + 1;
-    var yyyy = date.getFullYear();
 
-    if (dd < 10) {
-        dd = '0' + dd;
-    }
-    if (mm < 10) {
-        mm = '0' + mm;
-    }
-    date = dd + '/' + mm + '/' + yyyy;
-    return date;
-}
 
-//See if the value of favorite is true of false and save it to the local storage
-function toggleFavorite(key) {
-    if (key.favorite === false) {
-        key.favorite = true;
-    } else {
-        key.favorite = false;
-    }
-    setLocalStorage(noteArray);
-    this.location.reload()
-}
-//Take out the object from the array and save local storage
-function removeNote(object, array) {
-    array.splice(array.indexOf(object), 1)
-    setLocalStorage(array)
 
-}
 
 //Search function to find the right object by compareing id with the array
 function findObject(key, array) {
@@ -127,30 +92,40 @@ function findObject(key, array) {
         }
     }
 }
-//Create new id but scanning the array
-function createID() {
-    let newID;
-    if (localStorage.length === 0 || noteArray.length === 0) {
-        newID = 1;
-    } else {
-        let arrayLastID = noteArray[noteArray.length - 1].id;
-        arrayLastID++;
-        newID = arrayLastID
-    }
-    return newID;
-}
-//Inset values into the note object, push it into the main array and set local storage
-function saveNote() {
-    let newNote = {};
-    newNote.id = createID();
-    newNote.title = document.querySelector('#noteTitle').value;
-    newNote.body = document.querySelector('#noteBody').value;
-    newNote.favorite = false;
-    newNote.date = today(new Date);
 
-    noteArray.push(newNote);
-    setLocalStorage(noteArray)
+
+
+
+
+
+
+
+//Function for debugging
+function debug(key, target, object, array) {
+    console.log('===========================')
+    console.log('----------key--------------')
+    console.log(key)
+    console.log(typeof key)
+    console.log('----------object-----------')
+    console.log(object)
+    console.log('----------array------------')
+    console.log(array)
+    console.log(array[i])
+    console.log('----------target--------------')
+    console.log(target)
+    console.log(typeof target)
+    console.log('===========================')
 }
+
+
+
+
+
+
+//***************************************************************************************************/
+// Used functions in app.js
+//***************************************************************************************************/
+
 
 //set local storage to with the main array
 function setLocalStorage(array) {
@@ -167,6 +142,67 @@ function getLocalStorage() {
     }
     return noteArray;
 }
+
+//Get todays date
+function today(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth() + 1;
+    var yyyy = date.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    date = dd + '/' + mm + '/' + yyyy;
+    return date;
+}
+
+//Create new id but scanning the array
+function createID() {
+    let newID;
+    if (localStorage.length === 0 || noteArray.length === 0) {
+        newID = 1;
+    } else {
+        let arrayLastID = noteArray[noteArray.length - 1].id;
+        arrayLastID++;
+        newID = arrayLastID
+    }
+    return newID;
+}
+
+//Inset values into the note object, push it into the main array and set local storage
+function saveNote() {
+    let newNote = {};
+    newNote.id = createID();
+    newNote.title = document.querySelector('#noteTitle').value;
+    newNote.body = document.querySelector('#noteBody').value;
+    newNote.favorite = false;
+    newNote.date = today(new Date);
+
+    noteArray.push(newNote);
+    setLocalStorage(noteArray)
+}
+
+//See if the value of favorite is true of false and save it to the local storage
+function toggleFavorite(key) {
+    if (key.favorite === false) {
+        key.favorite = true;
+    } else {
+        key.favorite = false;
+    }
+    setLocalStorage(noteArray);
+    this.location.reload()
+}
+
+//Take out the object from the array and save local storage
+function removeNote(object, array) {
+    array.splice(array.indexOf(object), 1)
+    setLocalStorage(array)
+
+}
+
 //Empty the list in dom and create the list items from the main array
 function createNote(array) {
     noteList.innerHTML = '';
@@ -236,19 +272,3 @@ function createNote(array) {
 
 }
 
-//Function for debugging
-function debug(key, target, object, array) {
-    console.log('===========================')
-    console.log('----------key--------------')
-    console.log(key)
-    console.log(typeof key)
-    console.log('----------object-----------')
-    console.log(object)
-    console.log('----------array------------')
-    console.log(array)
-    console.log(array[i])
-    console.log('----------target--------------')
-    console.log(target)
-    console.log(typeof target)
-    console.log('===========================')
-}
