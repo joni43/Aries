@@ -60,20 +60,7 @@ function toggleNote(key, array) {
     }
 }
 
-function today(date) {
-    var dd = date.getDate();
-    var mm = date.getMonth() + 1;
-    var yyyy = date.getFullYear();
 
-    if (dd < 10) {
-        dd = '0' + dd;
-    }
-    if (mm < 10) {
-        mm = '0' + mm;
-    }
-    date = dd + '/' + mm + '/' + yyyy;
-    return date;
-}
 
 function toggleFavorite(object, array) {
     if (object.favorite === false) {
@@ -214,4 +201,23 @@ function debug(key, target, object, array) {
     console.log(target)
     console.log(typeof target)
     console.log('===========================')
+}
+
+
+
+//implemented functions
+
+function today(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth() + 1;
+    var yyyy = date.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    date = dd + '/' + mm + '/' + yyyy;
+    return date;
 }
