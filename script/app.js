@@ -1,33 +1,75 @@
+
 window.onload = function ()
 {
 
-//buttons
 const saveBtn = document.getElementById("btn-save");
 const newdocumentBtn = document.getElementById("new-document-btn");
-
-
-
-
-const inputTitle = document.getElementById("inputTitle");
 let noteArray = getLocalStorage();
-
+let inputTitle = document.getElementById("input-Title"); 
 createNote(noteArray);
+
+
+
+
+
+window.onclick = function(event)
+{
+    
+
+    if (event.target.className === 'far fa-star') {
+        event.target.className = ('fas fa-star');
+        event.target.style.color = ('yellow');
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToView);
+        
+    }
+
+    else if (event.target.className === 'fas fa-star') {
+        event.target.className = ('far fa-star');
+        event.target.style.color = ('black');
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToView);
+    }
+
+    else if (event.target.parentElement.className === 'document-handler-item') {
+        let noteToView = findObject(event.target.parentElement.id, noteArray);
+        console.log(noteToView);
+        
+        
+    }  
+   
+    else if (event.target.className === 'fas fa-trash-alt') {
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        removeNote(noteToView,noteArray);
+        
+    }  
+}
+
+
+
   
    
-    //Saves the document
-    saveBtn.onclick = function()
-    {                      
-        saveNote();
-        createNote(noteArray);
-        clearForm();
-    }
+
 
 
 //Functions
 
+//Saves the document
+saveBtn.onclick = function()
+{   
+    console.log(inputTitle);
+    saveNote();
+    createNote(noteArray);
+    clearForm();
+}
+
+//New dokument clears the title and the text editor text
+newdocumentBtn.addEventListener("click",clearForm);
+
+//Creates new id 
 function createID() {
     let newID;
-    if (localStorage.length === 0) {
+    if (localStorage.length === 0 || noteArray.length === 0) {
         newID = 1;
     } else {
         let arrayLastID = noteArray[noteArray.length - 1].id;
@@ -37,6 +79,7 @@ function createID() {
     return newID;
 }
 
+//Scan local storage and send the content back if it exist otherwise create a new array
 function getLocalStorage() {
     let noteArray;
     if (localStorage.length === 0) {
@@ -47,11 +90,16 @@ function getLocalStorage() {
     return noteArray;
 }
 
+//sets local storage with the main array
+function setLocalStorage(array) {
+    localStorage.setItem('notes', JSON.stringify(array))
+}
 
 
  //Makes Title shorter and adds ...
     function shortTitle(title)
     {
+       
         if (title.length > 8)
             {
                 title = title.slice(0,8) + "..."; 
@@ -144,7 +192,9 @@ function getLocalStorage() {
     function saveNote() {
         let newNote = {};
         newNote.id = createID();
+        
         newNote.title = inputTitle.value;
+        console.log(newNote.title);
         newNote.textContent = quill.getContents(); //here we get the content from the editor!
         newNote.date = today(new Date);
         newNote.favorite = false;
@@ -152,9 +202,7 @@ function getLocalStorage() {
         setLocalStorage(noteArray);
     };
 
-    function setLocalStorage(array) {
-        localStorage.setItem('notes', JSON.stringify(array))
-    }
+   
 
     //clears the form 
     function clearForm(){
@@ -173,47 +221,27 @@ function getLocalStorage() {
         }
     }
 
-
-    function toggleFavorite(object, array) {
-        if (object.favorite === false) {
-            object.favorite = true;
-        } else {
-            object.favorite = false;
-        }
-        setLocalStorage(array);
-    }
+   
    
 
-    //New dokument clears the title and the text editor text
-    newdocumentBtn.addEventListener("click",clearForm);
+    //Take out the object from the array and save local storage
+    function removeNote(objectID, array) {
+        array.splice(array.indexOf(objectID), 1)
+        setLocalStorage(array)
+        location.reload();
 
-    window.onclick = function(event)
-    {
-        console.log(event.target.parentElement.id);
-        if (event.target.className === 'far fa-star') {
-            event.target.className = ('fas fa-star');
-            event.target.style.color = ('yellow');
-            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
-            toggleFavorite(noteView)
-            console.log(noteToView);
-        }
-
-        else if (event.target.className === 'fas fa-star') {
-            event.target.className = ('far fa-star');
-            event.target.style.color = ('black');
-            let noteToView = findObject(event.target.parentElement.parentElement.id.parentElement, noteArray);
-            console.log(noteToView);
-        }
-
-        else if (event.target.className === 'fas fa-trash-alt') {
-            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
-            console.log(noteToView);
-        }
-            
     }
- 
 
+    //See if the value of favorite is true of false and save it to the local storage
+    function toggleFavorite(objectID) {
+        if (objectID.favorite === false) {
+            objectID.favorite = true;
+        } else {
+            objectID.favorite = false;
+        }
+        setLocalStorage(noteArray);
+        location.reload()
+    }
 
- 
+    
 } 
-
