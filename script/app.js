@@ -128,8 +128,7 @@ function setLocalStorage(array) {
     function createNote(array)
     {
         //sorts the array by favorite
-        array.sort(function(a,b){return b.favorite - a.favorite});
-
+        array.sort((a,b) =>  b.favorite - a.favorite);
         for (let i = 0; i < array.length; i++) 
         {
             id = array[i].id;
