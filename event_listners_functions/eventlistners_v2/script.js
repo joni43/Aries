@@ -77,11 +77,6 @@ function toggleNote(key, array) {
         }
     }
 }
-
-
-
-
-
 //Search function to find the right object by compareing id with the array
 function findObject(key, array) {
     console.log(key)
@@ -92,13 +87,6 @@ function findObject(key, array) {
         }
     }
 }
-
-
-
-
-
-
-
 
 //Function for debugging
 function debug(key, target, object, array) {
