@@ -224,6 +224,7 @@ font-size: 40px;
 }
 
 .fa-star:hover{
-    color: rgb(241, 238, 6);
+    color: rgb(241, 238, 6) !important;
     cursor: pointer;
 }
+

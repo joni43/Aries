@@ -6,6 +6,8 @@ const saveBtn = document.getElementById("btn-save");
 const newdocumentBtn = document.getElementById("new-document-btn");
 
 
+
+
 const inputTitle = document.getElementById("inputTitle");
 let noteArray = getLocalStorage();
 
@@ -34,6 +36,7 @@ function createID() {
     }
     return newID;
 }
+
 function getLocalStorage() {
     let noteArray;
     if (localStorage.length === 0) {
@@ -73,14 +76,7 @@ function getLocalStorage() {
         return date;
     }
 
-    function toggleFavorite(object, array) {
-        if (object.favorite === false) {
-            object.favorite = true;
-        } else {
-            object.favorite = false;
-        }
-        setLocalStorage(array);
-    }
+   
 
 
  //Creates a document item
@@ -105,13 +101,13 @@ function getLocalStorage() {
             let starIcon = document.createElement('i');
             let starButton = document.createElement('a');
         
-
+            divDocumentHandlerItem.id = id;
             divDocumentHandlerItem.className="document-handler-item";
             divDocumentTitle.className="item-title";
             divDocumentTime.className="item-time";
             divDocumentImage.className ="img-document";
 
-            starIcon.className ="fas fa-star";
+            
             if (favorite) {
                 starIcon.className = 'fas fa-star';
                 starIcon.style.color ='yellow';
@@ -166,11 +162,55 @@ function getLocalStorage() {
         location.reload();
     };
 
+    //finds object in the array
+    function findObject(key, array) {
+        console.log(key)
+        let parsedKey = parseInt(key);
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].id === parsedKey) {
+                return array[i];
+            }
+        }
+    }
+
+
+    function toggleFavorite(object, array) {
+        if (object.favorite === false) {
+            object.favorite = true;
+        } else {
+            object.favorite = false;
+        }
+        setLocalStorage(array);
+    }
    
 
     //New dokument clears the title and the text editor text
     newdocumentBtn.addEventListener("click",clearForm);
 
+    window.onclick = function(event)
+    {
+        console.log(event.target.parentElement.id);
+        if (event.target.className === 'far fa-star') {
+            event.target.className = ('fas fa-star');
+            event.target.style.color = ('yellow');
+            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+            toggleFavorite(noteView)
+            console.log(noteToView);
+        }
+
+        else if (event.target.className === 'fas fa-star') {
+            event.target.className = ('far fa-star');
+            event.target.style.color = ('black');
+            let noteToView = findObject(event.target.parentElement.parentElement.id.parentElement, noteArray);
+            console.log(noteToView);
+        }
+
+        else if (event.target.className === 'fas fa-trash-alt') {
+            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+            console.log(noteToView);
+        }
+            
+    }
  
 
 
