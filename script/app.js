@@ -1,20 +1,105 @@
+
 window.onload = function ()
 {
 
-
-//buttons
 const saveBtn = document.getElementById("btn-save");
 const newdocumentBtn = document.getElementById("new-document-btn");
+let noteArray = getLocalStorage();
+let inputTitle = document.getElementById("input-Title"); 
+createNote(noteArray);
 
-//Variables
-const inputTitle = document.getElementById("inputTitle");
+
+
+
+
+window.onclick = function(event)
+{
+    
+
+    if (event.target.className === 'far fa-star') {
+        event.target.className = ('fas fa-star');
+        event.target.style.color = ('yellow');
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToView);
+        
+    }
+
+    else if (event.target.className === 'fas fa-star') {
+        event.target.className = ('far fa-star');
+        event.target.style.color = ('black');
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToView);
+    }
+
+    else if (event.target.parentElement.className === 'document-handler-item') {
+        let noteToView = findObject(event.target.parentElement.id, noteArray);
+        console.log(noteToView);
+        
+        
+    }  
+   
+    else if (event.target.className === 'fas fa-trash-alt') {
+        let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+        removeNote(noteToView,noteArray);
+        
+    }  
+}
+
+
+
+  
+   
+
 
 
 //Functions
 
+//Saves the document
+saveBtn.onclick = function()
+{   
+    console.log(inputTitle);
+    saveNote();
+    createNote(noteArray);
+    clearForm();
+}
+
+//New dokument clears the title and the text editor text
+newdocumentBtn.addEventListener("click",clearForm);
+
+//Creates new id 
+function createID() {
+    let newID;
+    if (localStorage.length === 0 || noteArray.length === 0) {
+        newID = 1;
+    } else {
+        let arrayLastID = noteArray[noteArray.length - 1].id;
+        arrayLastID++;
+        newID = arrayLastID
+    }
+    return newID;
+}
+
+//Scan local storage and send the content back if it exist otherwise create a new array
+function getLocalStorage() {
+    let noteArray;
+    if (localStorage.length === 0) {
+        noteArray = [];
+    } else {
+        noteArray = JSON.parse(localStorage.getItem('notes'))
+    }
+    return noteArray;
+}
+
+//sets local storage with the main array
+function setLocalStorage(array) {
+    localStorage.setItem('notes', JSON.stringify(array))
+}
+
+
  //Makes Title shorter and adds ...
     function shortTitle(title)
     {
+       
         if (title.length > 8)
             {
                 title = title.slice(0,8) + "..."; 
@@ -24,7 +109,7 @@ const inputTitle = document.getElementById("inputTitle");
 
     //Gets the date of today and formats it
     function today (date){
-        console.log(date);
+        
         var dd = date.getDate();
         var mm = date.getMonth() +1;
         var yyyy= date.getFullYear();
@@ -39,49 +124,85 @@ const inputTitle = document.getElementById("inputTitle");
         return date;
     }
 
+   
+
+
  //Creates a document item
-    function createDocumentItem(title,dDate)
+    function createNote(array)
     {
+        for (let i = 0; i < array.length; i++) 
+        {
+            id = array[i].id;
+            title = array[i].title;
+            textContent = array[i].textContent;
+            favorite = array[i].favorite;
+            date = array[i].date;
 
-        let divDocumentHandlerItem = document.createElement('div');
-        let divDocumentImage = document.createElement('div');
-        let divDocumentTitle = document.createElement('div');
-        let divDocumentTime = document.createElement('div');
-        let documentTitle = document.createTextNode(title);
-        let documentTime = document.createTextNode(dDate);
-        let iconTrashCan = document.createElement('i');
-        let iconStar = document.createElement('i');
+            let divDocumentHandlerItem = document.createElement('div');
+            let divDocumentImage = document.createElement('div');
+            let divDocumentTitle = document.createElement('div');
+            let divDocumentTime = document.createElement('div');
+            let documentTitle = document.createTextNode(shortTitle(title));
+            let documentTime = document.createTextNode(date);
+            let trashcanIcon = document.createElement('i');
+            let trashcanButton = document.createElement('a');
+            let starIcon = document.createElement('i');
+            let starButton = document.createElement('a');
         
+            divDocumentHandlerItem.id = id;
+            divDocumentHandlerItem.className="document-handler-item";
+            divDocumentTitle.className="item-title";
+            divDocumentTime.className="item-time";
+            divDocumentImage.className ="img-document";
 
-        divDocumentHandlerItem.className="document-handler-item";
-        divDocumentTitle.className="item-title";
-        divDocumentTime.className="item-time";
-        divDocumentImage.className ="img-document";
-        iconStar.className ="fas fa-star";
-        iconTrashCan.className="fas fa-trash-alt";
+            
+            if (favorite) {
+                starIcon.className = 'fas fa-star';
+                starIcon.style.color ='yellow';
+            } else {
+                starIcon.className = 'far fa-star';
+            }
+
+            trashcanIcon.className="fas fa-trash-alt";
         
-        divDocumentTitle.appendChild(documentTitle);
-        divDocumentTime.appendChild(documentTime);
+            divDocumentTitle.appendChild(documentTitle);
+            divDocumentTime.appendChild(documentTime);
 
-        divDocumentHandlerItem.appendChild(divDocumentTitle);
-        divDocumentHandlerItem.appendChild(iconStar);
-        divDocumentHandlerItem.appendChild(divDocumentImage);
+            divDocumentHandlerItem.appendChild(divDocumentTitle);
+            
+            starButton.appendChild(starIcon);
+            divDocumentHandlerItem.appendChild(starButton);
 
-        divDocumentHandlerItem.appendChild(divDocumentTime);
-        divDocumentHandlerItem.appendChild(iconTrashCan);
+            divDocumentHandlerItem.appendChild(divDocumentImage);
 
-        document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
+            divDocumentHandlerItem.appendChild(divDocumentTime);
+            trashcanButton.appendChild(trashcanIcon);
+            divDocumentHandlerItem.appendChild(trashcanButton);
+
+            document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
+            
+
+        }
     }   
 
-    function submitForm() {
-        let formValue = {};
-        formValue.id = "nothing right now";
-        formValue.inputTitleValue = inputTitle.value;
-        formValue.textaareaValue = quill.getContents(); //here we get the content from the editor!
-        formValue.dateValue = today(new Date);
-        formValue.favorite = "nothing right now";
-        return formValue
+    
+    
+   
+    //Saves the note 
+    function saveNote() {
+        let newNote = {};
+        newNote.id = createID();
+        
+        newNote.title = inputTitle.value;
+        console.log(newNote.title);
+        newNote.textContent = quill.getContents(); //here we get the content from the editor!
+        newNote.date = today(new Date);
+        newNote.favorite = false;
+        noteArray.push(newNote);
+        setLocalStorage(noteArray);
     };
+
+   
 
     //clears the form 
     function clearForm(){
@@ -89,33 +210,38 @@ const inputTitle = document.getElementById("inputTitle");
         location.reload();
     };
 
-    //Saves the document
-    saveBtn.onclick = function()
-    {                      
-    
-    let titleKey = inputTitle.value;
-     
-    //just looking so the title is not empty and puts things in the localStorage
-    if(titleKey){            //we should put 'documents' here and make just one array of this tha takes object! --not finished id is missing and value for favorite
-        localStorage.setItem(titleKey,JSON.stringify(submitForm()));
-    }
-    else{
-        alert("Ange dokument titel!");
-    }
-    
-    clearForm();
-    
+    //finds object in the array
+    function findObject(key, array) {
+        console.log(key)
+        let parsedKey = parseInt(key);
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].id === parsedKey) {
+                return array[i];
+            }
+        }
     }
 
-    //New dokument clears the title and the text editor text
-    newdocumentBtn.addEventListener("click",clearForm);
+   
+   
 
-    //loops the local storage --this loop is not finished
-    for (var i = 0; i < localStorage.length; i++)
-    {
-        const key = localStorage.key(i);
-        createDocumentItem(shortTitle(key),today(new Date()));
+    //Take out the object from the array and save local storage
+    function removeNote(objectID, array) {
+        array.splice(array.indexOf(objectID), 1)
+        setLocalStorage(array)
+        location.reload();
+
     }
 
+    //See if the value of favorite is true of false and save it to the local storage
+    function toggleFavorite(objectID) {
+        if (objectID.favorite === false) {
+            objectID.favorite = true;
+        } else {
+            objectID.favorite = false;
+        }
+        setLocalStorage(noteArray);
+        location.reload()
+    }
+
+    
 } 
-

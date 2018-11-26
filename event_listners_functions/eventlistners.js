@@ -48,6 +48,8 @@ window.onload = function () {
 
         parsedLocalStorageArray.push(formObject)
         localStorage.setItem('notes', JSON.stringify(parsedLocalStorageArray))
+        let updatedNotes = checkLocalStorage();
+
         this.reset()
 
 
@@ -92,7 +94,7 @@ function createNewID(array) {
     return newID;
 }
 
-//CHeck local storage if empty then add MockData else parse the the local storage array
+//Check local storage if empty then add MockData else parse the the local storage array
 function checkLocalStorage() {
 
     let getLocalStorage;
