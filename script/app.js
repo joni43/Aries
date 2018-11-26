@@ -14,7 +14,7 @@ createNote(noteArray);
 
 window.onclick = function(event)
 {
-    
+    console.log(event.target)
 
     if (event.target.className === 'far fa-star') {
         event.target.className = ('fas fa-star');
@@ -33,7 +33,8 @@ window.onclick = function(event)
 
     else if (event.target.parentElement.className === 'document-handler-item') {
         let noteToView = findObject(event.target.parentElement.id, noteArray);
-        console.log(noteToView);
+        quill.setContents(noteToView.textContent);
+        inputTitle.value=(noteToView.title);
         
         
     }  
