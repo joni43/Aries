@@ -3,13 +3,12 @@
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 1.5px;
-  font-size: 14px;
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+  color: rgb(53, 53, 53);
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(255, 255, 255, 0.8);
   width: 150px;
   height: 40px;
   border-radius: 20px;
@@ -20,9 +19,6 @@ body {
   background-color: white;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 [class*="col-"] {
     width: 100%;
@@ -65,7 +61,7 @@ body {
 
 .col-4 {
   width: 20%;
-  background: black;
+  background: #435971;
   margin-left: 0;
   height: 710px;
   border-radius: 20px 0px 0px 20px;
@@ -79,16 +75,15 @@ body {
   flex-direction: column;
   flex-flow: wrap;
   height: 100px;
-  width: 100px;
-  font-family: 'Shadows Into Light';
-  font-size: 24px;
-  background-color: white;
-  border-radius: 50%;
+  width: 150px;
+  font-family: 'Pacifico', cursive;
+  font-size: 35px;
+  color: white;
+  background: #435971;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 70px;
-  padding: 30px;
 }
 
 /* #menu-btn {
@@ -110,8 +105,7 @@ body {
 h1 {
   text-align: center;
   position: relative;
-  font-family: 'Shadows Into Light';
-  font-style: oblique;
+  font-family: 'Pacifico', cursive;
   letter-spacing: 2px;
   font-size: 48px;
   top: 15%;
