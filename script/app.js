@@ -3,6 +3,7 @@ window.onload = function () {
     const saveBtn = document.getElementById("btn-save");
     const newdocumentBtn = document.getElementById("new-document-btn");
     let noteArray = getLocalStorage();
+    let noteToView;
     let inputTitle = document.getElementById("input-Title");
     createNote(noteArray);
 
@@ -11,46 +12,49 @@ window.onload = function () {
 
 
     window.onclick = function (event) {
-        console.log(event.target)
+       
 
         if (event.target.className === 'far fa-star') {
             event.target.className = ('fas fa-star');
             event.target.style.color = ('yellow');
-            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+            noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
 
         } else if (event.target.className === 'fas fa-star') {
             event.target.className = ('far fa-star');
             event.target.style.color = ('black');
-            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+            noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
         } else if (event.target.parentElement.className === 'document-handler-item') {
-            let noteToView = findObject(event.target.parentElement.id, noteArray);
+            noteToView = findObject(event.target.parentElement.id, noteArray);
 
             quill.setContents(noteToView.textContent);
             inputTitle.value = (noteToView.title);
 
-            //Saves the document if not noteToView else it updates
-            saveBtn.onclick = function () {
-                if (noteToView) {
-                    updateNote(noteToView);
-                } else {
-                    saveNote();
-                    createNote(noteArray);
-                    clearForm();
-                }
-            }
+            
+              
+            
 
 
         } else if (event.target.className === 'fas fa-trash-alt') {
-            let noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
+            noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             removeNote(noteToView, noteArray);
 
         }
     }
-
+    
     //Functions
 
+    //Saves new document if noteToView is true it updates existing note
+    saveBtn.onclick = function () {
+         if (noteToView) {
+             updateNote(noteToView);
+         } else {
+             saveNote();
+             createNote(noteArray);
+             clearForm();
+       }
+     }
 
     //New dokument clears the title and the text editor text
     newdocumentBtn.addEventListener("click", clearForm);
