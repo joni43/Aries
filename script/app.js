@@ -56,8 +56,11 @@ window.onload = function () {
        }
      }
 
-    //New dokument clears the title and the text editor text
-    newdocumentBtn.addEventListener("click", clearForm);
+     //New dokument clears the title and the text editor text
+     newdocumentBtn.onclick = function () {
+        clearForm();
+    }
+    
 
     //Creates new id 
     function createID() {
