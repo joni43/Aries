@@ -13,7 +13,7 @@ window.onload = function () {
 
     window.onclick = function (event) {
        
-
+        console.log(event.target);
         if (event.target.className === 'far fa-star') {
             event.target.className = ('fas fa-star');
             event.target.style.color = ('yellow');
