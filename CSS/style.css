@@ -1,8 +1,21 @@
-body,html{
+/* CSS Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
     margin:0px;
     padding:0px;
     width:100%;
-    height:100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 16px;
 }
 
 /*Generall css for main and section*/
