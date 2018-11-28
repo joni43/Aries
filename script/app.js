@@ -1,10 +1,12 @@
 window.onload = function () {
 
     const saveBtn = document.getElementById("btn-save");
+    const printbtn = document.getElementById("btn-print")
     const newdocumentBtn = document.getElementById("new-document-btn");
     let noteArray = getLocalStorage();
     let noteToView;
     let inputTitle = document.getElementById("input-Title");
+
     createNote(noteArray);
 
 
@@ -60,7 +62,24 @@ window.onload = function () {
      newdocumentBtn.onclick = function () {
         clearForm();
     }
-    
+
+    printbtn.onclick = function () {
+        printdoc(noteToView)
+     }
+     function printdoc() {
+        let content = document.getElementsByClassName("ql-editor")[0].innerHTML
+        let title = inputTitle.value;
+
+    let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
+    WinPrint.document.write(title, content);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+
+    title.innerHTML = letsPrint;
+    content.innerHTML = letsPrint
+    }
 
     //Creates new id 
     function createID() {
