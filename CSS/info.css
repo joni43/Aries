@@ -1,24 +1,12 @@
-/* Klass .menu-btn ersätter #menu-bt ~ FD 2018-11-18  */
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  flex-flow: wrap;
-  font-size: 20px;
-  font-family: 'Pacifico', cursive;
-  color: rgb(53, 53, 53);
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  height: 40px;
-  border-radius: 20px;
-}
 
 body {
   margin: 20px;
   background-color: white;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 [class*="col-"] {
     width: 100%;
@@ -61,7 +49,7 @@ body {
 
 .col-4 {
   width: 20%;
-  background: #435971;
+  background: black;
   margin-left: 0;
   height: 710px;
   border-radius: 20px 0px 0px 20px;
@@ -75,18 +63,19 @@ body {
   flex-direction: column;
   flex-flow: wrap;
   height: 100px;
-  width: 150px;
-  font-family: 'Pacifico', cursive;
-  font-size: 35px;
-  color: white;
-  background: #435971;
+  width: 100px;
+  font-family: 'Shadows Into Light';
+  font-size: 24px;
+  background-color: white;
+  border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 70px;
+  padding: 30px;
 }
 
-/* #menu-btn {
+#menu-btn {
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
@@ -100,12 +89,13 @@ body {
   width: 150px;
   height: 40px;
   border-radius: 20px;
-} */
+}
 
 h1 {
   text-align: center;
   position: relative;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Shadows Into Light';
+  font-style: oblique;
   letter-spacing: 2px;
   font-size: 48px;
   top: 15%;
