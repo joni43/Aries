@@ -9,13 +9,8 @@ window.onload = function () {
 
     createNote(noteArray);
 
-
-
-
-
-    window.onclick = function (event) {
+    window.onclick = function (event){
        
-        console.log(event.target);
         if (event.target.className === 'far fa-star') {
             event.target.className = ('fas fa-star');
             event.target.style.color = ('yellow');
@@ -27,18 +22,14 @@ window.onload = function () {
             event.target.style.color = ('black');
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
+
         } else if (event.target.parentElement.className === 'document-handler-item') {
             noteToView = findObject(event.target.parentElement.id, noteArray);
 
             quill.setContents(noteToView.textContent);
             inputTitle.value = (noteToView.title);
 
-            
-              
-            
-
-
-        } else if (event.target.className === 'fas fa-trash-alt') {
+        } else if (event.target.className === 'fas fa-trash-alt'){
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             removeNote(noteToView, noteArray);
 
@@ -66,19 +57,20 @@ window.onload = function () {
     printbtn.onclick = function () {
         printdoc(noteToView)
      }
-     function printdoc() {
+     
+    //Prints the title and the text editor content
+    function printdoc() {
         let content = document.getElementsByClassName("ql-editor")[0].innerHTML
         let title = inputTitle.value;
 
-    let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
-    WinPrint.document.write(title, content);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
-
-    title.innerHTML = letsPrint;
-    content.innerHTML = letsPrint
+        let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
+        WinPrint.document.write(title, content);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+        title.innerHTML = letsPrint;
+        content.innerHTML = letsPrint
     }
 
     //Creates new id 
@@ -142,6 +134,7 @@ window.onload = function () {
     function createNote(array) {
         //sorts the array by favorite
         array.sort((a, b) => b.favorite - a.favorite);
+
         for (let i = 0; i < array.length; i++) {
             id = array[i].id;
             title = array[i].title;
@@ -239,7 +232,6 @@ window.onload = function () {
         array.splice(array.indexOf(objectID), 1)
         setLocalStorage(array)
         location.reload();
-
     }
 
     //See if the value of favorite is true of false and save it to the local storage
