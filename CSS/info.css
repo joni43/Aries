@@ -1,11 +1,12 @@
 
-
-body,html {
-  margin:0px;
-  padding: 0px;
-  background: rgb(255, 255, 255);
+body {
+  margin: 20px;
+  background-color: white;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 [class*="col-"] {
     width: 100%;
@@ -14,8 +15,7 @@ body,html {
 
 
 .slideshow-container {
-  width: 100%;
-  height: 100%;
+  max-width: 1000px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -23,26 +23,33 @@ body,html {
 
 .mySlides  {
     display: none;
-    margin:0px;
-    background: #435971;
-    width: 100%;
-    height: 800px;
-    box-shadow: -webkit-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.75);
-                    -moz-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.75);
-                        box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.75);
+    margin-bottom: 50px;
+    background-color: white;
+    margin-top: 50px;
+    width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                        box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
 }
 
 .col-8 {
   display: grid;
-  background: rgb(255, 255, 255);
-  width: 100%;
-  height: 100%;
+  background: lightGrey;
+  width: 80%;
+  height: 710px;
   margin-left: auto;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                  -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                      box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+
 }
 
 .col-4 {
   width: 20%;
-  background: #435971;
+  background: black;
   margin-left: 0;
   height: 710px;
   border-radius: 20px 0px 0px 20px;
@@ -56,21 +63,39 @@ body,html {
   flex-direction: column;
   flex-flow: wrap;
   height: 100px;
-  width: 150px;
-  font-family: 'Pacifico', cursive;
-  font-size: 35px;
-  color: rgb(255, 255, 255);
-  background: #ffffff;
+  width: 100px;
+  font-family: 'Shadows Into Light';
+  font-size: 24px;
+  background-color: white;
+  border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 70px;
+  padding: 30px;
+}
+
+#menu-btn {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.8);
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 h1 {
   text-align: center;
   position: relative;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Shadows Into Light';
+  font-style: oblique;
   letter-spacing: 2px;
   font-size: 48px;
   top: 15%;
@@ -99,41 +124,22 @@ h1 {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  font-family: 'Baloo Paaji', cursive;
-  text-align: center;
-  font-size: 30px;
-  top: 40%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  top: 50%;
   width: auto;
-  background-color: #c5c5c5;
-  border-radius: 35%;
-  width: 50px;
-  height: 50px;
-  color: black;
-  transition: 0.8s ease;
-  right: 100px;
-}
-
-.prev, .next:hover {
-  cursor: pointer;
-  position: absolute;
-  font-family: 'Baloo Paaji', cursive;
-  text-align: center;
-  font-size: 30px;
-  top: 40%;
-  width: auto;
-  background-color: #7ee8f7;
-  border-radius: 35%;
-  width: 50px;
-  height: 50px;
+  margin-top: -22px;
+  padding: 16px;
   color: black;
   transition: 0.6s ease;
-  right: 100px;
+  border-radius: 0 3px 3px 0;
 }
 
 
-
-
-
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
 .dot {
   cursor: pointer;
@@ -146,12 +152,6 @@ h1 {
   transition: background-color 0.6s ease;
 }
 
-#dotsContainer{
-
-  text-align: center;
-  
-}
-
 
 .active, .dot:hover {
   background-color: #717171;
@@ -159,4 +159,38 @@ h1 {
 
 
 
+@media only screen and (max-width: 600px) { /*mobile-phones */
 
+
+    .dot {
+      height: 75px;
+      width: 75px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-grid;
+      margin: 50px;
+      position: auto;
+    }
+
+    #menu-btn {
+      max-width: 100%;
+    }
+
+    .slideshow-container {
+      width: 50%;
+    }
+
+    .mySlides  {
+        display: none;
+        margin-bottom: 50px;
+        max-width: 50%;
+    }
+
+    .mySlides.fade p {
+      max-width: 50%;
+    }
+
+    .col-4 {
+      width: 20%;
+    }
+}
