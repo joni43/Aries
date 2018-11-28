@@ -122,7 +122,39 @@ background-color:rgb(27, 214, 111);
 #btn-save:active{
 background-color:rgb(74, 214, 137);
 }
+#easter-egg1{
+background-color:#D4D4D4;
+}
+    
+#easter-egg1:hover{
+background-color:rgb(214, 27, 189);
+}
+#easter-egg1:active{
+background-color:rgb(209, 74, 214);
+}
 
+#easter-egg2{
+background-color:#D4D4D4;
+}
+        
+#easter-egg2:hover{
+background-color:rgb(214, 155, 27);
+}
+#easter-egg2:active{
+background-color:rgb(214, 193, 74);
+}
+
+#easter-egg3{
+background-color:#D4D4D4;
+}
+            
+#easter-egg3:hover{
+background-color:rgb(158, 214, 27);
+}
+#easter-egg3:active{
+background-color:rgb(130, 214, 74);
+}
+    
 i {
 font-size: 40px;
 }
@@ -131,6 +163,7 @@ font-size: 40px;
 
 #textarea-container{
     height: 100%;
+    width: 700px;;
     
 }
 
@@ -227,4 +260,3 @@ font-size: 40px;
     color: rgb(241, 238, 6) !important;
     cursor: pointer;
 }
-
