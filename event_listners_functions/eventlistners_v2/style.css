@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.container {
+
+    padding: 50px;
+}
+
+input,
+textarea {
+    border: 1px solid black;
+}
