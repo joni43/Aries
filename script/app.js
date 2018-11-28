@@ -57,7 +57,6 @@ window.onclick = function(event)
 //Saves the document
 saveBtn.onclick = function()
 {   
-    console.log(inputTitle);
     saveNote();
     createNote(noteArray);
     clearForm();
@@ -97,8 +96,7 @@ function setLocalStorage(array) {
 
 
  //Makes Title shorter and adds ...
-    function shortTitle(title)
-    {
+    function shortTitle(title){
        
         if (title.length > 8)
             {
@@ -107,6 +105,7 @@ function setLocalStorage(array) {
         return title;
     }
 
+    
     //Gets the date of today and formats it
     function today (date){
         
@@ -124,12 +123,11 @@ function setLocalStorage(array) {
         return date;
     }
 
-   
-
-
- //Creates a document item
+    //Creates a document item
     function createNote(array)
     {
+        //sorts the array by favorite
+        array.sort((a,b) =>  b.favorite - a.favorite);
         for (let i = 0; i < array.length; i++) 
         {
             id = array[i].id;
@@ -185,34 +183,28 @@ function setLocalStorage(array) {
         }
     }   
 
-    
-    
-   
     //Saves the note 
-    function saveNote() {
+    function saveNote(){
         let newNote = {};
+
         newNote.id = createID();
-        
         newNote.title = inputTitle.value;
-        console.log(newNote.title);
         newNote.textContent = quill.getContents(); //here we get the content from the editor!
         newNote.date = today(new Date);
         newNote.favorite = false;
+
         noteArray.push(newNote);
         setLocalStorage(noteArray);
-    };
-
-   
+    }
 
     //clears the form 
     function clearForm(){
         inputTitle.value ="";
         location.reload();
-    };
+    }
 
     //finds object in the array
     function findObject(key, array) {
-        console.log(key)
         let parsedKey = parseInt(key);
         for (let i = 0; i < array.length; i++) {
             if (array[i].id === parsedKey) {
@@ -220,9 +212,6 @@ function setLocalStorage(array) {
             }
         }
     }
-
-   
-   
 
     //Take out the object from the array and save local storage
     function removeNote(objectID, array) {

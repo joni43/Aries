@@ -58,12 +58,7 @@ function toggleFavorite(object, array) {
     }
     setLocalStorage(array);
 }
-
-function removeNote(object, array) {
-    array.splice(array.indexOf(object), 1)
-    setLocalStorage(array)
-}
-
+//Search function to find the right object by compareing id with the array
 function findObject(key, array) {
     console.log(key)
     let parsedKey = parseInt(key);
@@ -74,18 +69,21 @@ function findObject(key, array) {
     }
 }
 
-function saveNote() {
-    console.log('save')
-    let newNote = {};
-    let randomNumber = Math.floor(Math.random() * 1000) + 1;
-    newNote.id = randomNumber;
-    newNote.title = document.querySelector('#noteTitle').value;
-    newNote.body = document.querySelector('#noteBody').value;
-    newNote.favorite = false;
-    newNote.date = '-----25/08-1987'
-
-    noteArray.push(newNote);
-    setLocalStorage(noteArray)
+//Function for debugging
+function debug(key, target, object, array) {
+    console.log('===========================')
+    console.log('----------key--------------')
+    console.log(key)
+    console.log(typeof key)
+    console.log('----------object-----------')
+    console.log(object)
+    console.log('----------array------------')
+    console.log(array)
+    console.log(array[i])
+    console.log('----------target--------------')
+    console.log(target)
+    console.log(typeof target)
+    console.log('===========================')
 }
 
 function setLocalStorage(array) {
