@@ -12,20 +12,10 @@
 
 <body>
   <main>
-    <section>
-        <div class="col-4">
-            <span class="logo">Query 1.0</span>
-            <!-- Ersatt buttons med en form, alla knappar går temporärt till index.hmtl ~ FD 2018-11-18  -->
-            <form>
-              <input type="button" value="New Note" class="menu-btn" onclick="window.location.href='index.html'"/>
-              <input type="button" value="Saved Notes" class="menu-btn" onclick="window.location.href='index.html'"/>
-              <input type="button" value="Other" class="menu-btn" onclick="window.location.href='index.html'"/>
-              <input type="button" value="Another" class="menu-btn" onclick="window.location.href='index.html'"/>           
-            </form>
-      </div>
-   </section>
-  <section>
+    
+  <section id="infopage">
       <div class="col-8">
+          <span id="q-logo"><h1>Quire 1.0</h1></span>
           <div class="slideshow-container">
             <div class="mySlides fade">
                 <h1>Welcome to Query!</h1>
@@ -45,18 +35,19 @@
                 <h1>Start here</h1>
                     <section>
                       This is where we put our content.
+            
                     </section>
                 </div>
   
-            <a class="next" onclick="plusSlides(1)">></a>
   
-            <div style="text-align:center">
+            <div id="dotted"style="text-align:center">
               <span class="dot" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
             </div>
           </div>
         </div>
+        <a class="next" onclick="plusSlides(1)">></a>
   </section>
   </main>
 
