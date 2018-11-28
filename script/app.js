@@ -10,25 +10,28 @@ window.onload = function () {
     createNote(noteArray);
 
     window.onclick = function (event){
-       
+        //Toggle from non-favorite to favorite 
         if (event.target.className === 'far fa-star') {
             event.target.className = ('fas fa-star');
             event.target.style.color = ('yellow');
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
 
+        //Toggle from favorite to non-favorite
         } else if (event.target.className === 'fas fa-star') {
             event.target.className = ('far fa-star');
             event.target.style.color = ('black');
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
 
+        //If documents are selected open in the editor and put title    
         } else if (event.target.parentElement.className === 'document-handler-item') {
             noteToView = findObject(event.target.parentElement.id, noteArray);
 
             quill.setContents(noteToView.textContent);
             inputTitle.value = (noteToView.title);
 
+        //If the traschcan button is pressed, delete the attached document 
         } else if (event.target.className === 'fas fa-trash-alt'){
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             removeNote(noteToView, noteArray);
@@ -57,7 +60,7 @@ window.onload = function () {
     printbtn.onclick = function () {
         printdoc(noteToView)
      }
-     
+
     //Prints the title and the text editor content
     function printdoc() {
         let content = document.getElementsByClassName("ql-editor")[0].innerHTML
