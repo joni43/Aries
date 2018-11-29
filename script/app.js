@@ -1,11 +1,15 @@
-window.onload = function () {
-
     const saveBtn = document.getElementById("btn-save");
     const printbtn = document.getElementById("btn-print")
     const newdocumentBtn = document.getElementById("new-document-btn");
     let noteArray = getLocalStorage();
     let noteToView;
     let inputTitle = document.getElementById("input-Title");
+
+
+
+window.onload = function () {
+
+    
 
     createNote(noteArray);
 
@@ -39,214 +43,217 @@ window.onload = function () {
         }
     }
     
+
+
+}
+
+
+
     //Functions
 
     //Saves new document if noteToView is true it updates existing note
     saveBtn.onclick = function () {
-         if (noteToView) {
-             updateNote(noteToView);
-         } else {
-             saveNote();
-             createNote(noteArray);
-             clearForm();
+        if (noteToView) {
+            updateNote(noteToView);
+        } else {
+            saveNote();
+            createNote(noteArray);
+            clearForm();
+      }
+    }
+
+    //New dokument clears the title and the text editor text
+    newdocumentBtn.onclick = function () {
+       clearForm();
+   }
+
+   printbtn.onclick = function () {
+       printdoc(noteToView)
+    }
+
+   //Prints the title and the text editor content
+   function printdoc() {
+       let content = document.getElementsByClassName("ql-editor")[0].innerHTML
+       let title = inputTitle.value;
+
+       let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
+       WinPrint.document.write(title, content);
+       WinPrint.document.close();
+       WinPrint.focus();
+       WinPrint.print();
+       WinPrint.close();
+       title.innerHTML = letsPrint;
+       content.innerHTML = letsPrint
+   }
+
+   //Creates new id 
+   function createID() {
+       let newID;
+       if (localStorage.length === 0 || noteArray.length === 0) {
+           newID = 1;
+       } else {
+           let arrayLastID = noteArray[noteArray.length - 1].id;
+           arrayLastID++;
+           newID = arrayLastID
        }
-     }
+       return newID;
+   }
 
-     //New dokument clears the title and the text editor text
-     newdocumentBtn.onclick = function () {
-        clearForm();
-    }
+   //Scan local storage and send the content back if it exist otherwise create a new array
+   function getLocalStorage() {
+       let noteArray;
+       if (localStorage.length === 0) {
+           noteArray = [];
+       } else {
+           noteArray = JSON.parse(localStorage.getItem('notes'))
+       }
+       return noteArray;
+   }
 
-    printbtn.onclick = function () {
-        printdoc(noteToView)
-     }
-
-    //Prints the title and the text editor content
-    function printdoc() {
-        let content = document.getElementsByClassName("ql-editor")[0].innerHTML
-        let title = inputTitle.value;
-
-        let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
-        WinPrint.document.write(title, content);
-        WinPrint.document.close();
-        WinPrint.focus();
-        WinPrint.print();
-        WinPrint.close();
-        title.innerHTML = letsPrint;
-        content.innerHTML = letsPrint
-    }
-
-    //Creates new id 
-    function createID() {
-        let newID;
-        if (localStorage.length === 0 || noteArray.length === 0) {
-            newID = 1;
-        } else {
-            let arrayLastID = noteArray[noteArray.length - 1].id;
-            arrayLastID++;
-            newID = arrayLastID
-        }
-        return newID;
-    }
-
-    //Scan local storage and send the content back if it exist otherwise create a new array
-    function getLocalStorage() {
-        let noteArray;
-        if (localStorage.length === 0) {
-            noteArray = [];
-        } else {
-            noteArray = JSON.parse(localStorage.getItem('notes'))
-        }
-        return noteArray;
-    }
-
-    //sets local storage with the main array
-    function setLocalStorage(array) {
-        localStorage.setItem('notes', JSON.stringify(array))
-    }
+   //sets local storage with the main array
+   function setLocalStorage(array) {
+       localStorage.setItem('notes', JSON.stringify(array))
+   }
 
 
-    //Makes Title shorter and adds ...
-    function shortTitle(title) {
+   //Makes Title shorter and adds ...
+   function shortTitle(title) {
 
-        if (title.length > 8) {
-            title = title.slice(0, 8) + "...";
-        }
-        return title;
-    }
-
-
-    //Gets the date of today and formats it
-    function today(date) {
-
-        var dd = date.getDate();
-        var mm = date.getMonth() + 1;
-        var yyyy = date.getFullYear();
-
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-        date = dd + '/' + mm + '/' + yyyy;
-        return date;
-    }
-
-    //Creates a document item
-    function createNote(array) {
-        //sorts the array by favorite
-        array.sort((a, b) => b.favorite - a.favorite);
-
-        for (let i = 0; i < array.length; i++) {
-            id = array[i].id;
-            title = array[i].title;
-            textContent = array[i].textContent;
-            favorite = array[i].favorite;
-            date = array[i].date;
-
-            let divDocumentHandlerItem = document.createElement('div');
-            let divDocumentImage = document.createElement('div');
-            let divDocumentTitle = document.createElement('div');
-            let divDocumentTime = document.createElement('div');
-            let documentTitle = document.createTextNode(shortTitle(title));
-            let documentTime = document.createTextNode(date);
-            let trashcanIcon = document.createElement('i');
-            let trashcanButton = document.createElement('a');
-            let starIcon = document.createElement('i');
-            let starButton = document.createElement('a');
-
-            divDocumentHandlerItem.id = id;
-            divDocumentHandlerItem.className = "document-handler-item";
-            divDocumentTitle.className = "item-title";
-            divDocumentTime.className = "item-time";
-            divDocumentImage.className = "img-document";
+       if (title.length > 8) {
+           title = title.slice(0, 8) + "...";
+       }
+       return title;
+   }
 
 
-            if (favorite) {
-                starIcon.className = 'fas fa-star';
-                starIcon.style.color = 'yellow';
-            } else {
-                starIcon.className = 'far fa-star';
-            }
+   //Gets the date of today and formats it
+   function today(date) {
 
-            trashcanIcon.className = "fas fa-trash-alt";
+       var dd = date.getDate();
+       var mm = date.getMonth() + 1;
+       var yyyy = date.getFullYear();
 
-            divDocumentTitle.appendChild(documentTitle);
-            divDocumentTime.appendChild(documentTime);
+       if (dd < 10) {
+           dd = '0' + dd;
+       }
+       if (mm < 10) {
+           mm = '0' + mm;
+       }
+       date = dd + '/' + mm + '/' + yyyy;
+       return date;
+   }
 
-            divDocumentHandlerItem.appendChild(divDocumentTitle);
+   //Creates a document item
+   function createNote(array) {
+       //sorts the array by favorite
+       array.sort((a, b) => b.favorite - a.favorite);
 
-            starButton.appendChild(starIcon);
-            divDocumentHandlerItem.appendChild(starButton);
+       for (let i = 0; i < array.length; i++) {
+           id = array[i].id;
+           title = array[i].title;
+           textContent = array[i].textContent;
+           favorite = array[i].favorite;
+           date = array[i].date;
 
-            divDocumentHandlerItem.appendChild(divDocumentImage);
+           let divDocumentHandlerItem = document.createElement('div');
+           let divDocumentImage = document.createElement('div');
+           let divDocumentTitle = document.createElement('div');
+           let divDocumentTime = document.createElement('div');
+           let documentTitle = document.createTextNode(shortTitle(title));
+           let documentTime = document.createTextNode(date);
+           let trashcanIcon = document.createElement('i');
+           let trashcanButton = document.createElement('a');
+           let starIcon = document.createElement('i');
+           let starButton = document.createElement('a');
 
-            divDocumentHandlerItem.appendChild(divDocumentTime);
-            trashcanButton.appendChild(trashcanIcon);
-            divDocumentHandlerItem.appendChild(trashcanButton);
-
-            document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
-
-
-        }
-    }
-
-    //Saves the note 
-    function saveNote() {
-        let newNote = {};
-
-        newNote.id = createID();
-        newNote.title = inputTitle.value;
-        newNote.textContent = quill.getContents(); //here we get the content from the editor!
-        newNote.date = today(new Date);
-        newNote.favorite = false;
-
-        noteArray.push(newNote);
-        setLocalStorage(noteArray);
-    }
-
-    //update the values of title och textcontent
-    function updateNote(objectID) {
-        objectID.title = inputTitle.value;
-        objectID.textContent = quill.getContents(); //here we get the content from the editor!
-        setLocalStorage(noteArray);
-        location.reload()
-    }
-
-    //clears the form 
-    function clearForm() {
-        inputTitle.value = "";
-        location.reload();
-    }
-
-    //finds object in the array
-    function findObject(key, array) {
-        let parsedKey = parseInt(key);
-        for (let i = 0; i < array.length; i++) {
-            if (array[i].id === parsedKey) {
-                return array[i];
-            }
-        }
-    }
-
-    //Take out the object from the array and save local storage
-    function removeNote(objectID, array) {
-        array.splice(array.indexOf(objectID), 1)
-        setLocalStorage(array)
-        location.reload();
-    }
-
-    //See if the value of favorite is true of false and save it to the local storage
-    function toggleFavorite(objectID) {
-        if (objectID.favorite === false) {
-            objectID.favorite = true;
-        } else {
-            objectID.favorite = false;
-        }
-        setLocalStorage(noteArray);
-        location.reload()
-    }
+           divDocumentHandlerItem.id = id;
+           divDocumentHandlerItem.className = "document-handler-item";
+           divDocumentTitle.className = "item-title";
+           divDocumentTime.className = "item-time";
+           divDocumentImage.className = "img-document";
 
 
-}
+           if (favorite) {
+               starIcon.className = 'fas fa-star';
+               starIcon.style.color = 'yellow';
+           } else {
+               starIcon.className = 'far fa-star';
+           }
+
+           trashcanIcon.className = "fas fa-trash-alt";
+
+           divDocumentTitle.appendChild(documentTitle);
+           divDocumentTime.appendChild(documentTime);
+
+           divDocumentHandlerItem.appendChild(divDocumentTitle);
+
+           starButton.appendChild(starIcon);
+           divDocumentHandlerItem.appendChild(starButton);
+
+           divDocumentHandlerItem.appendChild(divDocumentImage);
+
+           divDocumentHandlerItem.appendChild(divDocumentTime);
+           trashcanButton.appendChild(trashcanIcon);
+           divDocumentHandlerItem.appendChild(trashcanButton);
+
+           document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
+
+
+       }
+   }
+
+   //Saves the note 
+   function saveNote() {
+       let newNote = {};
+
+       newNote.id = createID();
+       newNote.title = inputTitle.value;
+       newNote.textContent = quill.getContents(); //here we get the content from the editor!
+       newNote.date = today(new Date);
+       newNote.favorite = false;
+
+       noteArray.push(newNote);
+       setLocalStorage(noteArray);
+   }
+
+   //update the values of title och textcontent
+   function updateNote(objectID) {
+       objectID.title = inputTitle.value;
+       objectID.textContent = quill.getContents(); //here we get the content from the editor!
+       setLocalStorage(noteArray);
+       location.reload()
+   }
+
+   //clears the form 
+   function clearForm() {
+       inputTitle.value = "";
+       location.reload();
+   }
+
+   //finds object in the array
+   function findObject(key, array) {
+       let parsedKey = parseInt(key);
+       for (let i = 0; i < array.length; i++) {
+           if (array[i].id === parsedKey) {
+               return array[i];
+           }
+       }
+   }
+
+   //Take out the object from the array and save local storage
+   function removeNote(objectID, array) {
+       array.splice(array.indexOf(objectID), 1)
+       setLocalStorage(array)
+       location.reload();
+   }
+
+   //See if the value of favorite is true of false and save it to the local storage
+   function toggleFavorite(objectID) {
+       if (objectID.favorite === false) {
+           objectID.favorite = true;
+       } else {
+           objectID.favorite = false;
+       }
+       setLocalStorage(noteArray);
+       location.reload()
+   }
