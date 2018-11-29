@@ -41,21 +41,10 @@
     }
 }
 
-
-
-window.onload = function () {
-
-    
-}
-
-
-
-
 //Functions
 
-
+    //Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
     function updateView() {
-        console.log("updateview");
         document.getElementById("document-handler-container").innerHTML = "";
         createNote(noteArray);
    }
