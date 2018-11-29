@@ -4,14 +4,6 @@ body {
   background-color: white;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-[class*="col-"] {
-    width: 100%;
-    float: left;
-}
 
 #q-logo {
   position: absolute;
