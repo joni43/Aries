@@ -1,42 +1,38 @@
 window.onload = function () {
 
     const saveBtn = document.getElementById("btn-save");
+    const printbtn = document.getElementById("btn-print")
     const newdocumentBtn = document.getElementById("new-document-btn");
     let noteArray = getLocalStorage();
     let noteToView;
     let inputTitle = document.getElementById("input-Title");
+
     createNote(noteArray);
 
-
-
-
-
-    window.onclick = function (event) {
-       
-        console.log(event.target);
+    window.onclick = function (event){
+        //Toggle from non-favorite to favorite 
         if (event.target.className === 'far fa-star') {
             event.target.className = ('fas fa-star');
             event.target.style.color = ('yellow');
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
 
+        //Toggle from favorite to non-favorite
         } else if (event.target.className === 'fas fa-star') {
             event.target.className = ('far fa-star');
             event.target.style.color = ('black');
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             toggleFavorite(noteToView);
+
+        //If documents are selected open in the editor and put title    
         } else if (event.target.parentElement.className === 'document-handler-item') {
             noteToView = findObject(event.target.parentElement.id, noteArray);
 
             quill.setContents(noteToView.textContent);
             inputTitle.value = (noteToView.title);
 
-            
-              
-            
-
-
-        } else if (event.target.className === 'fas fa-trash-alt') {
+        //If the traschcan button is pressed, delete the attached document 
+        } else if (event.target.className === 'fas fa-trash-alt'){
             noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
             removeNote(noteToView, noteArray);
 
@@ -56,8 +52,29 @@ window.onload = function () {
        }
      }
 
-    //New dokument clears the title and the text editor text
-    newdocumentBtn.addEventListener("click", clearForm);
+     //New dokument clears the title and the text editor text
+     newdocumentBtn.onclick = function () {
+        clearForm();
+    }
+
+    printbtn.onclick = function () {
+        printdoc(noteToView)
+     }
+
+    //Prints the title and the text editor content
+    function printdoc() {
+        let content = document.getElementsByClassName("ql-editor")[0].innerHTML
+        let title = inputTitle.value;
+
+        let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
+        WinPrint.document.write(title, content);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+        title.innerHTML = letsPrint;
+        content.innerHTML = letsPrint
+    }
 
     //Creates new id 
     function createID() {
@@ -120,6 +137,7 @@ window.onload = function () {
     function createNote(array) {
         //sorts the array by favorite
         array.sort((a, b) => b.favorite - a.favorite);
+
         for (let i = 0; i < array.length; i++) {
             id = array[i].id;
             title = array[i].title;
@@ -217,7 +235,6 @@ window.onload = function () {
         array.splice(array.indexOf(objectID), 1)
         setLocalStorage(array)
         location.reload();
-
     }
 
     //See if the value of favorite is true of false and save it to the local storage

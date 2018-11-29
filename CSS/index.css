@@ -1,29 +1,16 @@
-/* Klass .menu-btn ersätter #menu-bt ~ FD 2018-11-18  */
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  flex-flow: wrap;
-  font-size: 20px;
-  font-family: 'Pacifico', cursive;
-  color: rgb(53, 53, 53);
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  height: 40px;
-  border-radius: 20px;
-}
 
 body {
   margin: 20px;
   background-color: white;
 }
 
-#infopage {
-  width: 100%;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
+* {
+    box-sizing: border-box;
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
 }
 
 #q-logo {
@@ -67,24 +54,38 @@ body {
 
 }
 
+<<<<<<< HEAD
+=======
+.col-4 {
+  width: 20%;
+  background: black;
+  margin-left: 0;
+  height: 710px;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                  -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+                      box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+}
+>>>>>>> 1a5596ae02e2b294ad0713678837a76c2e34df6e
 
 .logo {
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
   height: 100px;
-  width: 150px;
-  font-family: 'Pacifico', cursive;
-  font-size: 35px;
-  color: white;
-  background: #435971;
+  width: 100px;
+  font-family: 'Shadows Into Light';
+  font-size: 24px;
+  background-color: white;
+  border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 70px;
+  padding: 30px;
 }
 
-/* #menu-btn {
+#menu-btn {
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
@@ -98,12 +99,13 @@ body {
   width: 150px;
   height: 40px;
   border-radius: 20px;
-} */
+}
 
 h1 {
   text-align: center;
   position: relative;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Shadows Into Light';
+  font-style: oblique;
   letter-spacing: 2px;
   font-size: 48px;
   top: 5%;

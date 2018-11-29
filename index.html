@@ -1,82 +1,57 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Queri 1.0</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Stylesheets -->
-<!-- Google Fonts API -->
-<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<!-- Quill -->
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<!-- Local CSS  -->
-<link rel="stylesheet" href="css/style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+  <title>Query 1.0</title>
 </head>
 
 <body>
-    <main>
-        <!--Nav for hamburger menu and app tools-->
-        <nav>
-            <div id="tool-menu-container">
-                <!--here comes the hamburger menu, dont get hungry =)-->
-                <div class="tool-menu-item" id="hamburger-menu">
-                    <div id="hamburger-container">
-                        <div class="hamburger-line" id="hamburger-top"></div>
-                        <div class="hamburger-line" id="hamburger-middle"></div>
-                        <div class="hamburger-line" id="hamburger-bottom"></div>
-                    </div>
-                </div>
-                <!--here comes the logo-->
-                <div id="tool-menu-logo" class="tool-menu-item">Queri 1.0</div>
-                <!--here comes the editor buttons-->
-                <div class="tool-menu-item" id="new-document-btn"><i class="fas fa-plus-square"></i></div>
-                <div class="tool-menu-item" id="btn-print"><i class="fas fa-print"></i></div> 
-                <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div> 
-               <!-- <div class="tool-menu-item" id="easter-egg1"></div> 
-                <div class="tool-menu-item" id="easter-egg2"></div> 
-                <div class="tool-menu-item-empty"></div>
-                <div class="tool-menu-item" id="easter-egg3"></div> -->
+  <main>
+  
+    <div class="col-8">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+              <h1>Welcome to Quire</h1>
+                  <section>
+                    This is where we put our content.
+                  </section>
             </div>
-        </nav>
 
-        <section>
-            <!-- Form for heading -->
-            <form>
-                <input class="form-control" type="text" id="input-Title" placeholder="Rubrik">
-            </form>
-            <!-- An empty div that's "filled" with content from the Quill constructior -->
-            <div id="textarea-container">
-                <div id="editor"></div>
-            </div>           
-        </section>
-          <!--Section for document handler-->
-          <section id="document-handler">
-            <div id="document-handler-container">
-               
-             
+          <div class="mySlides fade">
+              <h1>This is how it works</h1>
+                  <section>
+                    This is where we put our content.
+                  </section>
             </div>
-        </section>
-    </main>
 
-    <!-- Quill JS -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>,
-    <!-- Local JS -->
-    <script src="script/quill.js" async defer></script>
-    <script src="script/app.js" async defer></script>
+          <div class="mySlides fade">
+              <h1>Start here</h1>
+                  <section>
+                    This is where we put our content.
+                  </section>
+              </div>
 
+          <a class="next" onclick="plusSlides(1)">Next</a>
+
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </div>
+  </main>
+
+
+
+<script type="text/javascript" src="/script/index.js"></script>
 
 </body>
 </html>
-
-
