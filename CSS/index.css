@@ -54,19 +54,6 @@ body {
 
 }
 
-<<<<<<< HEAD
-=======
-.col-4 {
-  width: 20%;
-  background: black;
-  margin-left: 0;
-  height: 710px;
-  border-radius: 20px 0px 0px 20px;
-  box-shadow: -webkit-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
-                  -moz-box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
-                      box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
-}
->>>>>>> 1a5596ae02e2b294ad0713678837a76c2e34df6e
 
 .logo {
   display: flex;

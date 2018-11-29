@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-body {
-    margin: 10px;
-=======
 /* CSS Reset */
 
 * {
@@ -13,7 +9,6 @@ body {
 html, body {
     margin:0px;
     padding:0px;
->>>>>>> 1a5596ae02e2b294ad0713678837a76c2e34df6e
     width:100%;
     height: 100%;
     font-family: sans-serif;
