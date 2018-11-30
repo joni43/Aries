@@ -31,14 +31,31 @@ body,html {
   box-sizing: border-box;
   margin: 0 auto;
   margin-top: 2rem;
-  height: 40px;
-  width: 120px;
+  animation: bouncy 5s infinite linear;
+  height: 50px;
+  width: 150px;
   border: none;
   border-radius: 10px;
   background-color: #435971;
   color: white;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.rem;
+  font-size: 1rem;
+}
+
+#m-button {
+  display: none;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 1rem;
+  animation: bouncy 5s infinite linear;
+  height: 20px;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  background-color: #435971;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.5rem;
 }
 
 .mySlides  {
@@ -80,7 +97,7 @@ body,html {
 
 
 #dotted {
-  margin-left: 150px;
+  margin: 0 auto;
   margin-top: 20px;
 }
 
@@ -102,7 +119,6 @@ body,html {
   font-family: 'Pacifico', cursive;
   font-size: 48px;
   top: 45%;
-  width: auto;
   margin-right: 50px;
   padding: 16px;
   color:white;
@@ -138,6 +154,12 @@ a.next {
 
     * {
       box-sizing: border-box;
+    }
+
+    #m-button {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
     }
   
     .slideshow-container {
