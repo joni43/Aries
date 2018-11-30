@@ -16,7 +16,7 @@ body,html {
   margin-left: 50px;
   font-size: 3em;
   font-family: 'Pacifico', cursive;
-  color: orange;
+  color:lightGrey;
 }
 
 .slideshow-container {
@@ -27,12 +27,26 @@ body,html {
   margin: 0 auto;
 }
 
+#button {
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  background-color: #435971;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.rem;
+}
+
 .mySlides  {
     box-sizing: border-box;
     position: inherit;
     z-index: 2;
     background-color: white;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Raleway', sans-serif;
     width: 80%;
     margin: 0 auto;
     height: 600px;
@@ -120,7 +134,7 @@ a.next {
 
 
 
-@media only screen and (max-width: 600px) { /*mobile-phones */
+@media only screen and (max-width: 780px) { /*mobile-phones */
 
     * {
       box-sizing: border-box;
@@ -147,12 +161,12 @@ a.next {
     }
 
     #q-logo {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 0 auto;
     }
 
     #slide-header {
-      font-size: 1rem;
+      font-size: 2rem;
       top: 5rem;
     }
     #content {
