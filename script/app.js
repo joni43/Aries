@@ -25,12 +25,12 @@ const saveBtn = document.getElementById("btn-save");
         toggleFavorite(noteToView);
 
     //If documents are selected open in the editor and put title    
-    } else if (event.target.parentElement.className === 'document-handler-item') {
+    } else if (event.target.parentElement.className === 'document-handler-item') { 
         noteToView = findObject(event.target.parentElement.id, noteArray);
 
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
-
+        noteToView = event.target.parentElement.id;
     //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt'){
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
@@ -52,7 +52,7 @@ const saveBtn = document.getElementById("btn-save");
     saveBtn.onclick = function () {
         console.log(noteToView);
         if (noteToView) {
-            updateNote(noteToView);
+            updateNote();
         } else {
             saveNote();
             createNote(noteArray);
@@ -204,9 +204,9 @@ const saveBtn = document.getElementById("btn-save");
    function saveNote() {
        let newNote = {};
        let newNoteID = createID();
-       console.log(newNoteID);
+       console.log(newNoteID + "saves");
        noteToView = newNoteID;
-       console.log(noteToView);
+       console.log(noteToView + "saves");
        newNote.id = newNoteID;
        newNote.title = inputTitle.value;
        newNote.textContent = quill.getContents(); //here we get the content from the editor!
@@ -218,7 +218,8 @@ const saveBtn = document.getElementById("btn-save");
    }
 
    //update the values of title och textcontent
-   function updateNote(objectID) {
+   function updateNote() {
+       objectID = findObject(noteToView,noteArray);
        objectID.title = inputTitle.value;
        objectID.textContent = quill.getContents(); //here we get the content from the editor!
        setLocalStorage(noteArray);
