@@ -1,9 +1,11 @@
 
-body {
-  margin: 20px;
+body,html {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;;
   background-color: white;
 }
-
 
 #q-logo {
   position: absolute;
@@ -26,6 +28,7 @@ body {
     position: inherit;
     z-index: 2;
     background-color: white;
+    font-family: 'Pacifico', cursive;
     width: 80%;
     margin-left: 200px;
     margin-top: 50px;
@@ -47,22 +50,6 @@ body {
 }
 
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  flex-flow: wrap;
-  height: 100px;
-  width: 100px;
-  font-family: 'Shadows Into Light';
-  font-size: 24px;
-  background-color: white;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  margin-bottom: 70px;
-  padding: 30px;
-}
 
 #menu-btn {
   display: flex;
@@ -81,10 +68,10 @@ body {
 }
 
 h1 {
+  color: antiquewhite;
   text-align: center;
   position: relative;
-  font-family: 'Shadows Into Light';
-  font-style: oblique;
+  font-family: 'Pacifico', cursive;
   letter-spacing: 2px;
   font-size: 48px;
   top: 5%;
