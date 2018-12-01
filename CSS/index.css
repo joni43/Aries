@@ -1,0 +1,203 @@
+
+body,html {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;;
+  background-color: white;
+}
+
+#q-logo {
+  position: absolute;
+  z-index: 1;
+  float: left;
+  top: -5%;
+  margin-right: auto;
+  margin-left: 50px;
+  font-size: 3em;
+  font-family: 'Pacifico', cursive;
+  color:lightGrey;
+}
+
+.slideshow-container {
+  box-sizing: border-box;
+  position: inherit;
+  float: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#button {
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 2rem;
+  animation: bouncy 5s infinite linear;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  background-color: #435971;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+#m-button {
+  display: none;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 1rem;
+  animation: bouncy 5s infinite linear;
+  height: 20px;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  background-color: #435971;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.5rem;
+}
+
+.mySlides  {
+    box-sizing: border-box;
+    position: inherit;
+    z-index: 2;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    height: 600px;
+    border-radius: 10px;
+    bottom: -150px;
+}
+
+.col-8 {
+  box-sizing: border-box;
+  display: grid;
+  background-color: #435971;
+  width: 100%;
+  height: 710px;
+  float: left;
+  margin: 0 auto;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+
+}
+
+
+#slide-header {
+  color: black;
+  text-align: center;
+  position: relative;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  font-size: 48px;
+  top: 5%;
+}
+
+
+#dotted {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.mySlides.fade section {
+  box-sizing: border-box;
+  background-color: rgba(250, 250, 250, 0.2);
+  text-align: left;
+  padding: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 35%;
+  text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  top: 45%;
+  margin-right: 50px;
+  padding: 16px;
+  color:white;
+  transition: 0.5s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+a.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+
+@media only screen and (max-width: 780px) { /*mobile-phones */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #m-button {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  
+    .slideshow-container {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .mySlides  {
+      max-width: 100%;
+      display: none;
+      margin: 0 auto;
+      top: 200px;
+    }
+
+    .mySlides.fade p {
+      max-width: 100%;
+      display: none;
+      margin: 0 auto;
+      top: 200px;
+
+    }
+
+    #q-logo {
+      font-size: 2rem;
+      margin: 0 auto;
+    }
+
+    #slide-header {
+      font-size: 2rem;
+      top: 5rem;
+    }
+    #content {
+      margin: 0 auto;
+    }
+
+    .dot {
+      display: block;
+      display: none;
+      flex-flow: row;
+    }
+}
