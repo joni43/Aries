@@ -1,5 +1,4 @@
-
- const saveBtn = document.getElementById("btn-save");
+const saveBtn = document.getElementById("btn-save");
  const printbtn = document.getElementById("btn-print")
  const newdocumentBtn = document.getElementById("new-document-btn");
  let noteArray = getLocalStorage();
@@ -26,12 +25,12 @@
         toggleFavorite(noteToView);
 
     //If documents are selected open in the editor and put title    
-    } else if (event.target.parentElement.className === 'document-handler-item') {
+    } else if (event.target.parentElement.className === 'document-handler-item') { 
         noteToView = findObject(event.target.parentElement.id, noteArray);
 
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
-
+        noteToView = event.target.parentElement.id;
     //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt'){
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
@@ -51,8 +50,9 @@
 
     //Saves new document if noteToView is true it updates existing note
     saveBtn.onclick = function () {
+        console.log(noteToView);
         if (noteToView) {
-            updateNote(noteToView);
+            updateNote();
         } else {
             saveNote();
             createNote(noteArray);
@@ -206,8 +206,11 @@
    //Saves the note 
    function saveNote() {
        let newNote = {};
-
-       newNote.id = createID();
+       let newNoteID = createID();
+       console.log(newNoteID + "saves");
+       noteToView = newNoteID;
+       console.log(noteToView + "saves");
+       newNote.id = newNoteID;
        newNote.title = inputTitle.value;
        newNote.textContent = quill.getContents(); //here we get the content from the editor!
        newNote.date = today(new Date);
@@ -218,7 +221,8 @@
    }
 
    //update the values of title och textcontent
-   function updateNote(objectID) {
+   function updateNote() {
+       objectID = findObject(noteToView,noteArray);
        objectID.title = inputTitle.value;
        objectID.textContent = quill.getContents(); //here we get the content from the editor!
        setLocalStorage(noteArray);
@@ -228,6 +232,8 @@
    //clears the form 
    function clearForm() {
        inputTitle.value = "";
+       quill.setContents([]);
+       noteToView = "";
        updateView();
    }
 
