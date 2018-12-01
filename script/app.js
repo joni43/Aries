@@ -1,5 +1,4 @@
-
- const saveBtn = document.getElementById("btn-save");
+const saveBtn = document.getElementById("btn-save");
  const printbtn = document.getElementById("btn-print")
  const newdocumentBtn = document.getElementById("new-document-btn");
  let noteArray = getLocalStorage();
@@ -51,6 +50,7 @@
 
     //Saves new document if noteToView is true it updates existing note
     saveBtn.onclick = function () {
+        console.log(noteToView);
         if (noteToView) {
             updateNote(noteToView);
         } else {
@@ -203,8 +203,11 @@
    //Saves the note 
    function saveNote() {
        let newNote = {};
-
-       newNote.id = createID();
+       let newNoteID = createID();
+       console.log(newNoteID);
+       noteToView = newNoteID;
+       console.log(noteToView);
+       newNote.id = newNoteID;
        newNote.title = inputTitle.value;
        newNote.textContent = quill.getContents(); //here we get the content from the editor!
        newNote.date = today(new Date);
@@ -225,6 +228,8 @@
    //clears the form 
    function clearForm() {
        inputTitle.value = "";
+       quill.setContents([]);
+       noteToView = "";
        updateView();
    }
 
