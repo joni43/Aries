@@ -1,18 +1,11 @@
 const saveBtn = document.getElementById("btn-save");
-<<<<<<< HEAD
+
 const printbtn = document.getElementById("btn-print")
 const newdocumentBtn = document.getElementById("new-document-btn");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
-=======
- const printbtn = document.getElementById("btn-print")
- const newdocumentBtn = document.getElementById("new-document-btn");
- let noteArray = getLocalStorage();
- let noteToView;
- let noteToViewFav;
- let inputTitle = document.getElementById("input-Title");
->>>>>>> 0a982013010d73fae34c308c0e56986f921f55b6
+
 
 createNote(noteArray);
 
@@ -25,7 +18,7 @@ window.onclick = function (event) {
         event.target.style.color = ('yellow');
         noteToViewFav = findObject(event.target.parentElement.parentElement.id, noteArray);
         toggleFavorite(noteToViewFav);
-        
+
 
         //Toggle from favorite to non-favorite
     } else if (event.target.className === 'fas fa-star') {
@@ -33,7 +26,7 @@ window.onclick = function (event) {
         event.target.style.color = ('black');
         noteToViewFav = findObject(event.target.parentElement.parentElement.id, noteArray);
         toggleFavorite(noteToViewFav);
-        
+
 
         //If documents are selected open in the editor and put title    
     } else if (event.target.parentElement.className === 'document-handler-item') {
