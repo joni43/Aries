@@ -3,6 +3,7 @@ const saveBtn = document.getElementById("btn-save");
  const newdocumentBtn = document.getElementById("new-document-btn");
  let noteArray = getLocalStorage();
  let noteToView;
+ let noteToViewFav;
  let inputTitle = document.getElementById("input-Title");
 
  createNote(noteArray);
@@ -14,15 +15,17 @@ const saveBtn = document.getElementById("btn-save");
     if (event.target.className === 'far fa-star') {
         event.target.className = ('fas fa-star');
         event.target.style.color = ('yellow');
-        noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
-        toggleFavorite(noteToView);
+        noteToViewFav = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToViewFav);
+        
 
     //Toggle from favorite to non-favorite
     } else if (event.target.className === 'fas fa-star') {
         event.target.className = ('far fa-star');
         event.target.style.color = ('black');
-        noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
-        toggleFavorite(noteToView);
+        noteToViewFav = findObject(event.target.parentElement.parentElement.id, noteArray);
+        toggleFavorite(noteToViewFav);
+        
 
     //If documents are selected open in the editor and put title    
     } else if (event.target.parentElement.className === 'document-handler-item') { 
