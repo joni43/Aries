@@ -170,8 +170,8 @@ p#p5 {
 }
 
 #dotted {
+  margin-bottom: 100px;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
 .mySlides.fade section {
@@ -223,16 +223,10 @@ a.next {
 
 
 
-@media only screen and (max-width: 600px) { /*mobile-phones */
+@media only screen and (max-width: 1200px) { /*mobile-phones */
 
     * {
       box-sizing: border-box;
-    }
-
-    #m-button {
-      display: block;
-      max-width: 100%;
-      max-height: 100%;
     }
 
     .col-8 {
@@ -254,7 +248,6 @@ a.next {
 
     .mySlides.fade p {
       max-width: 100%;
-      display: none;
       margin: 0 auto;
       top: 200px;
 
@@ -268,17 +261,61 @@ a.next {
     #q-logo {
       font-size: 2rem;
       margin: 0 auto;
+      margin-left: 10px;
+      margin-top: 20px;
     }
 
     #slide-header {
       font-size: 2rem;
       top: 5rem;
     }
+    #editormodeimg {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 80px;
+    }
+
+    #editorimg {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 80px;
+    }
+    .paragraphs {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 80px;
+    }
+
+    p#p1, p#p2, p#p3, p#p4 {
+      width: 100%;
+      font-size: 1rem;
+    }
   
     p {
       width: 100%;
+      font-size: 1rem;
+      text-align: center;
+      padding: 20px;
+      margin-top: 70px;
     }
-
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      top: 45%;
+      margin-right: 50px;
+      padding: 16px;
+      color:white;
+      transition: 0.5s ease;
+      border-radius: 0 3px 3px 0;
+    }
     .dot {
       display: block;
       display: none;
