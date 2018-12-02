@@ -50,7 +50,6 @@ const saveBtn = document.getElementById("btn-save");
 
     //Saves new document if noteToView is true it updates existing note
     saveBtn.onclick = function () {
-        console.log(noteToView);
         if (noteToView) {
             updateNote();
         } else {
