@@ -1,0 +1,89 @@
+.content {
+    display: flex;
+
+}
+
+.container {
+    flex-direction: row;
+    min-height: 200px;
+
+}
+
+#tool-menu-logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 35px;
+    color: white;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
+.navbar,
+#document-handler-container {
+    background: #435971;
+}
+
+.tool-menu-item {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 70px;
+    background-color: #D4D4D4;
+    border: 2px solid rgb(59, 59, 59);
+    margin: 4px;
+    border-radius: 5px;
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(53, 53, 53);
+
+}
+
+.form::placeholder {
+    font-size: 30px;
+}
+
+#document-handler-container {
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    display: flex;
+    min-height: 320px;
+    flex-direction: column;
+
+
+}
+
+.document-handler-item {
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
+
+.img-document {
+    width: 40px;
+    content: url(../components/document.png);
+}
+
+.img-document:hover {
+    width: 40px;
+    cursor: pointer;
+    content: url(../components/documentHover.png);
+}
+
+.img-document-add {
+    width: 40px;
+    content: url(../components/documentplus.png);
+}
+
+.img-document-add:hover {
+    width: 40px;
+    cursor: pointer;
+    content: url(../components/documentplusHover.png);
+
+
+}
