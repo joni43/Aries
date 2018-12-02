@@ -150,7 +150,7 @@ a.next {
 
 
 
-@media only screen and (max-width: 780px) { /*mobile-phones */
+@media only screen and (max-width: 600px) { /*mobile-phones */
 
     * {
       box-sizing: border-box;
@@ -160,6 +160,10 @@ a.next {
       display: block;
       max-width: 100%;
       max-height: 100%;
+    }
+
+    .col-8 {
+      width: 100%;
     }
   
     .slideshow-container {
@@ -182,6 +186,11 @@ a.next {
 
     }
 
+    .mySlides.fade section {
+      width: 100%;
+      margin: 0;
+    }
+
     #q-logo {
       font-size: 2rem;
       margin: 0 auto;
@@ -192,7 +201,11 @@ a.next {
       top: 5rem;
     }
     #content {
+      width: 100%;
       margin: 0 auto;
+    }
+    p {
+      width: 100%;
     }
 
     .dot {
