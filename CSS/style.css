@@ -295,3 +295,17 @@ i {
     color: rgb(241, 238, 6) !important;
     cursor: pointer;
 }
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+     .ql-editor * {
+      visibility: visible;
+    }
+     .ql-editor {
+      position: absolute;
+      right: 900px;
+      top: 0;
+    }
+  }

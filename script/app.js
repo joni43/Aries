@@ -70,25 +70,10 @@ newdocumentBtn.onclick = function () {
 }
 
 printbtn.onclick = function () {
-    printdoc(noteToView)
+    print()
 }
 
-//Prints the title and the text editor content
-function printdoc() {
-    let content = document.getElementsByClassName("ql-editor")[0].innerHTML
-    let title = inputTitle.value;
-
-    let WinPrint = window.open('', '', 'letf=300,top=300,width=461,height=341,toolbar=110,scrollbars=30,status=0');
-    WinPrint.document.write(title, content);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
-    WinPrint.close();
-    title.innerHTML = letsPrint;
-    content.innerHTML = letsPrint
-}
-
-//Creates new id 
+//Creates new id
 function createID() {
     let newID;
     if (localStorage.length === 0 || noteArray.length === 0) {
