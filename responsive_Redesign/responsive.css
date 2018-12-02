@@ -1,10 +1,12 @@
 .content {
     display: flex;
-    justify-content: space-evenly
+
 }
 
 .container {
+    flex-direction: row;
     min-height: 200px;
+
 }
 
 #tool-menu-logo {
@@ -33,7 +35,7 @@
     border: 2px solid rgb(59, 59, 59);
     margin: 4px;
     border-radius: 5px;
-    font-size: 40px;
+    font-size: 60px;
     font-family: 'Roboto', sans-serif;
     color: rgb(53, 53, 53);
 
@@ -48,7 +50,7 @@
     color: white;
     padding: 5px;
     display: flex;
-    min-height: 300px;
+    min-height: 320px;
     flex-direction: column;
 
 
@@ -59,10 +61,7 @@
     padding: 5px;
 }
 
-.document-handler-item {
-    margin: 10px;
-    padding: 10px;
-}
+
 
 
 .img-document {
