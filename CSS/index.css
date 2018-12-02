@@ -1,9 +1,10 @@
-
-body,html {
+body,
+html {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100%;;
+  height: 100%;
+  ;
   background-color: white;
 }
 
@@ -24,17 +25,17 @@ body,html {
   margin: 0 auto;
 }
 
-.mySlides  {
-    position: inherit;
-    z-index: 2;
-    background-color: white;
-    font-family: 'Pacifico', cursive;
-    width: 80%;
-    margin-left: 200px;
-    margin-top: 50px;
-    height: 600px;
-    border-radius: 10px;
-    bottom: -150px;
+.mySlides {
+  position: inherit;
+  z-index: 2;
+  background-color: white;
+  font-family: 'Pacifico', cursive;
+  width: 80%;
+  margin-left: 200px;
+  margin-top: 50px;
+  height: 600px;
+  border-radius: 10px;
+  bottom: -150px;
 }
 
 .col-8 {
@@ -45,7 +46,7 @@ body,html {
   float: left;
   margin: 0 auto;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 24px 1px rgba(0, 0, 0, 0.75);
 
 }
 
@@ -96,7 +97,8 @@ h1 {
 
 
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   font-family: 'Pacifico', cursive;
@@ -105,7 +107,7 @@ h1 {
   width: auto;
   margin-right: 50px;
   padding: 16px;
-  color:white;
+  color: white;
   transition: 0.5s ease;
   border-radius: 0 3px 3px 0;
 }
@@ -128,44 +130,46 @@ a.next {
 }
 
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
 
 
-@media only screen and (max-width: 600px) { /*mobile-phones */
+@media only screen and (max-width: 600px) {
+  /*mobile-phones */
 
 
-    .dot {
-      height: 75px;
-      width: 75px;
-      background-color: white;
-      border-radius: 50%;
-      display: inline-grid;
-      margin: 50px;
-      position: auto;
-    }
+  .dot {
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-grid;
+    margin: 50px;
+    position: auto;
+  }
 
-    #menu-btn {
-      max-width: 100%;
-    }
+  #menu-btn {
+    max-width: 100%;
+  }
 
-    .slideshow-container {
-      width: 50%;
-    }
+  .slideshow-container {
+    width: 50%;
+  }
 
-    .mySlides  {
-        display: none;
-        margin-bottom: 50px;
-        max-width: 70%;
-    }
+  .mySlides {
+    display: none;
+    margin-bottom: 50px;
+    max-width: 70%;
+  }
 
-    .mySlides.fade p {
-      max-width: 70%;
-    }
+  .mySlides.fade p {
+    max-width: 70%;
+  }
 
-    .col-4 {
-      width: 20%;
-    }
+  .col-4 {
+    width: 20%;
+  }
 }
