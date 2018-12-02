@@ -95,6 +95,22 @@ body,html {
   top: 5%;
 }
 
+#editormodeimg {
+  display: block;
+  float: left;
+  max-width: 100%;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+p {
+  display: block;
+  float: left;
+  width: 100%;
+  font-size: 1em;
+  margin: 20px;
+  margin-top: 70px;
+}
 
 #dotted {
   margin: 0 auto;
@@ -171,6 +187,7 @@ a.next {
       margin: 0 auto;
     }
 
+
     .mySlides  {
       max-width: 100%;
       display: none;
@@ -200,10 +217,7 @@ a.next {
       font-size: 2rem;
       top: 5rem;
     }
-    #content {
-      width: 100%;
-      margin: 0 auto;
-    }
+  
     p {
       width: 100%;
     }
