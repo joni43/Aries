@@ -8,7 +8,7 @@ body,html {
 }
 
 #q-logo {
-  position: absolute;
+  position: absolute; 
   z-index: 1;
   float: left;
   top: -5%;
@@ -76,7 +76,7 @@ body,html {
   font-size: 48px;
   top: 5%;
 }
-
+ 
 #editormodeimg {
   display: block;
   float: left;
@@ -105,8 +105,16 @@ p {
 .paragraphs {
   display: flex;
   position: inherit;
-  align-content: flex-start;
+  align-content: center;
   flex-direction: column;
+}
+
+.infoimg {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  align-content: center;
+  width: 25%;
 }
 
 p#page4 {
@@ -294,27 +302,27 @@ a.next {
     }
 
     p#p1.infoimg {
-      width: 20%;
+      width: 50%;
     }
 
     p#p2.infoimg {
-      width: 20%;
+      width: 50%;
     }
 
     p#p3.infoimg {
-      width: 20%;
+      width: 50%;
     }
 
     p#p4.infoimg {
-      width: 20%;
+      width: 50%;
     }
 
     
-    .infoimg {
-      font-size: 1rem;
+    .infoimg p {
+      flex-flow: wrap;
+      flex-direction: row
+      font-size: 0.5rem;
       display: flex;
-      flex-direction: column;
-      flex-flow: wrap
     }
     
     p {
