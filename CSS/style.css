@@ -296,6 +296,43 @@ i {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
+{
+    content: 'Arial';
+    font-family: 'Arial';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='verdana']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='verdana']::before
+{
+    content: 'Verdana';
+    font-family: 'Verdana';
+}
+
+
+
+.ql-font-arial {
+    font-family: 'Verdana';
+
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='times']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='times']::before
+{
+    content: 'Times';
+    font-family: 'Times';
+}
+
+
+
+.ql-font-arial {
+    font-family: 'Times';
+
+}
+=======
 @media print {
     body * {
       visibility: hidden;
@@ -309,3 +346,4 @@ i {
       top: 0;
     }
   }
+>>>>>>> b1a54dcffd38ada31f494750357aed3e6f586c05
