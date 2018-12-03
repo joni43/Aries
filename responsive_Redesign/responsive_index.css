@@ -53,8 +53,14 @@ img {
     background-color: #717171;
 }
 
+
 .dotted {
     text-align: center;
+}
+
+.slide-img {
+    margin: 0px 5px;
+    padding: 0px 5px;
 }
 
 .slides,
