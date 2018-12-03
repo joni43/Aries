@@ -10,6 +10,20 @@ img {
     width: auto;
 }
 
+.grid-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+    grid-row: 3;
+}
+
 .index-page {
     text-align: center;
     background: white;
