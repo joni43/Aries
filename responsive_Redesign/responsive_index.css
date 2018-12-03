@@ -83,6 +83,17 @@ img {
     border-radius: 0 3px 3px 0;
 }
 
+.slide-header {
+    font-family: 'Pacifico', cursive;
+}
+
+.editor-mode-paragraph {
+    font-family: 'Raleway', sans-serif;
+}
+
+.slide-paragraphs {
+    font-family: 'Raleway', sans-serif;
+}
 @media screen and (max-width: 922px) {
     .next {
         display: none;
