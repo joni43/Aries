@@ -122,6 +122,7 @@ p#p1 {
   float: left;
   font-size: 18px;
   margin: 10px;
+  margin-top: -30;
   
 }
 
@@ -284,19 +285,38 @@ a.next {
       margin: 0 auto;
       padding-top: 80px;
     }
-    .paragraphs {
+    .paragraphs p #p{
       display: block;
       float: left;
-      width: 100%;
+      width: 50%;
       margin: 0 auto;
       padding-top: 80px;
     }
 
-    p#p1, p#p2, p#p3, p#p4 {
-      width: 100%;
-      font-size: 1rem;
+    p#p1.infoimg {
+      width: 20%;
     }
-  
+
+    p#p2.infoimg {
+      width: 20%;
+    }
+
+    p#p3.infoimg {
+      width: 20%;
+    }
+
+    p#p4.infoimg {
+      width: 20%;
+    }
+
+    
+    .infoimg {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-flow: wrap
+    }
+    
     p {
       width: 100%;
       font-size: 1rem;
