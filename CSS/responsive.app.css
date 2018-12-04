@@ -3,6 +3,11 @@
 
 }
 
+html,
+body {
+    margin: 0 auto;
+}
+
 #document-handler-container {
     margin: 10px;
     padding: 10px;
@@ -11,8 +16,9 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
-    grid-gap: 5px;
+    grid-gap: 1px;
     padding: 5px;
+    text-align: center;
 
 
 }
@@ -32,34 +38,54 @@ input::-webkit-input-placeholder,
 
     text-align: center;
     padding: 10px;
-    font-size: 30px;
-
 }
 
 
+.sidenav-text-item i,
+.sidenav-new-item i,
+.sidenav-save-item i,
+.sidenav-print-item i {
+    align-items: center;
+    line-height: 30px;
+    margin: 30px;
+    font-size: 50px;
+
+}
+
+#tool-menu-logo {
+    margin: 5px;
+    font-size: 50px;
+    padding: none;
+    font-family: 'Pacifico', cursive;
+}
 
 .sidenav-text-item {
     grid-area: 1/1/1/1;
     background: #435971;
     color: white;
+    font-size: 30px;
 }
 
 .sidenav-save-item {
     grid-area: 2/1/2/1;
     background: #435971;
     color: white;
+    font-size: 30px;
+
 }
 
 .sidenav-new-item {
     grid-area: 3/1/3/1;
     background: #435971;
     color: white;
+    font-size: 30px;
 }
 
 .sidenav-print-item {
     grid-area: 4/1/4/1;
     background: #435971;
     color: white;
+    font-size: 30px;
 }
 
 
@@ -74,12 +100,17 @@ input::-webkit-input-placeholder,
     border-bottom: 1px solid white;
     background: #435971;
     color: white;
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+
 }
 
 .my-note-folder-item {
     grid-area: 2/6/5/6;
     background: #435971;
     color: white;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
 }
 
 @media screen and (max-width: 767px) {
@@ -91,24 +122,28 @@ input::-webkit-input-placeholder,
         grid-area: 1/1/2/2;
         background: #435971;
         color: white;
+        font-size: 30px;
     }
 
     .sidenav-save-item {
         grid-area: 1/2/1/4;
         background: #435971;
         color: white;
+        font-size: 30px;
     }
 
     .sidenav-new-item {
         grid-area: 2/1/2/2;
         background: #435971;
         color: white;
+        font-size: 30px;
     }
 
     .sidenav-print-item {
         grid-area: 2/2/2/4;
         background: #435971;
         color: white;
+        font-size: 30px;
     }
 
     .notepad-body-item {
@@ -122,11 +157,14 @@ input::-webkit-input-placeholder,
         border-bottom: 1px solid white;
         background: #435971;
         color: white;
+        font-size: 30px;
     }
 
     .my-note-folder-item {
         grid-area: 9/1/13/4;
         background: #435971;
         color: white;
+        font-size: 20px;
+
     }
 }

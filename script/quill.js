@@ -5,14 +5,12 @@
 // Anger vad som ska ingå i tool-bar 
 // Tool-bar funktionaliteten finns redan i quills biblotek.
 
-
 let toolbarOptions = [
   
   ['bold', 'italic', 'underline', 'strike' ],
-  [{ 'size': ['small', false, 'large', 'huge'] }, ],
+  [{ 'size': ['small', false, 'large', 'huge', 'h1'] }, ],
   [ 'link', 'blockquote', 'code-block', 'image' ],
-  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ],
- 
+  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ]
 ];
 
 // Konstruktor, skapar ett objekt av klassen Quill
