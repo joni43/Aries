@@ -3,12 +3,9 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-
 }
 
-html,
-body {
+html,body {
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -31,6 +28,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100%;
 }
 
 
@@ -38,7 +36,7 @@ main {
 
 nav {
     background: #435971;
-    height: 710px;
+    height: 100%;
 }
 
 
@@ -78,7 +76,7 @@ nav {
 }
 
 #tool-menu-container {
-    width: 300px;
+    width: 100%;;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -193,7 +191,7 @@ i {
 /*text-editor section*/
 
 #textarea-container {
-    height: 710px;
+    height: 100%;;
     width: 700px;
 
 }
@@ -202,7 +200,7 @@ i {
 #document-handler {
     width: 100%;
     background-color: rgb(170, 170, 170);
-    height: 710px;
+    height: 100%;
 }
 
 #document-handler-container {
@@ -296,43 +294,25 @@ i {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 
-.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
-.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
-{
-    content: 'Arial';
-    font-family: 'Arial';
-}
+@media screen and (max-width:600px){
 
-.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='verdana']::before,
-.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='verdana']::before
-{
-    content: 'Verdana';
-    font-family: 'Verdana';
-}
+    main {
+       
+        flex-direction: column;
+       
+    }
 
-
-
-.ql-font-arial {
-    font-family: 'Verdana';
+    #tool-menu-container {
+       
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+   
+    }
 
 }
-
-.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='times']::before,
-.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='times']::before
-{
-    content: 'Times';
-    font-family: 'Times';
-}
-
-
-
-.ql-font-arial {
-    font-family: 'Times';
-
-}
-=======
 @media print {
     body * {
       visibility: hidden;
@@ -346,4 +326,3 @@ i {
       top: 0;
     }
   }
->>>>>>> b1a54dcffd38ada31f494750357aed3e6f586c05
