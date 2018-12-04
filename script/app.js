@@ -185,6 +185,8 @@ function createNote(array) {
 
         divDocumentHandlerItem.id = id;
         divDocumentHandlerItem.className = "document-handler-item";
+        divDocumentHandlerItem.style.borderBottom = '2px dotted white'
+        divDocumentHandlerItem.style.marginBottom = '30px';
         divDocumentTitle.className = "item-title";
         divDocumentTime.className = "item-time";
         divDocumentImage.className = "img-document";
