@@ -295,6 +295,7 @@ i {
 }
 
 
+<<<<<<< HEAD:CSS/app.css
 @media screen and (max-width:600px){
 
     main {
@@ -313,16 +314,41 @@ i {
     }
 
 }
+=======
+>>>>>>> 85d63a3fcc0c93dddbd0ee724f579c4634c85c02:CSS/style.css
 @media print {
+    *{
+        margin: 0 auto;
+
+    }
     body * {
       visibility: hidden;
     }
      .ql-editor * {
       visibility: visible;
+
     }
      .ql-editor {
-      position: absolute;
-      right: 900px;
-      top: 0;
+      text-align: center;
+      margin: 0 auto;
+      overflow: hidden ;
+      height:3000px;
+      /* margin-left: 5%; */
+
     }
+
+    p{
+        text-align: left;
+    }
+<<<<<<< HEAD:CSS/app.css
   }
+=======
+    nav{
+        display: none;
+    }
+     #document-handler{
+        display: none;
+    }
+
+  }
+>>>>>>> 85d63a3fcc0c93dddbd0ee724f579c4634c85c02:CSS/style.css
