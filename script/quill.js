@@ -4,17 +4,13 @@
 // Variabeln toolbarOptions används i quill-konstruktorn
 // Anger vad som ska ingå i tool-bar 
 // Tool-bar funktionaliteten finns redan i quills biblotek.
-let Font = Quill.import ('formats/font');
-Font.whitelist = ['arial','verdana','times'];
-Quill.register(Font,true);
 
 let toolbarOptions = [
   
   ['bold', 'italic', 'underline', 'strike' ],
-  [{ 'size': ['small', false, 'large', 'huge'] }, ],
+  [{ 'size': ['small', false, 'large', 'huge', 'h1'] }, ],
   [ 'link', 'blockquote', 'code-block', 'image' ],
-  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ],
-  [{ 'font': ['', 'arial','verdana','times']} ]
+  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ]
 ];
 
 // Konstruktor, skapar ett objekt av klassen Quill

@@ -1,5 +1,4 @@
 const saveBtn = document.getElementById("btn-save");
-
 const printbtn = document.getElementById("btn-print")
 const newdocumentBtn = document.getElementById("new-document-btn");
 let noteArray = getLocalStorage();
@@ -44,15 +43,19 @@ window.onclick = function (event) {
     }
 }
 
-//Functions
+/*
+Code below is al the function
+*/
 
-//Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
+/* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
+ */
 function updateView() {
     document.getElementById("document-handler-container").innerHTML = "";
     createNote(noteArray);
 }
 
-//Saves new document if noteToView is true it updates existing note
+/* Saves new document if noteToView is true it updates existing note
+*/
 saveBtn.onclick = function () {
     console.log(noteToView);
     if (noteToView) {
@@ -64,16 +67,26 @@ saveBtn.onclick = function () {
     }
 }
 
-//New dokument clears the title and the text editor text
-newdocumentBtn.onclick = function () {
+/*
+New dokument clears the title and the text editor text
+*/
+newdocumentBtn.addEventListener('click', function () {
     clearForm();
-}
+})
 
-printbtn.onclick = function () {
+/*
+Print out the note
+*/
+printbtn.addEventListener('click', function() {
     print()
-}
+})
 
-//Creates new id
+/*
+Creates new id
+Check if ls is empty, id starts with 1,
+if ls not empty, give id the next number from the lates id.
+@return {number} a new id
+*/
 function createID() {
     let newID;
     if (localStorage.length === 0 || noteArray.length === 0) {
@@ -86,7 +99,10 @@ function createID() {
     return newID;
 }
 
-//Scan local storage and send the content back if it exist otherwise create a new array
+/*
+Scan local storage and send the content back if it exist otherwise create a new array
+@return {string[]} A string from localstorage
+*/
 function getLocalStorage() {
     let noteArray;
     if (localStorage.length === 0) {
@@ -97,13 +113,19 @@ function getLocalStorage() {
     return noteArray;
 }
 
-//sets local storage with the main array
+/*
+ sets local storage with the main array
+*/
+
 function setLocalStorage(array) {
     localStorage.setItem('notes', JSON.stringify(array))
 }
 
+/*
+Makes Title shorter and add ... (dots)
+@return {string} a shorter title
+*/
 
-//Makes Title shorter and adds ...
 function shortTitle(title) {
 
     if (title.length > 8) {
@@ -112,8 +134,10 @@ function shortTitle(title) {
     return title;
 }
 
-
-//Gets the date of today and formats it
+/*
+Gets the date of today and formats it
+@return {number} the todays date the note was created.
+*/
 function today(date) {
 
     var dd = date.getDate();
@@ -130,8 +154,14 @@ function today(date) {
     return date;
 }
 
-//Creates a document item
+
+/*
+Creates a document item
+@param {Array from ls}
+*/
+
 function createNote(array) {
+
     //sorts the array by favorite
     array.sort((a, b) => b.favorite - a.favorite);
 
