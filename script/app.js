@@ -8,8 +8,6 @@ let inputTitle = document.getElementById("input-Title");
 
 createNote(noteArray);
 
-
-
 window.onclick = function (event) {
     //Toggle from non-favorite to favorite 
     if (event.target.className === 'far fa-star') {
@@ -43,9 +41,6 @@ window.onclick = function (event) {
     }
 }
 
-/*
-Code below is al the function
-*/
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
  */
@@ -185,8 +180,6 @@ function createNote(array) {
 
         divDocumentHandlerItem.id = id;
         divDocumentHandlerItem.className = "document-handler-item";
-        divDocumentHandlerItem.style.borderBottom = '2px dotted white'
-        divDocumentHandlerItem.style.marginBottom = '30px';
         divDocumentTitle.className = "item-title";
         divDocumentTime.className = "item-time";
         divDocumentImage.className = "img-document";
