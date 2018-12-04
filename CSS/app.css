@@ -124,17 +124,7 @@ nav {
     background-color: rgb(150, 218, 235);
 }
 
-#btn-italic {
-    font-style: italic;
-}
 
-#btn-underline {
-    text-decoration: underline;
-}
-
-#btn-bold {
-    font-weight: 900;
-}
 
 #btn-save {
     background-color: rgb(247, 247, 247);
@@ -191,7 +181,7 @@ i {
 /*text-editor section*/
 
 #textarea-container {
-    height: 100%;;
+    height: 91.18%;
     width: 700px;
 
 }
@@ -313,6 +303,8 @@ i {
     }
 
 }
+
+
 @media print {
     *{
         margin: 0 auto;
@@ -337,15 +329,14 @@ i {
     p{
         text-align: left;
     }
-<<<<<<< HEAD:CSS/app.css
-  }
-=======
+
     nav{
         display: none;
     }
      #document-handler{
         display: none;
     }
-
   }
->>>>>>> 85d63a3fcc0c93dddbd0ee724f579c4634c85c02:CSS/style.css
+    
+
+  
