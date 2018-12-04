@@ -1,57 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="stylesheet" href="css/info.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
-  <title>Query 1.0</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <title>Welcome to Quire</title>
 </head>
 
 <body>
   <main>
-  
-    <div class="col-8">
-        <div class="slideshow-container">
-          <div class="mySlides fade">
-              <h1>Welcome to Quire</h1>
-                  <section>
-                    This is where we put our content.
-                  </section>
-            </div>
-
-          <div class="mySlides fade">
-              <h1>This is how it works</h1>
-                  <section>
-                    This is where we put our content.
-                  </section>
-            </div>
-
-          <div class="mySlides fade">
-              <h1>Start here</h1>
-                  <section>
-                    This is where we put our content.
-                  </section>
+    
+  <section id="infopage">
+      <div class="col-8">
+          <span id="q-logo"><h1>Quire 1.0</h1></span>
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+                <h1 id="slide-header">Välkommen till Quire!</h1>
+                <img id="editormodeimg" src="/Graphics/editormode.png" alt="quire">
+                <p id="page1">Quire är en textredigerare som låter dig skriva och spara anteckningar, 
+                        presentationer och andra dokument online. 
+                        Med Quire behöver du inte installera någon programvara, 
+                        den är kostnadsfri och finns i din webbläsare för att du ska komma åt appen 
+                        oavsett var du är eller vilken enhet du använder.</p>
               </div>
-
-          <a class="next" onclick="plusSlides(1)">Next</a>
-
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
+  
+            <div class="mySlides fade">  
+                <h1 id="slide-header">Såhär använder du Quire</h1>
+                <img id="editorimg" src="/Graphics/editorimg.png" alt="quire">
+                      <p id="page2">
+                            Skriv dina anteckningar i fältet
+                            För att skapa en rubrik eller göra andra ändringar på texten - 
+                            välj bland alternativen i verktygsfältet ovanför och skriv med det nya formatet, 
+                            eller markera texten du skrivit och välj vilken ändring du vill göra. 
+                            Skriv en titel för ditt dokument i fältet ovanför verktygen som är märkt med ”titel”.
+                      </p>
+              </div>
+              <div class="mySlides fade">
+                    <h1 id="slide-header">Börja här!</h1>
+                    <div class="paragraphs">
+                            <div class="infoimg">
+                                <p id="p1">För att skapa ett nytt dokument, klicka på <img id="newnoteimg" src="/Graphics/newnote.png" alt="quire"> ikonen.</p>
+                            </div>
+                            <div class="infoimg">
+                                <p id="p2"> För att spara dina anteckningar, klicka på <img id="savenoteimg" src="/Graphics/savenote.png" alt="quire"> ikonen.</p>
+                            </div>   
+                            <div class="infoimg">
+                                <p id="p3"> Dina sparade anteckningar ligger i menyn bredvid textredigeraren.</p>
+                                <p id="p4">Klicka på den sparade anteckningen för att ta fram den igen.</p>
+                            </div>   
+                            <div class="infoimg">
+                                <p id="p5">För att skriva ut ditt dokument, klicka på <img id="printimg" src="/Graphics/print.png" alt="quire"> ikonen.</p>    
+                                <button id="button" onclick="window.location.href='/app.html'">Ok, ta mig till appen!</button>
+                            </div>       
+                            </div>
+                        </div>
+                    </section>
+                </div>
+  
+  
+            <div id="dotted"style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+          <a class="next" onclick="plusSlides(1)">></a>
         </div>
-      </div>
+  </section>
   </main>
 
-
-
-<script type="text/javascript" src="/script/info.js"></script>
-
+<script type="text/javascript" src="script/index.js"></script>
 </body>
 </html>
