@@ -295,8 +295,7 @@ i {
 }
 
 
-<<<<<<< HEAD:CSS/app.css
-@media screen and (max-width:600px){
+@media screen and (max-width:1200px){
 
     main {
        
@@ -314,8 +313,6 @@ i {
     }
 
 }
-=======
->>>>>>> 85d63a3fcc0c93dddbd0ee724f579c4634c85c02:CSS/style.css
 @media print {
     *{
         margin: 0 auto;
