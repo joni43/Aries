@@ -3,6 +3,11 @@
 
 }
 
+html,
+body {
+    margin: 0 auto;
+}
+
 #document-handler-container {
     margin: 10px;
     padding: 10px;
@@ -11,7 +16,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
-    grid-gap: 5px;
+    grid-gap: 1px;
     padding: 5px;
     text-align: center;
 
