@@ -48,8 +48,10 @@ input::-webkit-input-placeholder,
 }
 
 #tool-menu-logo {
-    margin: 30px;
-    font-size: 40px;
+    margin: 5px;
+    font-size: 50px;
+    padding: none;
+    font-family: 'Pacifico', cursive;
 }
 
 .sidenav-text-item {
@@ -64,6 +66,7 @@ input::-webkit-input-placeholder,
     background: #435971;
     color: white;
     font-size: 30px;
+
 }
 
 .sidenav-new-item {
@@ -93,13 +96,15 @@ input::-webkit-input-placeholder,
     background: #435971;
     color: white;
     font-size: 30px;
+    font-family: 'Pacifico', cursive;
 }
 
 .my-note-folder-item {
     grid-area: 2/6/5/6;
     background: #435971;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
 }
 
 @media screen and (max-width: 767px) {
