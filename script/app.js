@@ -195,13 +195,13 @@ function createNote(array) {
         trashcanIcon.className = "fas fa-trash-alt";
 
         starButton.appendChild(starIcon);
-        divDocumentHandlerItem.appendChild(starButton)
+        divDocumentHandlerItem.appendChild(starButton);
         divDocumentTitle.appendChild(documentTitle);
         divDocumentTime.appendChild(documentTime);
 
         divDocumentHandlerItem.appendChild(divDocumentTitle);
 
-        ;
+        
 
         divDocumentHandlerItem.appendChild(divDocumentImage);
 

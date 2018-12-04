@@ -181,7 +181,7 @@ i {
 /*text-editor section*/
 
 #textarea-container {
-    height: 91.18%;
+    height: 91.1%;
     width: 700px;
 
 }
@@ -222,18 +222,7 @@ i {
     content: url(/components/documentHover.png);
 }
 
-.img-document-add {
-    width: 110px;
-    content: url(/components/documentplus.png);
-}
 
-.img-document-add:hover {
-    width: 110px;
-    cursor: pointer;
-    content: url(/components/documentplusHover.png);
-
-
-}
 
 .item-title {
 
