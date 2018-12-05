@@ -1,25 +1,25 @@
 .folder-slide-close {
     height: 100%;
-    width: 0;
+    width: 600px;
     position: fixed;
+    left: -600px;
     z-index: 1;
-    ;
     color: white;
     background: black;
-    display: none;
-    transition: 2s;
+
+    transition: 900ms;
 }
 
 .folder-slide-open {
     height: 100%;
-    width: 50%;
+    width: 600px;
     position: fixed;
+    left: 0px;
     z-index: 1;
-    ;
     color: white;
     background: black;
     opacity: 0.95;
-    transition: 2s;
+    transition: all 500ms linear;
     display: flex;
 }
 
@@ -28,7 +28,7 @@
     text-decoration: none;
     padding: 20px;
     display: block;
-    transition: 1s;
+    transition: 3s;
 }
 
 .document-handler:hover {
@@ -51,7 +51,7 @@
     font-size: 40px;
     margin-left: 50px;
     text-decoration: none;
-    color: gre;
+    color: grey;
 }
 
 .folder-slide-open .closeButton:hover {
