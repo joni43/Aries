@@ -1,11 +1,7 @@
 /* CSS Reset */
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
-}
+
+
 
 html, body {
     margin:0px;
@@ -45,6 +41,7 @@ nav{
     
 }
 #hamburger-menu{
+    display: none;
     background-color: rgb(43, 184, 219);
 }
 #hamburger-menu:hover{
@@ -56,27 +53,36 @@ nav{
 }
 
 .hamburger-container{
-    display:block;
+    display: none;
 }
-
-.hamburger-line{
+.menu-switch{
+    display: none;
+}
+div .menu-switch{
+    visibility: hidden;
+}
+/* .hamburger-line{
     width: 45px;
     height: 7px;
     border-radius: 2px;
     margin:7px 10px 7px 10px;
     background-color: rgb(70, 70, 70);
-}
+} */
 
 #tool-menu-container{
     width: 300px;
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin:40px 3% 0 8%;
  }
+.tools{
+    margin-top:10px;
+    position: relative;
+    display: inline-flex;
+}
 
 .tool-menu-item{
-
     display: flex;
     justify-content:center;
     align-items: center;
@@ -177,14 +183,15 @@ font-size: 40px;
 /*text-editor section*/
 
 #textarea-container{
-    height: 710px;
-    width: 700px;
+    height: px;
+    width: 641.12px;
     
 }
 
 /*doucument-handler section*/
-#document-handler{
+.sideMenu{
     width: 100%;
+    margin-left: 0;
     background-color:rgb(170, 170, 170);
     height: 710px;
 }
@@ -193,6 +200,7 @@ font-size: 40px;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
+    max-height: 710px;
     margin:10px 2% 0 7%; 
 }
 
@@ -275,4 +283,195 @@ font-size: 40px;
 .fa-star:hover{
     color: rgb(241, 238, 6) !important;
     cursor: pointer;
+}
+
+/*1130px width, then change*/
+
+@media screen and (max-width: 1130px) and (min-width: 940px){
+    .sideMenu{
+        display: none;
+    }
+    nav{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 940px) and (min-width: 410px){
+    .sideMenu{
+        visibility: hidden;
+    }
+    .display{
+        visibility: visible;
+        display: block;
+        position: absolute;
+        width: 300px;
+        right: 0;
+        top: 120px;
+        background-color: #435971;
+
+    }
+
+    .switchDisplay{
+        visibility: visible;
+        height: 50px;
+        width: 300px;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background-color: #435971;
+        text-align: center;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+    }
+    .switchDisplay div{
+        display: inline-block;
+        padding: 10px 32px;
+        border-radius: 5px;
+        border: 1px solid rgba(255,255,255, 0.5);
+    }
+    .switchDisplay div:hover{
+        cursor: pointer;
+    }
+
+    #tool-menu-container{
+        display: block;
+        margin: 0 auto;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        background-color: #435971; 
+    }
+    .tools{
+        margin-top: 4px;
+        margin-left: 170px;
+        position: relative;
+        display: inline-flex;
+    }
+    
+    body{
+        margin: 0 auto;
+    }
+    #input-Title{
+        height: 20px;
+    }
+
+    #hamburger-menu{
+        background-color: white;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        border-radius: 2px;
+        width: 42px;
+        height: 44px;
+    
+    }
+    #hamburger-menu:hover{
+        background-color: #4ED7F9;
+        cursor: pointer;
+    }
+    button{
+        border: none;
+    }
+    
+    /* #hamburger-menu:active{
+        background-color: rgb(150, 218, 235);
+    } */
+    
+    #hamburger-container{
+        position: relative;
+        display: block;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        background-image: url(/components/burger.svg);
+    }
+    
+    /* .hamburger-line{
+        position: relative;
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        margin:5px 20px 5px 10px;
+        background-color: rgb(70, 70, 70);
+    } */
+    #tool-menu-logo{
+        position: absolute;
+        top: 5px;
+        left: 20px;
+        font-family: 'Pacifico', cursive;
+        color: white;
+        font-size: 2em;
+    }
+    #paperNote{
+        margin-top: 70px;
+        position: absolute;
+        width: 100%;
+        height: 640px;
+        background-color: white; 
+        box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.75);
+    
+    }
+    .form-control{
+        margin-top: 10px;
+        margin-bottom: 6px;
+        width: 100%;
+        border: none;
+    }
+    #textarea-container{
+        width: 100%;
+        height: 50%;
+    }
+    .ql-toolbar{
+        background-color: rgba(67, 89, 113, 0.7);
+        width: 100%;
+    }
+    #editor{
+        border: none;
+        width: 100%;
+    }
+
+
+    .tool-menu-item{
+        flex-direction: row;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        font-size: 10px;
+        text-align: center;
+        left: 0;
+        margin-left: 3%;
+        position: relative;
+        padding: 0;
+    }
+    
+    #tool-menu{
+        font-family: 'Raleway', sans-serif;
+        display: inline-block;
+        font-size: 0;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        padding: 0;
+    }
+    #new-document-btn:hover{
+        cursor: pointer;
+    }
+    #btn-print:hover{
+        cursor: pointer;
+    
+    }
+    #btn-save:hover{
+        cursor: pointer;
+        background-size: 108%;
+        background-image: url(/components/save2.svg);
+    
+    
+    }
+
 }

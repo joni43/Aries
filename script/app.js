@@ -1,14 +1,40 @@
 
  const saveBtn = document.getElementById("btn-save");
  const printbtn = document.getElementById("btn-print")
+ const burgerBtn = document.getElementById('hamburger-menu');
  const newdocumentBtn = document.getElementById("new-document-btn");
+ const switchMenu = document.getElementById("menu-selector");
+ const docHandler = document.getElementById("document-handler");
  let noteArray = getLocalStorage();
  let noteToView;
  let inputTitle = document.getElementById("input-Title");
 
  createNote(noteArray);
 
+ burgerBtn.addEventListener('click', function(){
+    displayMenu();
+    displaySwitch();
+})
 
+function displayMenu(){
+    if(docHandler.className==="sideMenu"){
+        docHandler.className += " display";
+        console.log('displayed');
+    }else{
+        docHandler.className = "sideMenu";
+        console.log('not displayed');
+    }
+}
+
+function displaySwitch(){
+    if(switchMenu.className==="menu-switch"){
+        switchMenu.className += " switchDisplay";
+        console.log('displayed');
+    }else{
+        switchMenu.className = "menu-switch";
+        console.log('not displayed');
+    }
+}  
 
  window.onclick = function (event){
     //Toggle from non-favorite to favorite 
@@ -37,7 +63,6 @@
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
         removeNote(noteToView, noteArray);
         noteToView = "";
-
     }
 }
 
