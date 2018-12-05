@@ -1,0 +1,65 @@
+.folder-slide-close {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    ;
+    color: white;
+    background: black;
+    display: none;
+    transition: 2s;
+}
+
+.folder-slide-open {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    ;
+    color: white;
+    background: black;
+    opacity: 0.95;
+    transition: 2s;
+    display: flex;
+}
+
+.folder-slide-open .document-handler {
+    color: gray;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: 1s;
+}
+
+.document-handler:hover {
+    color: white;
+}
+
+.closeButton {
+    color: grey;
+}
+
+.closeButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.folder-slide-open .closeButton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: gre;
+}
+
+.folder-slide-open .closeButton:hover {
+    color: white;
+}
+
+@media screen and (max-width: 576px) {
+    .folder-slide-open {
+        flex-direction: column;
+    }
+}
