@@ -1,8 +1,8 @@
 .folder-slide-close {
     height: 100%;
-    width: 411px;
+    width: 500px;
     position: fixed;
-    left: -411px;
+    left: -500px;
     z-index: 1;
     color: white;
     background: black;
@@ -12,7 +12,7 @@
 
 .folder-slide-open {
     height: 100%;
-    width: 411px;
+    width: 500px;
     position: fixed;
     left: 0px;
     z-index: 1;
@@ -20,7 +20,7 @@
     background: black;
     opacity: 0.95;
     transition: all 500ms linear;
-   
+   overflow: scroll;
 }
 
 .folder-slide-open .document-handler {
@@ -37,6 +37,8 @@
 
 #closeButton {
     color: grey;
+    float: right;
+    margin:15px;
 }
 
 #closeButton:hover {

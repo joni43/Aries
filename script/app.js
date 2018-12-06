@@ -1,6 +1,7 @@
 const saveBtn = document.getElementById("btn-save");
 const printbtn = document.getElementById("btn-print")
 const newdocumentBtn = document.getElementById("new-document-btn");
+const closeSlideBtn = document.getElementById("closeButton");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
@@ -61,6 +62,10 @@ saveBtn.onclick = function () {
         createNote(noteArray);
         updateView();
     }
+}
+
+closeSlideBtn.onclick = function(){
+closeSlide();
 }
 
 /*
