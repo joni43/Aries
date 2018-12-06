@@ -198,6 +198,9 @@ i {
     margin-left: 40px;
 
 }
+#editor{
+    height: 400px;
+}
 
 /*doucument-handler section*/
 #document-handler {
@@ -316,21 +319,42 @@ i {
 
 
 
-@media screen and (max-width:750px){
+@media screen and (min-width: 100px) and (max-width:750px){
 
     main {
        
         flex-direction: column;
        
     }
+    #new-document-btn{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-save{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-folder{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-print{
+        height: 45px;
+        width: 45px;
+    }
 
     nav {
         background: #435971;
         max-width: none;
+        height: 70px;
         width: 100%;
-        
-       
-       
+    }
+    #tool-menu-logo{
+        font-size: 1.7em;
+        position: relative;
+        margin-left: 0;
+        height: 40px;
+        width: 115px;
     }
     .tool-menu-item-themes {
 
@@ -351,12 +375,13 @@ i {
 
     #tool-menu-container {
     
-        max-width: 500px;
+        max-width: 350px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
-        margin: 3% 1% 0 3%;
+        margin: 0 auto;
+        margin-left: 0;
     }
 
     .tool-menu-item-themes {
@@ -394,13 +419,13 @@ i {
     }
 
     #tool-menu-container {
-    
         max-width: 500px;
         display: flex;
+        height: 70px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
-        margin: 3% 1% 0 3%;
+        margin-top: 5px;
     }
 
     .tool-menu-item-themes {
