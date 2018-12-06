@@ -296,18 +296,19 @@ function quillFunction(quillSwitchSelect = '1') {
     break;
      
     case '2':
-
+    
+    quill.root.classList.remove('halloweenTheme')
     quill.root.classList.add('christmasTheme');
-    quill.root.classList.add('h1');
-    // quill.root.classList.remove('halloween')
+    
+ 
      
     break;
 
     case '3':
+    quill.root.classList.remove('christmasTheme')
+    quill.root.classList.add('halloweenTheme');
+    
 
-   
-    // quill.root.classList.add('halloween');
-    // quill.root.classList.remove('christmasTheme')
 
     break;
 
