@@ -8,7 +8,7 @@
 let toolbarOptions = [
   
   ['bold', 'italic', 'underline', 'strike' ],
-  [{ 'size': ['small', false, 'large', 'huge', 'h1'] }, ],
+  [{ 'size': ['small', false, 'large', 'huge',] }, ],
   [ 'link', 'blockquote', 'code-block', 'image' ],
   [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ]
 ];

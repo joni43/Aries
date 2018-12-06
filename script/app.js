@@ -277,3 +277,50 @@ function toggleFavorite(objectID) {
     setLocalStorage(noteArray);
     updateView();
 }
+
+
+// under construction
+document.getElementById("themeList").onchange = function() {
+    quillFunction(this.value);
+ };
+
+function quillFunction(quillSwitchSelect = '1') {
+    var quillTemplate;
+  switch(quillSwitchSelect){
+
+    case '1':
+    
+    quillTemplate = document.createElement('div');
+    quillTemplate.innerHTML = "<p><br></p>";
+     
+    break;
+     
+    case '2':
+
+    quill.root.classList.add('christmasTheme');
+    quill.root.classList.add('h1');
+    // quill.root.classList.remove('halloween')
+     
+    break;
+
+    case '3':
+
+   
+    // quill.root.classList.add('halloween');
+    // quill.root.classList.remove('christmasTheme')
+
+    break;
+
+    case '4':
+
+    break;
+     
+    default:
+    console.log('Something went wrong!');
+     
+    break;
+     
+    }
+    console.log(quillTemplate.innerHTML);
+    quill.root.innerHTML = quillTemplate.innerHTML;
+};
