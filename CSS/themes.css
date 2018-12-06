@@ -1,13 +1,30 @@
 .christmasTheme {
     font-family: 'Charmonman', cursive;
-    color: blue;
+    color:  blue;
+    
 }
 
-.large {
-
-    /* font-family: 'Charmonman', cursive; */
-    color: red;
+.christmasTheme h1, h2, h3 {
+    font-family: 'Charmonman', cursive;
+    color:  rgb(255, 0, 0);
+    
 }
+
+
+.halloweenTheme {
+    font-family: 'Dokdo', cursive;
+    color: orangered;
+}
+
+.halloweenTheme h1, h2, h3 {
+    font-family: 'Charmonman', cursive;
+    color:  rgb(5, 77, 11);
+    
+}
+
+/* Cred Philip */
+
+/* halloweenTheme */
 
 
 /* font-family: 'Charmonman', cursive;
