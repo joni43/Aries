@@ -69,6 +69,23 @@ closeSlide();
 }
 
 /*
+Opens the slide bar
+*/
+function openSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-open';
+    
+   
+}
+/*
+Closes the slide bar
+*/
+function closeSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-close';
+
+    event.preventDefault();
+}
+
+/*
 New dokument clears the title and the text editor text
 */
 newdocumentBtn.addEventListener('click', function () {
