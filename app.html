@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Query 1.0</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    <!-- Google Fonts API -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bevan%7CCharmonman%7CDancing+Script%7CDokdo%7CFredericka+the+Great" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <!-- Quill -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Local CSS  -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="CSS/slide.css">
+    <link rel="stylesheet" href="CSS/themes.css">
+
+</head>
+
+<body>
+    <main>
+        <!--Nav for hamburger menu and app tools-->
+        <nav>
+            <div id="tool-menu-container">
+                <!--here comes the hamburger menu, dont get hungry =)-->
+                <div class="tool-menu-item" id="hamburger-menu">
+                    <div id="hamburger-container">
+                        <div class="hamburger-line" id="hamburger-top"></div>
+                        <div class="hamburger-line" id="hamburger-middle"></div>
+                        <div class="hamburger-line" id="hamburger-bottom"></div>
+                    </div>
+                </div>
+                <!--here comes the logo-->
+                <div id="tool-menu-logo" class="tool-menu-item">Queri 1.0</div>
+                <!--here comes the editor buttons-->
+                <div class="tool-menu-item" id="new-document-btn"><i class="fas fa-plus-square"></i></div>
+                <div class="tool-menu-item" id="btn-folder"><i class="fas fa-folder" onclick="openSlide()"></i></div>
+                <div class="tool-menu-item" id="btn-print"><i class="fas fa-print"></i></div>
+                <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div>
+
+
+
+                <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
+                <div class="tool-menu-item-themes" id="hallowen-theme"><i class="fas fa-ghost"></i></div>
+                <div class="tool-menu-item-themes" id="birthday-theme"><i class="fas fa-birthday-cake"></i></div>
+                <div class="tool-menu-item-themes" id="christmas-theme"><i class="fas fa-air-freshener"></i></div>
+                <div class="tool-menu-item-themes" id="christmas-theme"><i class="fas fa-futbol"></i></i></div>
+                
+                <div>
+                    <form>
+                        <select id="themeList" >
+                          <option value='1'>Inget tema</option>
+                          <option value='2'>Jul</option>
+                          <option value='3'>Halloweeen</option>  
+                          <option value='4'>Midsommar</option>
+                        </select>
+                    <form>
+                </div>
+            </div>
+        </nav>
+
+        <section>
+
+
+            <input class="form-control" type="text" id="input-Title" placeholder="Dokument namn...">
+            <!-- An empty div that's "filled" with content from the Quill constructior -->
+            <div id="textarea-container">
+                <div id="editor"></div>
+            </div>
+        </section>
+        <!--Section for document handler-->
+        <div id="folderSlide" class="folder-slide-close">
+            <a href="" javascript:void(0) class="closeButton" onclick="closeSlide()"> X</a>
+            <section id="document-handler"></section>
+            <div id="document-handler-container">
+
+
+            </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Local JS -->
+    <script src="script/quill.js" async defer></script>
+    <script src="script/app.js" async defer></script>
+    <script src="script/slide.js"></script>
+
+
+</body>
+
+</html>
