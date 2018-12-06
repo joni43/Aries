@@ -35,11 +35,11 @@
     color: white;
 }
 
-.closeButton {
+#closeButton {
     color: grey;
 }
 
-.closeButton:hover {
+#closeButton:hover {
     color: white;
     cursor: pointer;
 }
