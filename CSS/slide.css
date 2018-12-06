@@ -7,7 +7,7 @@
     color: white;
     background: black;
 
-    transition: 900ms;
+    transition: all 500ms linear;
 }
 
 .folder-slide-open {
@@ -20,13 +20,13 @@
     background: black;
     opacity: 0.95;
     transition: all 500ms linear;
-    display: flex;
+   
 }
 
 .folder-slide-open .document-handler {
     color: gray;
     text-decoration: none;
-    padding: 20px;
+   
     display: block;
     transition: 3s;
 }
