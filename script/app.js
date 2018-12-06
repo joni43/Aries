@@ -32,6 +32,7 @@ window.onclick = function (event) {
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
+        closeSlide();
         //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt') {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
