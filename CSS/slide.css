@@ -1,8 +1,8 @@
 .folder-slide-close {
     height: 100%;
-    width: 600px;
+    width: 411px;
     position: fixed;
-    left: -600px;
+    left: -411px;
     z-index: 1;
     color: white;
     background: black;
@@ -12,7 +12,7 @@
 
 .folder-slide-open {
     height: 100%;
-    width: 600px;
+    width: 411px;
     position: fixed;
     left: 0px;
     z-index: 1;
