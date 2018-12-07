@@ -192,7 +192,6 @@ i {
 
 #textarea-container {
     
-    width: 1400px;
     height: 100%;
     max-height: 800px;
     margin-left: 40px;
@@ -228,7 +227,7 @@ i {
 }
 
 .document-handler-item i {
-    color: rgb(44, 44, 44);
+    color: rgb(173, 173, 173);
 }
 
 .img-document {
