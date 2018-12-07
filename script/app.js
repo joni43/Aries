@@ -39,8 +39,8 @@ window.onclick = function (event) {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
         removeNote(noteToView, noteArray);
         noteToView = "";
-
     }
+ 
 }
 
 
@@ -73,12 +73,14 @@ Opens the slide bar
 */
 function openSlide() {
     document.querySelector('#folderSlide').className = 'folder-slide-open';  
+  
 }
 /*
 Closes the slide bar
 */
 function closeSlide() {
     document.querySelector('#folderSlide').className = 'folder-slide-close';
+   
 }
 
 /*
