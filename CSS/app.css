@@ -1,33 +1,25 @@
 /* CSS Reset */
 
 * {
-    padding: 0;
+    padding: 0 ;
     margin: 0;
 }
 
 html,body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0 auto;
+    padding: 0 auto;
     width: 100%;
     height: 100%;
     font-family: sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin-bottom: 16px;
-}
+
 
 /*Generall css for main and section*/
 main {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:stretch;
     height: 100%;
 }
 
@@ -36,7 +28,9 @@ main {
 
 nav {
     background: #435971;
-    height: 100%;
+    max-width: 250px;
+
+   
 }
 
 
@@ -50,8 +44,19 @@ nav {
 
 }
 
+#tool-menu-themes-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: white;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
 #hamburger-menu {
     background-color: rgb(43, 184, 219);
+    display: none;
 }
 
 #hamburger-menu:hover {
@@ -75,13 +80,19 @@ nav {
     background-color: rgb(70, 70, 70);
 }
 
+
 #tool-menu-container {
-    width: 100%;;
+    
+    min-width: 200px;
+    max-width: 200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 40px 3% 0 8%;
+    justify-content: center;
+    margin: 3% 1% 0 3%;
 }
+
+
 
 .tool-menu-item {
 
@@ -99,6 +110,21 @@ nav {
     color: rgb(53, 53, 53);
 }
 
+.tool-menu-item-themes {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #D4D4D4;
+    border: 2px solid rgb(59, 59, 59);
+    margin: 4px;
+    border-radius: 5px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(53, 53, 53);
+}
 .tool-menu-item-empty {
     display: flex;
     justify-content: center;
@@ -124,6 +150,16 @@ nav {
     background-color: rgb(150, 218, 235);
 }
 
+.tool-menu-item-themes:hover {
+    cursor: pointer;
+    background-color: rgb(176, 102, 206);
+
+}
+
+.tool-menu-item-themes:active {
+    background-color: rgb(119, 68, 111);
+}
+
 
 
 #btn-save {
@@ -138,41 +174,7 @@ nav {
     background-color: rgb(74, 214, 137);
 }
 
-#easter-egg1 {
-    background-color: #D4D4D4;
-}
 
-#easter-egg1:hover {
-    background-color: rgb(214, 27, 189);
-}
-
-#easter-egg1:active {
-    background-color: rgb(209, 74, 214);
-}
-
-#easter-egg2 {
-    background-color: #D4D4D4;
-}
-
-#easter-egg2:hover {
-    background-color: rgb(214, 155, 27);
-}
-
-#easter-egg2:active {
-    background-color: rgb(214, 193, 74);
-}
-
-#easter-egg3 {
-    background-color: #D4D4D4;
-}
-
-#easter-egg3:hover {
-    background-color: rgb(158, 214, 27);
-}
-
-#easter-egg3:active {
-    background-color: rgb(130, 214, 74);
-}
 
 i {
     font-size: 40px;
@@ -180,30 +182,48 @@ i {
 
 /*text-editor section*/
 
-#textarea-container {
-    height: 91.1%;
-    width: 700px;
+#input-Title{
 
+    border:none;
+    border-color: white;
+    font-size: 25px;
+    margin: 30px 5px 10px 40px;
+}
+
+#textarea-container {
+    
+    width: 1400px;
+    height: 100%;
+    max-height: 800px;
+    margin-left: 40px;
+
+}
+#editor{
+    height: 400px;
 }
 
 /*doucument-handler section*/
 #document-handler {
-    width: 100%;
+
+    
+    
+    
     background-color: rgb(170, 170, 170);
-    height: 100%;
+    
 }
 
 #document-handler-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px 2% 0 7%;
+    
+    margin: 10% 5% 0 5%;
 }
 
 .document-handler-item {
+    
     padding: 0;
-    margin-left: 10px;
-    margin-top: 15px;
+    margin: 0px 5px 20px 5px;
     width: 115px;
 }
 
@@ -273,8 +293,114 @@ i {
     cursor: pointer;
 }
 
+@media screen and (max-width:1545px){
 
-@media screen and (max-width:1200px){
+    .tool-menu-item {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        background-color: #D4D4D4;
+        border: 2px solid rgb(59, 59, 59);
+        margin: 4px;
+        border-radius: 5px;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(53, 53, 53);
+    }
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 100px) and (max-width:750px){
+
+    main {
+       
+        flex-direction: column;
+       
+    }
+    #new-document-btn{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-save{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-folder{
+        height: 45px;
+        width: 45px;
+    }
+    #btn-print{
+        height: 45px;
+        width: 45px;
+    }
+
+    nav {
+        background: #435971;
+        max-width: none;
+        height: 70px;
+        width: 100%;
+    }
+    #tool-menu-logo{
+        font-size: 1.7em;
+        position: relative;
+        margin-left: 0;
+        height: 40px;
+        width: 115px;
+    }
+    .tool-menu-item-themes {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: #D4D4D4;
+        border: 2px solid rgb(59, 59, 59);
+        margin: 4px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(53, 53, 53);
+    }
+
+
+    #tool-menu-container {
+    
+        max-width: 350px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin: 0 auto;
+        margin-left: 0;
+    }
+
+    .tool-menu-item-themes {
+
+        display: none;
+    }
+
+    #document-handler {
+
+    
+    display: none;
+    
+        background-color: rgb(170, 170, 170);
+        
+    }
+
+}
+
+
+@media screen and (max-width:750px){
 
     main {
        
@@ -282,13 +408,37 @@ i {
        
     }
 
-    #tool-menu-container {
-       
-        display: flex;
+    nav {
+        background: #435971;
+        max-width: none;
         width: 100%;
+        
+       
+       
+    }
+
+    #tool-menu-container {
+        max-width: 500px;
+        display: flex;
+        height: 70px;
         flex-direction: row;
         flex-wrap: wrap;
-   
+        justify-content: start;
+        margin-top: 5px;
+    }
+
+    .tool-menu-item-themes {
+
+        display: none;
+    }
+
+    #document-handler {
+
+    
+    display: none;
+    
+        background-color: rgb(170, 170, 170);
+        
     }
 
 }

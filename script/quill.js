@@ -7,10 +7,10 @@
 
 let toolbarOptions = [
   
-  ['bold', 'italic', 'underline', 'strike' ],
-  [{ 'size': ['small', false, 'large', 'huge', 'h1'] }, ],
+  ['bold', 'italic', 'underline', 'strike'],
   [ 'link', 'blockquote', 'code-block', 'image' ],
-  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ]
+  [{ 'color': [] }, { 'background': [] }, { list: 'ordered' }, { list: 'bullet' } ],
+  [{ 'header': [1, 2, 3, false] }]
 ];
 
 // Konstruktor, skapar ett objekt av klassen Quill

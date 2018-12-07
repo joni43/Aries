@@ -1,6 +1,7 @@
 const saveBtn = document.getElementById("btn-save");
 const printbtn = document.getElementById("btn-print")
 const newdocumentBtn = document.getElementById("new-document-btn");
+const closeSlideBtn = document.getElementById("closeButton");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
@@ -32,6 +33,7 @@ window.onclick = function (event) {
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
+        closeSlide();
         //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt') {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
@@ -60,6 +62,23 @@ saveBtn.onclick = function () {
         createNote(noteArray);
         updateView();
     }
+}
+
+closeSlideBtn.onclick = function(){
+closeSlide();
+}
+
+/*
+Opens the slide bar
+*/
+function openSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-open';  
+}
+/*
+Closes the slide bar
+*/
+function closeSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-close';
 }
 
 /*
@@ -270,3 +289,51 @@ function toggleFavorite(objectID) {
     setLocalStorage(noteArray);
     updateView();
 }
+
+
+// under construction
+document.getElementById("themeList").onchange = function() {
+    quillFunction(this.value);
+ };
+
+function quillFunction(quillSwitchSelect = '1') {
+    var quillTemplate;
+  switch(quillSwitchSelect){
+
+    case '1':
+    
+    quillTemplate = document.createElement('div');
+    quillTemplate.innerHTML = "<p><br></p>";
+     
+    break;
+     
+    case '2':
+    
+    quill.root.classList.remove('halloweenTheme')
+    quill.root.classList.add('christmasTheme');
+    
+ 
+     
+    break;
+
+    case '3':
+    quill.root.classList.remove('christmasTheme')
+    quill.root.classList.add('halloweenTheme');
+    
+
+
+    break;
+
+    case '4':
+
+    break;
+     
+    default:
+    console.log('Something went wrong!');
+     
+    break;
+     
+    }
+    console.log(quillTemplate.innerHTML);
+    quill.root.innerHTML = quillTemplate.innerHTML;
+};
