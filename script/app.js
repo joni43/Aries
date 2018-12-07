@@ -1,15 +1,13 @@
 const saveBtn = document.getElementById("btn-save");
-
 const printbtn = document.getElementById("btn-print")
 const newdocumentBtn = document.getElementById("new-document-btn");
+const closeSlideBtn = document.getElementById("closeButton");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
 
 
 createNote(noteArray);
-
-
 
 window.onclick = function (event) {
     //Toggle from non-favorite to favorite 
@@ -35,24 +33,26 @@ window.onclick = function (event) {
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
+        closeSlide();
         //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt') {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
         removeNote(noteToView, noteArray);
         noteToView = "";
-
     }
+ 
 }
 
-//Functions
 
-//Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
+/* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
+ */
 function updateView() {
     document.getElementById("document-handler-container").innerHTML = "";
     createNote(noteArray);
 }
 
-//Saves new document if noteToView is true it updates existing note
+/* Saves new document if noteToView is true it updates existing note
+*/
 saveBtn.onclick = function () {
     console.log(noteToView);
     if (noteToView) {
@@ -64,16 +64,45 @@ saveBtn.onclick = function () {
     }
 }
 
-//New dokument clears the title and the text editor text
-newdocumentBtn.onclick = function () {
+closeSlideBtn.onclick = function(){
+closeSlide();
+}
+
+/*
+Opens the slide bar
+*/
+function openSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-open';  
+  
+}
+/*
+Closes the slide bar
+*/
+function closeSlide() {
+    document.querySelector('#folderSlide').className = 'folder-slide-close';
+   
+}
+
+/*
+New dokument clears the title and the text editor text
+*/
+newdocumentBtn.addEventListener('click', function () {
     clearForm();
-}
+})
 
-printbtn.onclick = function () {
+/*
+Print out the note
+*/
+printbtn.addEventListener('click', function() {
     print()
-}
+})
 
-//Creates new id
+/*
+Creates new id
+Check if ls is empty, id starts with 1,
+if ls not empty, give id the next number from the lates id.
+@return {number} a new id
+*/
 function createID() {
     let newID;
     if (localStorage.length === 0 || noteArray.length === 0) {
@@ -86,7 +115,10 @@ function createID() {
     return newID;
 }
 
-//Scan local storage and send the content back if it exist otherwise create a new array
+/*
+Scan local storage and send the content back if it exist otherwise create a new array
+@return {string[]} A string from localstorage
+*/
 function getLocalStorage() {
     let noteArray;
     if (localStorage.length === 0) {
@@ -97,13 +129,19 @@ function getLocalStorage() {
     return noteArray;
 }
 
-//sets local storage with the main array
+/*
+ sets local storage with the main array
+*/
+
 function setLocalStorage(array) {
     localStorage.setItem('notes', JSON.stringify(array))
 }
 
+/*
+Makes Title shorter and add ... (dots)
+@return {string} a shorter title
+*/
 
-//Makes Title shorter and adds ...
 function shortTitle(title) {
 
     if (title.length > 8) {
@@ -112,8 +150,10 @@ function shortTitle(title) {
     return title;
 }
 
-
-//Gets the date of today and formats it
+/*
+Gets the date of today and formats it
+@return {number} the todays date the note was created.
+*/
 function today(date) {
 
     var dd = date.getDate();
@@ -130,8 +170,14 @@ function today(date) {
     return date;
 }
 
-//Creates a document item
+
+/*
+Creates a document item
+@param {Array from ls}
+*/
+
 function createNote(array) {
+
     //sorts the array by favorite
     array.sort((a, b) => b.favorite - a.favorite);
 
@@ -170,13 +216,13 @@ function createNote(array) {
         trashcanIcon.className = "fas fa-trash-alt";
 
         starButton.appendChild(starIcon);
-        divDocumentHandlerItem.appendChild(starButton)
+        divDocumentHandlerItem.appendChild(starButton);
         divDocumentTitle.appendChild(documentTitle);
         divDocumentTime.appendChild(documentTime);
 
         divDocumentHandlerItem.appendChild(divDocumentTitle);
 
-        ;
+        
 
         divDocumentHandlerItem.appendChild(divDocumentImage);
 
@@ -251,3 +297,51 @@ function toggleFavorite(objectID) {
     setLocalStorage(noteArray);
     updateView();
 }
+
+
+// under construction
+document.getElementById("themeList").onchange = function() {
+    quillFunction(this.value);
+ };
+
+function quillFunction(quillSwitchSelect = '1') {
+    var quillTemplate;
+  switch(quillSwitchSelect){
+
+    case '1':
+    
+    quillTemplate = document.createElement('div');
+    quillTemplate.innerHTML = "<p><br></p>";
+     
+    break;
+     
+    case '2':
+    
+    quill.root.classList.remove('halloweenTheme')
+    quill.root.classList.add('christmasTheme');
+    
+ 
+     
+    break;
+
+    case '3':
+    quill.root.classList.remove('christmasTheme')
+    quill.root.classList.add('halloweenTheme');
+    
+
+
+    break;
+
+    case '4':
+
+    break;
+     
+    default:
+    console.log('Something went wrong!');
+     
+    break;
+     
+    }
+    console.log(quillTemplate.innerHTML);
+    quill.root.innerHTML = quillTemplate.innerHTML;
+};
