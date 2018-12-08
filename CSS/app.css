@@ -28,13 +28,7 @@ main {
 
 nav {
     background: #435971;
-<<<<<<< HEAD
-    max-width: 280px;
-
-   
-=======
     max-width: 250px;
->>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 }
 
 
@@ -92,12 +86,6 @@ nav {
     margin: 3% 1% 0 3%;
 }
 
-<<<<<<< HEAD
-.revisitedThemes{
-    
-}
-=======
->>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 
 .tool-menu-item {
     display: flex;
@@ -289,8 +277,6 @@ i {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 @media screen and (max-width:1545px){
 
     .tool-menu-item {
@@ -307,7 +293,6 @@ i {
     }
 
 }
->>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 
 
 
