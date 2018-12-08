@@ -28,9 +28,13 @@ main {
 
 nav {
     background: #435971;
+<<<<<<< HEAD
     max-width: 280px;
 
    
+=======
+    max-width: 250px;
+>>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 }
 
 
@@ -41,7 +45,6 @@ nav {
     width: 150px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-
 }
 
 #tool-menu-themes-title {
@@ -51,7 +54,6 @@ nav {
     width: 150px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-
 }
 
 #hamburger-menu {
@@ -80,9 +82,7 @@ nav {
     background-color: rgb(70, 70, 70);
 }
 
-
 #tool-menu-container {
-    
     min-width: 200px;
     max-width: 200px;
     display: flex;
@@ -92,40 +92,34 @@ nav {
     margin: 3% 1% 0 3%;
 }
 
+<<<<<<< HEAD
 .revisitedThemes{
     
 }
+=======
+>>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 
 .tool-menu-item {
-
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
+    color: #D4D4D4;
     margin: 4px;
-    border-radius: 5px;
     font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(53, 53, 53);
+    font-family: 'Roboto', sans-serif; 
 }
 
 .tool-menu-item-themes {
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
+    color: #D4D4D4;
     margin: 4px;
-    border-radius: 5px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
-    color: rgb(53, 53, 53);
+    
 }
 .tool-menu-item-empty {
     display: flex;
@@ -162,10 +156,14 @@ nav {
     background-color: rgb(119, 68, 111);
 }
 
+i.fas.fa {
+    font-weight: none;
+    color: white;
+}
 
 
 #btn-save {
-    background-color: rgb(247, 247, 247);
+
 }
 
 #btn-save:hover {
@@ -193,7 +191,7 @@ i {
 }
 
 #textarea-container {
-    
+
     height: 100%;
     max-height: 800px;
     margin-left: 40px;
@@ -205,13 +203,9 @@ i {
 }
 
 /*doucument-handler section*/
-#document-handler {
-
-    
-    
-    
+#document-handler { 
     background-color: rgb(170, 170, 170);
-    
+   
 }
 
 #document-handler-container {
@@ -295,6 +289,25 @@ i {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width:1545px){
+
+    .tool-menu-item {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        margin: 4px;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        
+    }
+
+}
+>>>>>>> 5a54a94753f238ffca06649751a229f44a042a55
 
 
 
@@ -330,12 +343,9 @@ i {
         width: 30px;
         height: 30px;
         background-color: #D4D4D4;
-        border: 2px solid rgb(59, 59, 59);
         margin: 4px;
-        border-radius: 5px;
         font-size: 18px;
         font-family: 'Roboto', sans-serif;
-        color: rgb(53, 53, 53);
     }
 
     #tool-menu-container {

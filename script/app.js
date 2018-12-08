@@ -240,7 +240,6 @@ function createNote(array) {
         }
 
         trashcanIcon.className = "fas fa-trash-alt";
-
         starButton.appendChild(starIcon);
         divDocumentHandlerItem.appendChild(starButton);
         divDocumentTitle.appendChild(documentTitle);
@@ -256,13 +255,10 @@ function createNote(array) {
         trashcanButton.appendChild(trashcanIcon);
         divDocumentHandlerItem.appendChild(trashcanButton);
 
-        document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
-
-
-    }
+        document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);}
 }
 
-//Saves the note 
+//Saves the note
 function saveNote() {
     let newNote = {};
     let newNoteID = createID();
