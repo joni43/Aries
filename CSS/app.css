@@ -28,7 +28,7 @@ main {
 
 nav {
     background: #435971;
-    max-width: 250px;
+    max-width: 280px;
 
    
 }
@@ -92,7 +92,9 @@ nav {
     margin: 3% 1% 0 3%;
 }
 
-
+.revisitedThemes{
+    
+}
 
 .tool-menu-item {
 
