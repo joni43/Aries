@@ -293,30 +293,13 @@ i {
     cursor: pointer;
 }
 
+
+
+
+
 @media screen and (max-width:1545px){
 
-    .tool-menu-item {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-        background-color: #D4D4D4;
-        border: 2px solid rgb(59, 59, 59);
-        margin: 4px;
-        border-radius: 5px;
-        font-size: 30px;
-        font-family: 'Roboto', sans-serif;
-        color: rgb(53, 53, 53);
-    }
-
 }
-
-
-
-
-
 
 @media screen and (min-width: 100px) and (max-width:750px){
 
@@ -325,23 +308,6 @@ i {
         flex-direction: column;
        
     }
-    #new-document-btn{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-save{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-folder{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-print{
-        height: 45px;
-        width: 45px;
-    }
-
     nav {
         background: #435971;
         max-width: none;
@@ -356,7 +322,6 @@ i {
         width: 115px;
     }
     .tool-menu-item-themes {
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -371,9 +336,7 @@ i {
         color: rgb(53, 53, 53);
     }
 
-
     #tool-menu-container {
-    
         max-width: 350px;
         display: flex;
         flex-direction: row;
@@ -384,17 +347,12 @@ i {
     }
 
     .tool-menu-item-themes {
-
         display: none;
     }
 
     #document-handler {
-
-    
-    display: none;
-    
+        display: none;
         background-color: rgb(170, 170, 170);
-        
     }
 
 }
