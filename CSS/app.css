@@ -29,8 +29,6 @@ main {
 nav {
     background: #435971;
     max-width: 250px;
-
-   
 }
 
 
@@ -41,7 +39,6 @@ nav {
     width: 150px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-
 }
 
 #tool-menu-themes-title {
@@ -51,7 +48,6 @@ nav {
     width: 150px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-
 }
 
 #hamburger-menu {
@@ -80,9 +76,7 @@ nav {
     background-color: rgb(70, 70, 70);
 }
 
-
 #tool-menu-container {
-    
     min-width: 200px;
     max-width: 200px;
     display: flex;
@@ -93,37 +87,27 @@ nav {
 }
 
 
-
 .tool-menu-item {
-
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
+    color: #D4D4D4;
     margin: 4px;
-    border-radius: 5px;
     font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(53, 53, 53);
+    font-family: 'Roboto', sans-serif; 
 }
 
 .tool-menu-item-themes {
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
+    color: #D4D4D4;
     margin: 4px;
-    border-radius: 5px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
-    color: rgb(53, 53, 53);
+    
 }
 .tool-menu-item-empty {
     display: flex;
@@ -160,10 +144,14 @@ nav {
     background-color: rgb(119, 68, 111);
 }
 
+i.fas.fa {
+    font-weight: none;
+    color: white;
+}
 
 
 #btn-save {
-    background-color: rgb(247, 247, 247);
+
 }
 
 #btn-save:hover {
@@ -203,13 +191,9 @@ i {
 }
 
 /*doucument-handler section*/
-#document-handler {
-
-    
-    
-    
+#document-handler { 
     background-color: rgb(170, 170, 170);
-    
+   
 }
 
 #document-handler-container {
@@ -302,13 +286,10 @@ i {
         align-items: center;
         width: 60px;
         height: 60px;
-        background-color: #D4D4D4;
-        border: 2px solid rgb(59, 59, 59);
         margin: 4px;
-        border-radius: 5px;
         font-size: 30px;
         font-family: 'Roboto', sans-serif;
-        color: rgb(53, 53, 53);
+        
     }
 
 }
@@ -363,12 +344,9 @@ i {
         width: 30px;
         height: 30px;
         background-color: #D4D4D4;
-        border: 2px solid rgb(59, 59, 59);
         margin: 4px;
-        border-radius: 5px;
         font-size: 18px;
         font-family: 'Roboto', sans-serif;
-        color: rgb(53, 53, 53);
     }
 
 

@@ -18,7 +18,7 @@ let toolbarOptions = [
 // targets ID editor (<div id="editor">)
 let quill = new Quill('#editor', {
   modules: { toolbar: toolbarOptions, },
-  placeholder: 'Skriv något här...',
+  placeholder: '',
   theme: 'snow'
 });
 
