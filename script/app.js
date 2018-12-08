@@ -247,11 +247,8 @@ function createNote(array) {
 
         divDocumentHandlerItem.appendChild(divDocumentTitle);
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 1a29cd240e0e730efa765945384b339fd1534825
         divDocumentHandlerItem.appendChild(divDocumentImage);
 
         divDocumentHandlerItem.appendChild(divDocumentTime);
