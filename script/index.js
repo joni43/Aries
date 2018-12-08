@@ -1,16 +1,19 @@
 
 siteVisited = document.cookie;
+// moves to app.html when cookie is true
+if (siteVisited === "true"){
+  window.location = "app.html";
+ } 
+
 
 var slideIndex = 1;
 showSlides(slideIndex);
 btnButton = document.getElementById("button");
 
-// moves to app.html when cookie is true
-window.onload = function() {
- if (siteVisited === "true"){
-  window.location = "app.html";
- } 
 
+window.onload = function(){
+
+  
 }
 
 btnButton.onclick = function(){
