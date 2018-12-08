@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
-       
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="CSS/responsive_index.css">
+    <link rel="stylesheet" href="responsive_index.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <title>Welcome to Quire</title>
-    <script  src="script/index.js"></script>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
                 <div grid-item>
                     <h1 class="slide-header">Välkommen till Quire</h1>
                 </div>
-                <div grid-item><img class="editor-mode" src="Graphics/editormode.png" alt="">
+                <div grid-item><img class="editor-mode" src="../Graphics/editormode.png" alt="">
                     <a class="next" onclick="plusSlides(1)">></a></div>
                 <div grid-item>
                     <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
@@ -35,7 +35,7 @@
                     <h1 class="slide-header">Såhär använder du Quire</h1>
                 </div>
 
-                <div grid-item><img class="editor-img" src="Graphics/editorimg.png" alt="">
+                <div grid-item><img class="editor-img" src="../Graphics/editorimg.png" alt="">
                     <a class="next" onclick="plusSlides(1)">></a></div>
 
                 <div grid-item>
@@ -51,24 +51,24 @@
 
                 <div grid-item>
                     <h1 class="slide-header">Välkommen till Quire</h1>
-                    <p class="slide-paragraphs">För att skapa ett nytt dokument, klicka på <img class="slide-img" src="Graphics/newnote.png"
+                    <p class="slide-paragraphs">För att skapa ett nytt dokument, klicka på <img class="slide-img" src="../Graphics/newnote.png"
                             alt="
                             quire"> ikonen.</p>
                 </div>
 
                 <div grid-item>
-                    <p class="slide-paragraphs"> För att spara dina anteckningar, klicka på <img class="slide-img" src="Graphics/savenote.png"
+                    <p class="slide-paragraphs"> För att spara dina anteckningar, klicka på <img class="slide-img" src="../Graphics/savenote.png"
                             alt="quire"> ikonen.</p>
                 </div>
 
                 <div grid-item>
-                    <p class="slide-paragraphs">För att skriva ut ditt dokument, klicka på <img class="slide-img" src="Graphics/print.png"
+                    <p class="slide-paragraphs">För att skriva ut ditt dokument, klicka på <img class="slide-img" src="../Graphics/print.png"
                             alt="quire"> ikonen.</p>
                 </div>
 
                 <p class="slide-paragraphs"> Dina sparade anteckningar ligger i menyn bredvid textredigeraren.</p>
                 <p class="slide-paragraphs">Klicka på den sparade anteckningen för att ta fram den igen.</p>
-                <button id="button" >Ok, ta mig till appen!</button>
+                <button id="button" onclick="window.location.href='/../app.html'">Ok, ta mig till appen!</button>
             </div>
             <div class="dotted">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -78,9 +78,7 @@
         </div>
     </div>
     </div>
-
-    <script  src="script/index.js"></script>
-
+    <script src="../script/index.js"></script>
 </body>
 
 </html>

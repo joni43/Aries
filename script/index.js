@@ -1,5 +1,26 @@
+
+siteVisited = document.cookie;
+// moves to app.html when cookie is true
+if (siteVisited === "true"){
+  window.location = "app.html";
+ } 
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
+btnButton = document.getElementById("button");
+
+
+window.onload = function(){
+
+  
+}
+
+btnButton.onclick = function(){
+  
+  document.cookie = true;
+  window.location.href = "app.html";
+}
 
 // Next/previous controls
 function plusSlides(n) {
