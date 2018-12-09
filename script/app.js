@@ -88,6 +88,37 @@ function cleanThemes(){
 }
   
 
+switch(document.getElementById("themeList").value){
+
+    case '1':
+    cleanThemes();
+    selectedTheme = 'defaultTheme';
+    quill.root.classList.add(selectedTheme);
+    console.log("1");
+    break;
+
+    case '2':
+    cleanThemes();
+    selectedTheme = 'halloweenTheme';
+    quill.root.classList.add(selectedTheme);
+    console.log("2");
+    break;
+
+    case '3':
+    cleanThemes();
+    selectedTheme = 'birthdayTheme';
+    quill.root.classList.add(selectedTheme);
+    console.log("3");
+    break;
+
+    case '4':
+    cleanThemes();
+    selectedTheme = 'birthdayTheme';
+    quill.root.classList.add(selectedTheme);
+    console.log("4");
+    break;
+     
+    }
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
  */
@@ -340,3 +371,10 @@ function toggleFavorite(objectID) {
 }
 
 
+
+
+
+
+
+
+  
