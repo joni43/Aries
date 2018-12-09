@@ -10,10 +10,10 @@
 
     <!-- Stylesheets -->
     <!-- Google Fonts API -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Bree+Serif|Courgette|Encode+Sans+Condensed|Kaushan+Script|Lora|Ropa+Sans|Shadows+Into+Light" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bevan%7CCharmonman%7CDancing+Script%7CDokdo%7CFredericka+the+Great"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bevan%7CCharmonman%7CDancing+Script%7CDokdo%7CFredericka+the+Great"rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
@@ -42,23 +42,21 @@
                 </div>
                 <!--here comes the logo-->
                 <div id="tool-menu-logo" class="tool-menu-item">Quire 1.0</div>
+
                 <!--here comes the editor buttons-->
                 <div class="tool-menu-item" id="new-document-btn"><i class="fas fa-plus-square"></i></div>
                 <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div>
                 <div class="tool-menu-item" id="btn-folder"><i class="fas fa-folder" onclick="openSlide()"></i></div>
                 <div class="tool-menu-item" id="btn-print"><i class="fas fa-print"></i></div>
 
-
-
-
-                <div id="revisitedThemes">
-                    <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
-                    <div class="tool-menu-item-themes" id="default-theme"><i class="default">D.F</i></div>
-                    <div class="tool-menu-item-themes" id="hallowen-theme"><i class="fas fa-ghost"></i></div>
-                    <div class="tool-menu-item-themes" id="birthday-theme"><i class="fas fa-birthday-cake"></i></div>
-                    <div class="tool-menu-item-themes" id="christmas-theme"><i class="fas fa-air-freshener"></i></div>
-                    <div class="tool-menu-item-themes" id="sport-theme"><i class="fas fa-futbol"></i></div>
-                </div>
+                    
+                <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
+                <div class="tool-menu-item-themes" id="default-theme-btn"><i class="fas fa-dot-circle"></i></div>
+                <div class="tool-menu-item-themes" id="hallowen-theme-btn"><i class="fas fa-ghost"></i></div>
+                <div class="tool-menu-item-themes" id="birthday-theme-btn"><i class="fas fa-birthday-cake"></i></div>
+                <div class="tool-menu-item-themes" id="christmas-theme-btn"><i class="fas fa-air-freshener"></i></div>
+                  
+                
 
                 <!-- <div>
                     <form>
@@ -74,7 +72,7 @@
         </nav>
 
         <section>
-            <h2>Editor</h2>
+            <h2 class="headerTitle">Editor</h2>
 
             <input class="form-control" type="text" id="input-Title" placeholder="Dokument namn...">
             <!-- An empty div that's "filled" with content from the Quill constructior -->
@@ -89,7 +87,7 @@
 
             <div id="closeButton"><i class="fas fa-window-close"></i></div>
             <section id="document-handler">
-                <h2>Saved Notes</h2>
+                <h2 class="headerTitle">Saved Notes</h2>
                 <div id="document-handler-container">
 
                 </div>
