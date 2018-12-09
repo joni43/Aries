@@ -36,8 +36,17 @@ main {
 nav {
     background: #435971;
     max-width: 250px;
+    
 }
 
+#themeList{
+
+    display: none;
+    border: none;
+    background-color: #D4D4D4;
+    appearance: none;
+ 
+}
 
 #tool-menu-logo {
     font-family: 'Pacifico', cursive;
@@ -126,20 +135,7 @@ nav {
     color: rgb(53, 53, 53);
     
 }
-.tool-menu-item-empty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    height: 70px;
-    background-color: rgba(212, 212, 212, 0);
-    border: 2px solid rgba(59, 59, 59, 0);
-    margin: 4px;
-    border-radius: 5px;
-    font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    color: rgba(53, 53, 53, 0);
-}
+
 
 .tool-menu-item:hover {
     cursor: pointer;
@@ -328,6 +324,11 @@ i {
         height: 70px;
         width: 100%;
     }
+    #themeList{
+
+        display: inline-block;
+        margin: 30px 0px 0px 20px; 
+    }
     #tool-menu-logo{
         font-size: 1.7em;
         position: relative;
@@ -370,6 +371,50 @@ i {
 
 
 @media screen and (max-width:750px){
+
+    main {
+       
+        flex-direction: column;
+       
+    }
+
+    nav {
+        background: #435971;
+        max-width: none;
+        width: 100%;
+        min-height: 100px;
+        
+       
+       
+    }
+
+    #tool-menu-container {
+        max-width: 500px;
+        display: flex;
+        height: 70px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-top: 5px;
+    }
+
+    .tool-menu-item-themes {
+
+        display: none;
+    }
+
+    #document-handler {
+
+    
+    display: none;
+    
+        background-color: rgb(170, 170, 170);
+        
+    }
+
+}
+
+@media screen and (max-width:450px){
 
     main {
        
