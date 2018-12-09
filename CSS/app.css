@@ -217,13 +217,13 @@ i {
 
 .img-document {
     width: 110px;
-    content: url(/components/document.png);
+    content: url(/Graphics/document.png);
 }
 
 .img-document:hover {
     width: 110px;
     cursor: pointer;
-    content: url(/components/documentHover.png);
+    content: url(/Graphics/documentHover.png);
 }
 
 
