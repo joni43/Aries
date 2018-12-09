@@ -23,7 +23,14 @@ main {
     height: 100%;
 }
 
+.headerTitle {
+    font-family: 'Roboto', sans-serif ;
+    font-size: 36px;
+    color:rgb(133, 133, 133) ;
+    margin: 30px 0px 0px 40px ;
+    text-shadow: none;
 
+}
 /*nav section*/
 
 nav {
@@ -55,7 +62,7 @@ nav {
     font-size: 30px;
     color: white;
     width: 150px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(49, 41, 41, 0.281);
     border: none;
 }
 
@@ -96,14 +103,20 @@ nav {
 }
 
 
-.tool-menu-item {
+.tool-menu-item{
+
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    color: #D4D4D4;
+    width: 70px;
+    height: 70px;
+    background-color:#D4D4D4;
+    border: 2px solid rgb(59, 59, 59);
     margin: 4px;
+    border-radius: 5px;
     font-size: 30px;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
+    color: rgb(53, 53, 53);
 }
 
 .tool-menu-item-themes {
@@ -113,9 +126,13 @@ nav {
     width: 70px;
     height: 70px;
     color: #D4D4D4;
+    background-color:#D4D4D4;
+    border: 2px solid rgb(59, 59, 59);
+    border-radius: 5px;
     margin: 4px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
+    color: rgb(53, 53, 53);
     
 }
 
@@ -146,9 +163,6 @@ i.fas.fa {
 }
 
 
-#btn-save {
-
-}
 
 #btn-save:hover {
     background-color: rgb(27, 214, 111);
@@ -170,7 +184,7 @@ i {
 
     border:none;
     border-color: white;
-    font-size: 25px;
+    font-size: 20px;
     margin: 30px 5px 10px 40px;
 }
 
@@ -178,7 +192,7 @@ i {
 
     height: 100%;
     max-height: 800px;
-    margin-left: 40px;
+    margin: 0% 4% 0% 4%;
 
 }
 #editor{
@@ -187,21 +201,21 @@ i {
 }
 
 /*doucument-handler section*/
-#document-handler {
-    background-color: rgb(170, 170, 170);
-
+#document-handler { 
+    background-color: rgb(0, 0, 0);
+   
 }
 
 #document-handler-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    
     margin: 10% 5% 0 5%;
 }
 
 .document-handler-item {
-
+    
     padding: 0;
     margin: 0px 5px 20px 5px;
     width: 115px;
@@ -285,7 +299,7 @@ i {
         margin: 4px;
         font-size: 30px;
         font-family: 'Roboto', sans-serif;
-
+        
     }
 
 }
@@ -293,7 +307,9 @@ i {
 
 
 
+@media screen and (max-width:1545px){
 
+}
 
 @media screen and (min-width: 100px) and (max-width:750px){
 
@@ -302,23 +318,6 @@ i {
         flex-direction: column;
        
     }
-    #new-document-btn{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-save{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-folder{
-        height: 45px;
-        width: 45px;
-    }
-    #btn-print{
-        height: 45px;
-        width: 45px;
-    }
-
     nav {
         background: #435971;
         max-width: none;
@@ -338,7 +337,6 @@ i {
         width: 115px;
     }
     .tool-menu-item-themes {
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -350,9 +348,7 @@ i {
         font-family: 'Roboto', sans-serif;
     }
 
-
     #tool-menu-container {
-
         max-width: 350px;
         display: flex;
         flex-direction: row;
@@ -363,17 +359,12 @@ i {
     }
 
     .tool-menu-item-themes {
-
         display: none;
     }
 
     #document-handler {
-
-
-
-    
+        display: none;
         background-color: rgb(170, 170, 170);
-
     }
 
 }
@@ -391,6 +382,7 @@ i {
         background: #435971;
         max-width: none;
         width: 100%;
+        min-height: 100px;
         
        
        
@@ -413,7 +405,9 @@ i {
 
     #document-handler {
 
-
+    
+    display: none;
+    
         background-color: rgb(170, 170, 170);
         
     }
@@ -423,7 +417,6 @@ i {
 @media screen and (max-width:450px){
 
     main {
-
        
         flex-direction: column;
        
@@ -435,8 +428,10 @@ i {
         width: 100%;
         min-height: 100px;
         
-
+       
+       
     }
+
     #tool-menu-container {
         max-width: 500px;
         display: flex;
@@ -447,22 +442,6 @@ i {
         margin-top: 5px;
     }
 
-    .folder-slide-open  {
-        height: 100%;
-        width: 300px !important;
-        position: fixed;
-        left: 0px;
-        z-index: 1;
-        color: white;
-        background: rgb(2, 0, 0) !important;
-        opacity: 0.95;
-        transition: all 500ms linear;
-       overflow: scroll;
-    }
-
-
-
-
     .tool-menu-item-themes {
 
         display: none;
@@ -470,11 +449,11 @@ i {
 
     #document-handler {
 
-
-
+    
+    display: none;
     
         background-color: rgb(170, 170, 170);
-
+        
     }
 
 }
@@ -509,7 +488,7 @@ i {
         display: none;
     }
      #document-handler{
-
+        display: none;
     }
   }
     

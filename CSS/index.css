@@ -4,10 +4,6 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
 }
-
-h1 {
-    font-size: 3rem;
-}
  img {
     max-width: 100%;
     width: auto;
@@ -68,6 +64,7 @@ h1 {
     font-family: 'Pacifico', cursive;
     font-size: 48px;
     font-weight: bold;
+    margin: auto;
     padding: 16px;
     color: #435971;
     transition: 0.5s ease;
@@ -82,61 +79,8 @@ h1 {
  .slide-paragraphs {
     font-family: 'Raleway', sans-serif;
 }
-#button {
-    cursor: pointer;
-    background: #435971;
-    display: inline-block;
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    width: 220px;
-    height: 30px;
-    border-radius: 15px;
-
-}
-
-#nextBtn {
-    display: none;
- }
-
-
 @media screen and (max-width: 922px) {
     .next {
         display: none;
-     }
-     
-     h1 {
-        font-size: 2rem;
-    }
-
-     #nextBtn {
-        cursor: pointer;
-        background: #435971;
-        display: inline-block;
-        color: white;
-        font-family: 'Raleway', sans-serif;
-        font-size: 16px;
-        width: 100px;
-        height: 20px;
-        border-radius: 15px;
-     }
-} 
-
-@media screen and (max-width: 470px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    #nextBtn {
-        cursor: pointer;
-        background: #435971;
-        display: inline-block;
-        color: white;
-        font-family: 'Raleway', sans-serif;
-        font-size: 16px;
-        width: 100px;
-        height: 20px;
-        border-radius: 15px;
-
      }
 } 

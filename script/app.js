@@ -5,9 +5,14 @@ const closeSlideBtn = document.getElementById("closeButton");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
-const themeSelection = document.querySelector('#revisitedThemes');
+
+const defaultThemebtn = document.getElementById("default-theme-btn");
+const hallowenThemebtn = document.getElementById("hallowen-theme-btn");
+const birthdayThemebtn = document.getElementById("birthday-theme-btn");
+const christmasThemebtn = document.getElementById("christmas-theme-btn");
+
 let selectedTheme;
-document.querySelector("#editor").className = selectedTheme;
+
 
 
 createNote(noteArray);
@@ -31,8 +36,11 @@ window.onclick = function (event) {
 
         //If documents are selected open in the editor and put title    
     } else if (event.target.parentElement.classList.contains('document-handler-item')) {
+
+        cleanThemes();
         noteToView = findObject(event.target.parentElement.id, noteArray);
-        document.querySelector("#editor").className = noteToView.classTheme;
+        selectedTheme = noteToView.classTheme;
+        quill.root.classList.add(selectedTheme);
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
@@ -154,7 +162,7 @@ function updateView() {
 /* Saves new document if noteToView is true it updates existing note
  */
 saveBtn.onclick = function () {
-    console.log(noteToView);
+    
     if (noteToView) {
         updateNote();
     } else {
@@ -187,6 +195,8 @@ New dokument clears the title and the text editor text
 */
 newdocumentBtn.addEventListener('click', function () {
     clearForm();
+    cleanThemes();
+    selectedTheme="defaultTheme";
 })
 
 /*
@@ -299,7 +309,7 @@ function createNote(array) {
         let starButton = document.createElement('a');
 
         divDocumentHandlerItem.id = id;
-        divDocumentHandlerItem.className = "document-handler-item " + theme;
+        divDocumentHandlerItem.className = "document-handler-item ";
         divDocumentTitle.className = "item-title";
         divDocumentTime.className = "item-time";
         divDocumentImage.className = "img-document";
@@ -335,9 +345,7 @@ function createNote(array) {
 function saveNote() {
     let newNote = {};
     let newNoteID = createID();
-    console.log(newNoteID + "saves");
     noteToView = newNoteID;
-    console.log(noteToView + "saves");
     newNote.id = newNoteID;
     newNote.title = inputTitle.value;
     newNote.textContent = quill.getContents(); //here we get the content from the editor!
