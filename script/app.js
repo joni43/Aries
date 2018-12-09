@@ -47,29 +47,29 @@ window.onclick = function (event) {
     }
 }
 //
-defaultThemebtn.onclick = function(){
-     cleanThemes();
-     selectedTheme = 'defaultTheme';
-     quill.root.classList.add(selectedTheme);
-}
-        
-hallowenThemebtn.onclick = function(){
-    cleanThemes();
-    selectedTheme = 'halloweenTheme';
-    quill.root.classList.add(selectedTheme);
-}
+// defaultThemebtn.onclick = function(){
+//      cleanThemes();
+//      selectedTheme = 'defaultTheme';
+//      quill.root.classList.add(selectedTheme);
+// }
 
-christmasThemebtn.onclick = function(){
-    cleanThemes();
-    selectedTheme = 'christmasTheme';
-    quill.root.classList.add(selectedTheme);
-}
+// hallowenThemebtn.onclick = function(){
+//     cleanThemes();
+//     selectedTheme = 'halloweenTheme';
+//     quill.root.classList.add(selectedTheme);
+// }
 
-birthdayThemebtn.onclick = function(){
-    cleanThemes();
-    selectedTheme = 'birthdayTheme';
-    quill.root.classList.add(selectedTheme);
-}
+// christmasThemebtn.onclick = function(){
+//     cleanThemes();
+//     selectedTheme = 'christmasTheme';
+//     quill.root.classList.add(selectedTheme);
+// }
+
+// birthdayThemebtn.onclick = function(){
+//     cleanThemes();
+//     selectedTheme = 'birthdayTheme';
+//     quill.root.classList.add(selectedTheme);
+// }
    
 /* removes all the themes from the quill*/
 function cleanThemes(){
