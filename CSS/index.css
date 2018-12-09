@@ -64,7 +64,6 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 48px;
     font-weight: bold;
-    margin: auto;
     padding: 16px;
     color: #435971;
     transition: 0.5s ease;
@@ -79,8 +78,24 @@ body {
  .slide-paragraphs {
     font-family: 'Raleway', sans-serif;
 }
+
+#nextBtn {
+    display: none;
+ }
+
+
 @media screen and (max-width: 922px) {
     .next {
         display: none;
+     }
+
+     #nextBtn {
+        display: inline-block;
+     }
+} 
+
+@media screen and (max-width: 470px) {
+    #nextBtn {
+        display: inline-block;
      }
 } 
