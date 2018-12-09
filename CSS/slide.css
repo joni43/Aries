@@ -23,7 +23,7 @@
    overflow: scroll;
 }
 
- .document-handler {
+.folder-slide-open .document-handler {
     color: gray;
     text-decoration: none;
    

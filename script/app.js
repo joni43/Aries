@@ -46,29 +46,76 @@ window.onclick = function (event) {
 
     }
 }
-themeSelection.addEventListener('click', function () {
-    if (event.target.className === 'fas fa-ghost') {
+//
+defaultThemebtn.onclick = function(){
+     cleanThemes();
+     selectedTheme = 'defaultTheme';
+     quill.root.classList.add(selectedTheme);
+}
+        
+hallowenThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'halloweenTheme';
+    quill.root.classList.add(selectedTheme);
+}
+
+christmasThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'christmasTheme';
+    quill.root.classList.add(selectedTheme);
+}
+
+birthdayThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'birthdayTheme';
+    quill.root.classList.add(selectedTheme);
+}
+   
+/* removes all the themes from the quill*/
+function cleanThemes(){
+    quill.root.classList.remove('christmasTheme')
+    quill.root.classList.remove('halloweenTheme')
+    quill.root.classList.remove('defaultTheme')
+    quill.root.classList.remove('birthdayTheme')
+}
+  
+document.getElementById("themeList").onchange = function() {
+    
+    switch(this.value){
+
+        case '1':
+        cleanThemes();
+        selectedTheme = 'defaultTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("1");
+        break;
+    
+        case '2':
+        cleanThemes();
         selectedTheme = 'halloweenTheme';
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-birthday-cake') {
+        quill.root.classList.add(selectedTheme);
+        console.log("2");
+        break;
+    
+        case '3':
+        cleanThemes();
+        selectedTheme = 'christmasTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("3");
+        break;
+    
+        case '4':
+        cleanThemes();
         selectedTheme = 'birthdayTheme';
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-air-freshener') {
-        selectedTheme = 'christmasTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-futbol') {
-        selectedTheme = 'sportTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'default') {
-        selectedTheme = 'defaultTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    }
-})
+        quill.root.classList.add(selectedTheme);
+        console.log("4");
+        break;
+         
+        }
+    
+ };
+
+//function quillFunction(quillSwitchSelect = '1') {
 
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
@@ -322,49 +369,10 @@ function toggleFavorite(objectID) {
 }
 
 
-// under construction
-/* document.getElementById("themeList").onchange = function () {
-    quillFunction(this.value);
-};
-
-function quillFunction(quillSwitchSelect = '1') {
-    var quillTemplate;
-    switch (quillSwitchSelect) {
-
-        case '1':
-
-            quillTemplate = document.createElement('div');
-            quillTemplate.innerHTML = "<p><br></p>";
-
-            break;
-
-        case '2':
-
-            quill.root.classList.remove('halloweenTheme')
-            quill.root.classList.add('christmasTheme');
 
 
 
-            break;
-
-        case '3':
-            quill.root.classList.remove('christmasTheme')
-            quill.root.classList.add('halloweenTheme');
 
 
 
-            break;
-
-        case '4':
-
-            break;
-
-        default:
-            console.log('Something went wrong!');
-
-            break;
-
-    }
-    console.log(quillTemplate.innerHTML);
-    quill.root.innerHTML = quillTemplate.innerHTML;
-}; */
+  
