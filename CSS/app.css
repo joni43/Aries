@@ -54,6 +54,7 @@ nav {
     border: none;
     background-color: #D4D4D4;
     appearance: none;
+    border-radius: 5px;
  
 }
 
@@ -228,7 +229,7 @@ i {
     flex-direction: row;
     flex-wrap: wrap;
     
-    margin: 10% 5% 0 5%;
+    margin: 0 5% 0 5%;
 }
 
 .document-handler-item {
@@ -345,6 +346,7 @@ i {
 
         display: inline-block;
         margin: 30px 0px 0px 20px; 
+        
     }
     #tool-menu-logo{
         font-size: 1.7em;
@@ -411,10 +413,12 @@ i {
     select{
         height: 44px;
         width: 44px;
+       
     }
     #themeList{
         border: 2px solid rgb(59, 59, 59);
         margin-top: 4px;
+        margin-bottom: 4px;
         margin-left: 3px;
     }
 
@@ -425,6 +429,7 @@ i {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
+        margin-top:4%;
 
     }
 
@@ -471,6 +476,7 @@ i {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
+        
     }
     .tool-menu-item{
 
@@ -506,6 +512,38 @@ i {
     }
 
 }
+
+@media screen and (max-width:380px){
+
+    .tool-menu-item {
+
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        
+        
+    }
+
+    #themeList{
+     
+        margin:1px;
+        
+        
+    }
+
+    
+#tool-menu-logo {
+ 
+    font-size: 20px;
+    width: 85px;
+  
+}
+
+   
+   
+
+}
+
 
 
 @media print {
