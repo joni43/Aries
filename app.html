@@ -45,27 +45,27 @@
                         <!--here comes the logo-->
                         <div id="tool-menu-logo" class="tool-menu-item" alt="Quire-logo">Quire 1.0</div>
                         <!--here comes the editor buttons-->
-                        <div class="tool-menu-item" id="new-document-btn" alt="documentButton"><i class="far fa-file-alt"></i></div>
-                        <div class="tool-menu-item" id="btn-save" alt="saveButton"><i class="fas fa-save"></i></div>
-                        <div class="tool-menu-item" id="btn-folder" alt="savedNotes"><i class="fas fa-folder" onclick="openSlide()"></i></div>
-                        <div class="tool-menu-item" id="btn-print" alt="printButton"><i class="fas fa-print"></i></div>
+                        <div class="tool-menu-item" title="New" id="new-document-btn" alt="documentButton"><i class="far fa-file-alt"></i></div>
+                        <div class="tool-menu-item" title="Save document" id="btn-save" alt="saveButton"><i class="fas fa-save"></i></div>
+                        <div class="tool-menu-item" title="Saved documents" id="btn-folder" alt="savedNotes"><i class="fas fa-folder" onclick="openSlide()"></i></div>
+                        <div class="tool-menu-item" title="Print document" id="btn-print" alt="printButton"><i class="fas fa-print"></i></div>
         
         
         
         
                         <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
-                        <div class="tool-menu-item-themes" id="default-theme-btn" alt="defaultTheme"><i class="fas fa-dot-circle"></i></div>
-                        <div class="tool-menu-item-themes" id="hallowen-theme-btn" alt="halloweenTheme"><i class="fas fa-ghost"></i></div>
-                        <div class="tool-menu-item-themes" id="birthday-theme-btn" alt="bdayTheme"><i class="fas fa-birthday-cake"></i></div>
-                        <div class="tool-menu-item-themes" id="christmas-theme-btn" alt="xmasTheme"><i class="fas fa-air-freshener"></i></div>
+                        <div class="tool-menu-item-themes" id="default-theme-btn" title="Default theme" alt="defaultTheme"><i class="fas fa-dot-circle"></i></div>
+                        <div class="tool-menu-item-themes" id="hallowen-theme-btn" title="Halloween theme" alt="halloweenTheme"><i class="fas fa-ghost"></i></div>
+                        <div class="tool-menu-item-themes" id="birthday-theme-btn" title="Birthday theme" alt="bdayTheme"><i class="fas fa-birthday-cake"></i></div>
+                        <div class="tool-menu-item-themes" id="christmas-theme-btn" title="Christmas theme" alt="xmasTheme"><i class="fas fa-air-freshener"></i></div>
         
                     
                             <form>
-                                <select id="themeList" >
-                                    <option value='1' alt="scripticon"> 📜 </option>
-                                    <option class="emoji" value="2" alt="pumpkin"> 🎃 </option>
-                                    <option value='3' alt="xmastree"> 🎄 </option>
-                                    <option value='4' alt="bdaycake"> 🎂 </option>
+                                <select id="themeList" title="Themes">
+                                    <option value='1' alt="scripticon" title="Default theme"> 📜 </option>
+                                    <option class="emoji" value="2" alt="pumpkin" title="Halloween theme"> 🎃 </option>
+                                    <option value='3' alt="xmastree" title="Christmas theme"> 🎄 </option>
+                                    <option value='4' alt="bdaycake" title="Birthday theme"> 🎂 </option>
                                 </select>
                             </form>
 
@@ -75,7 +75,7 @@
                 <div id="textEditorSection">
                         <h2 class="headerTitle">Editor</h2>
             
-                        <input class="form-control" type="text" id="input-Title" placeholder="Dokument namn...">
+                        <input class="form-control" type="text" title="Document name" id="input-Title" placeholder="Dokument namn...">
                         <!-- An empty div that's "filled" with content from the Quill constructior -->
                         <div id="textarea-container">
                             <div id="editor"></div>
