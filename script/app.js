@@ -54,31 +54,6 @@ window.onclick = function (event) {
 
     }
 }
-<<<<<<< HEAD
-themeSelection.addEventListener('click', function () {
-    if (event.target.className === 'fas fa-ghost') {
-        selectedTheme = 'halloweenTheme';
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-birthday-cake') {
-        selectedTheme = 'birthdayTheme';
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-air-freshener') {
-        selectedTheme = 'christmasTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'fas fa-futbol') {
-        selectedTheme = 'sportTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    } else if (event.target.className === 'default') {
-        selectedTheme = 'defaultTheme'
-        document.querySelector("#editor").className = selectedTheme;
-        return selectedTheme;
-    }
-})
-=======
 //
 defaultThemebtn.onclick = function(){
      cleanThemes();
@@ -149,7 +124,6 @@ document.getElementById("themeList").onchange = function() {
  };
 
 //function quillFunction(quillSwitchSelect = '1') {
->>>>>>> fc89feddfaf6f9642e9158b2c3b8b9209997abb9
 
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
@@ -409,4 +383,3 @@ function toggleFavorite(objectID) {
 
 
 
-  
