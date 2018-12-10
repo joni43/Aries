@@ -416,6 +416,8 @@ i {
         margin-top: 5px;
     }
 
+    
+
     .tool-menu-item-themes {
 
         display: none;
@@ -432,7 +434,7 @@ i {
 
 }
 
-@media screen and (max-width:450px){
+@media screen and (max-width:500px){
 
     main {
        
@@ -458,6 +460,25 @@ i {
         flex-wrap: wrap;
         justify-content: start;
         margin-top: 5px;
+    }
+    .tool-menu-item{
+
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        background-color:#D4D4D4;
+        border: 2px solid rgb(59, 59, 59);
+        margin: 2px;
+        border-radius: 5px;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(53, 53, 53);
+    }
+
+    i {
+        font-size: 20px;
     }
 
     .tool-menu-item-themes {
