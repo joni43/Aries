@@ -400,7 +400,7 @@ i {
         height: 45px;
     }
 
-    .fa-plus-square, .fa-save, .fa-folder, .fa-print{
+    .fa-file-alt, .fa-save, .fa-folder, .fa-print{
         font-size: 30px;
     }
     nav {
