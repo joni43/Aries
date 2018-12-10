@@ -35,7 +35,8 @@ main {
     font-family: 'Roboto', sans-serif ;
     font-size: 36px;
     color:rgb(255, 255, 255) ;
-    margin: 4.5%;
+    margin: 3% 0% 1% 3%;
+    
     text-shadow: none;
 
 }
@@ -110,7 +111,7 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* margin: 3% 1% 0 3%; */
+    background: #435971;
 }
 
 
@@ -214,7 +215,7 @@ i {
 }
 #editor{
     width: 100%;
-    height: 90%;
+    height: 80%;
     
 }
 
@@ -310,22 +311,6 @@ i {
 
 
 /*Big screen*/
-@media screen and (max-width:1545px){
-
-    .tool-menu-item {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-        margin: 4px;
-        font-size: 30px;
-        font-family: 'Roboto', sans-serif;
-        
-    }
-
-}
 
 
 
@@ -381,11 +366,7 @@ i {
         display: none;
     }
 
-    #document-handler {
-        /* display: none; */
-        background-color: rgb(170, 170, 170);
-    }
-
+   
 }
 
 
@@ -440,14 +421,7 @@ i {
         display: none;
     }
 
-    #document-handler {
-
-    
-    /* display: none; */
-    
-        background-color: rgb(170, 170, 170);
-        
-    }
+   
 
 }
 
@@ -502,14 +476,7 @@ i {
         display: none;
     }
 
-    #document-handler {
 
-    
-    display: none;
-    
-        background-color: rgb(170, 170, 170);
-        
-    }
 
 }
 
