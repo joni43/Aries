@@ -45,7 +45,7 @@
                 <!--here comes the logo-->
                 <div id="tool-menu-logo" class="tool-menu-item">Quire 1.0</div>
                 <!--here comes the editor buttons-->
-                <div class="tool-menu-item" id="new-document-btn"><i class="far fa-plus-square"></i></div>
+                <div class="tool-menu-item" id="new-document-btn"><i class="far fa-file-alt"></i></div>
                 <div class="tool-menu-item" id="btn-save"><i class="fas fa-save"></i></div>
                 <div class="tool-menu-item" id="btn-folder"><i class="fas fa-folder" onclick="openSlide()"></i></div>
                 <div class="tool-menu-item" id="btn-print"><i class="fas fa-print"></i></div>
@@ -62,6 +62,7 @@
               
                     <form>
                         <select id="themeList" >
+                            <option></option>
                             <option value='1'>Default</option>
                             <option value='2'>Hallowen</option>
                             <option value='3'>Cristmas</option>  
@@ -73,7 +74,7 @@
             </div>
         </nav>
 
-        <section>
+        <section id="textEditorSection">
             <h2 class="headerTitle">Editor</h2>
 
             <input class="form-control" type="text" id="input-Title" placeholder="Dokument namn...">
@@ -81,7 +82,7 @@
             <div id="textarea-container">
                 <div id="editor"></div>
             </div>
-            <div class="container saved-notes"></div>
+            
 
         </section>
         <!--Section for document handler-->
@@ -89,7 +90,7 @@
 
             <div id="closeButton"><i class="fas fa-window-close"></i></div>
             <section id="document-handler">
-                <h2 class="headerTitle">Saved Notes</h2>
+                <h2 class="SavedNoteTitle">Saved Notes</h2>
                 <div id="document-handler-container">
 
                 </div>
