@@ -61,6 +61,10 @@ h1 {
     padding: 20px;
     margin: 20px;
 }
+
+#p-style {
+    font-weight: bold;
+}
  .prev,
 .next {
     cursor: pointer;
