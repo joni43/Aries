@@ -408,9 +408,15 @@ i {
         max-width: none;
         width: 100%;
         height: 100px;
-        
-       
-       
+    }
+    select{
+        height: 49px;
+        width: 49px;
+    }
+    #themeList{
+        border: 2px solid rgb(59, 59, 59);
+        margin-top: 2px;
+        margin-left: 3px;
     }
 
     #tool-menu-container {
@@ -453,7 +459,7 @@ i {
         background: #435971;
         max-width: none;
         width: 100%;
-        min-height: 100px;
+        height: 100px;
         
        
        
