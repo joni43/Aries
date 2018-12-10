@@ -95,9 +95,8 @@ img {
 
 .editor-mode {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     align-items: baseline;
+    justify-content: space-evenly
 }
 
 .editor-mode-paragraph {
