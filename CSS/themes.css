@@ -1,0 +1,63 @@
+.christmasTheme {
+    font-family: 'Charmonman', cursive;
+    color: rgb(107, 107, 107);
+   
+    font-size: 14px;
+
+}
+
+.christmasTheme h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    color: rgb(172, 5, 5);
+    text-shadow: 2px 1px rgba(17, 17, 17, 0.678); 
+    margin-bottom:10px;
+}
+
+
+.halloweenTheme {
+    font-family: 'Bree Serif', serif;
+    color: rgb(211, 144, 0);
+    font-size: 16px;
+}
+
+.halloweenTheme h1,
+h2,
+h3 {
+    font-family: 'Shadows Into Light', cursive;
+    text-shadow: 1px 1px rgba(145, 145, 145, 0.678);
+    color: rgb(5, 77, 11);
+    margin-bottom:10px;
+
+}
+
+.birthdayTheme {
+    font-family: 'Ropa Sans', sans-serif;
+    color: rgb(252, 150, 252);
+    font-size: 16px;
+}
+
+.birthdayTheme h1,
+h2,
+h3 {
+    font-family: 'Courgette', cursive;
+    text-shadow: 1px 1px rgba(145, 145, 145, 0.678);
+    color: rgb(48, 177, 236);
+    margin-bottom:10px;
+
+}
+
+
+.defaultTheme {
+    font-family: 'arial';
+    color: rgb(0, 0, 0);
+}
+
+.defaultTheme h1,
+h2,
+h3 {
+    font-family: 'Archivo Black', sans-serif;
+    color: rgb(0, 0, 0);
+
+}
