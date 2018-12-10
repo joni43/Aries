@@ -60,7 +60,7 @@ defaultThemebtn.onclick = function(){
      selectedTheme = 'defaultTheme';
      quill.root.classList.add(selectedTheme);
 }
-        
+
 hallowenThemebtn.onclick = function(){
     cleanThemes();
     selectedTheme = 'halloweenTheme';
@@ -78,7 +78,7 @@ birthdayThemebtn.onclick = function(){
     selectedTheme = 'birthdayTheme';
     quill.root.classList.add(selectedTheme);
 }
-   
+
 /* removes all the themes from the quill*/
 function cleanThemes(){
     quill.root.classList.remove('christmasTheme')
@@ -86,9 +86,9 @@ function cleanThemes(){
     quill.root.classList.remove('defaultTheme')
     quill.root.classList.remove('birthdayTheme')
 }
-  
+
 document.getElementById("themeList").onchange = function() {
-    
+
     switch(this.value){
 
         case '1':
@@ -97,7 +97,7 @@ document.getElementById("themeList").onchange = function() {
         quill.root.classList.add(selectedTheme);
         console.log("1");
         break;
-    
+
         case '2':
         cleanThemes();
         selectedTheme = 'halloweenTheme';
