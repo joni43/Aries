@@ -386,12 +386,19 @@ i {
         flex-direction: column;
        
     }
+    #new-document-btn, #btn-save, #btn-folder, #btn-print{
+        width: 45px;
+        height: 45px;
+    }
 
+    .fa-plus-square, .fa-save, .fa-folder, .fa-print{
+        font-size: 30px;
+    }
     nav {
         background: #435971;
         max-width: none;
         width: 100%;
-        min-height: 100px;
+        height: 100px;
         
        
        
@@ -404,7 +411,7 @@ i {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
     .tool-menu-item-themes {
