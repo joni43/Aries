@@ -6,6 +6,14 @@ let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
 
+const defaultThemebtn = document.getElementById("default-theme-btn");
+const hallowenThemebtn = document.getElementById("hallowen-theme-btn");
+const birthdayThemebtn = document.getElementById("birthday-theme-btn");
+const christmasThemebtn = document.getElementById("christmas-theme-btn");
+
+let selectedTheme;
+
+
 
 createNote(noteArray);
 
@@ -27,21 +35,95 @@ window.onclick = function (event) {
 
 
         //If documents are selected open in the editor and put title    
-    } else if (event.target.parentElement.className === 'document-handler-item') {
-        noteToView = findObject(event.target.parentElement.id, noteArray);
+    } else if (event.target.parentElement.classList.contains('document-handler-item')) {
 
+        cleanThemes();
+        noteToView = findObject(event.target.parentElement.id, noteArray);
+        selectedTheme = noteToView.classTheme;
+        quill.root.classList.add(selectedTheme);
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
+
         closeSlide();
         //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt') {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
         removeNote(noteToView, noteArray);
         noteToView = "";
+
     }
- 
 }
+//
+defaultThemebtn.onclick = function(){
+     cleanThemes();
+     selectedTheme = 'defaultTheme';
+     quill.root.classList.add(selectedTheme);
+}
+
+hallowenThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'halloweenTheme';
+    quill.root.classList.add(selectedTheme);
+}
+
+christmasThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'christmasTheme';
+    quill.root.classList.add(selectedTheme);
+}
+
+birthdayThemebtn.onclick = function(){
+    cleanThemes();
+    selectedTheme = 'birthdayTheme';
+    quill.root.classList.add(selectedTheme);
+}
+
+/* removes all the themes from the quill*/
+function cleanThemes(){
+    quill.root.classList.remove('christmasTheme')
+    quill.root.classList.remove('halloweenTheme')
+    quill.root.classList.remove('defaultTheme')
+    quill.root.classList.remove('birthdayTheme')
+}
+
+document.getElementById("themeList").onchange = function() {
+
+    switch(this.value){
+
+        case '1':
+        cleanThemes();
+        selectedTheme = 'defaultTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("1");
+        break;
+
+        case '2':
+        cleanThemes();
+        selectedTheme = 'halloweenTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("2");
+        break;
+    
+        case '3':
+        cleanThemes();
+        selectedTheme = 'christmasTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("3");
+        break;
+    
+        case '4':
+        cleanThemes();
+        selectedTheme = 'birthdayTheme';
+        quill.root.classList.add(selectedTheme);
+        console.log("4");
+        break;
+         
+        }
+    
+ };
+
+//function quillFunction(quillSwitchSelect = '1') {
 
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again
@@ -52,9 +134,9 @@ function updateView() {
 }
 
 /* Saves new document if noteToView is true it updates existing note
-*/
+ */
 saveBtn.onclick = function () {
-    console.log(noteToView);
+    
     if (noteToView) {
         updateNote();
     } else {
@@ -64,23 +146,22 @@ saveBtn.onclick = function () {
     }
 }
 
-closeSlideBtn.onclick = function(){
-closeSlide();
+closeSlideBtn.onclick = function () {
+    closeSlide();
 }
 
 /*
 Opens the slide bar
 */
 function openSlide() {
-    document.querySelector('#folderSlide').className = 'folder-slide-open';  
-  
+    document.querySelector('#folderSlide').className = 'folder-slide-open';
 }
 /*
 Closes the slide bar
 */
 function closeSlide() {
     document.querySelector('#folderSlide').className = 'folder-slide-close';
-   
+
 }
 
 /*
@@ -88,12 +169,14 @@ New dokument clears the title and the text editor text
 */
 newdocumentBtn.addEventListener('click', function () {
     clearForm();
+    cleanThemes();
+    selectedTheme="defaultTheme";
 })
 
 /*
 Print out the note
 */
-printbtn.addEventListener('click', function() {
+printbtn.addEventListener('click', function () {
     print()
 })
 
@@ -187,7 +270,7 @@ function createNote(array) {
         textContent = array[i].textContent;
         favorite = array[i].favorite;
         date = array[i].date;
-
+        theme = array[i].classTheme;
         let divDocumentHandlerItem = document.createElement('div');
         let divDocumentImage = document.createElement('div');
         let divDocumentTitle = document.createElement('div');
@@ -200,7 +283,7 @@ function createNote(array) {
         let starButton = document.createElement('a');
 
         divDocumentHandlerItem.id = id;
-        divDocumentHandlerItem.className = "document-handler-item";
+        divDocumentHandlerItem.className = "document-handler-item ";
         divDocumentTitle.className = "item-title";
         divDocumentTime.className = "item-time";
         divDocumentImage.className = "img-document";
@@ -214,7 +297,6 @@ function createNote(array) {
         }
 
         trashcanIcon.className = "fas fa-trash-alt";
-
         starButton.appendChild(starIcon);
         divDocumentHandlerItem.appendChild(starButton);
         divDocumentTitle.appendChild(documentTitle);
@@ -222,7 +304,7 @@ function createNote(array) {
 
         divDocumentHandlerItem.appendChild(divDocumentTitle);
 
-        
+
 
         divDocumentHandlerItem.appendChild(divDocumentImage);
 
@@ -230,25 +312,20 @@ function createNote(array) {
         trashcanButton.appendChild(trashcanIcon);
         divDocumentHandlerItem.appendChild(trashcanButton);
 
-        document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);
-
-
-    }
+        document.getElementById("document-handler-container").appendChild(divDocumentHandlerItem);}
 }
 
-//Saves the note 
+//Saves the note
 function saveNote() {
     let newNote = {};
     let newNoteID = createID();
-    console.log(newNoteID + "saves");
     noteToView = newNoteID;
-    console.log(noteToView + "saves");
     newNote.id = newNoteID;
     newNote.title = inputTitle.value;
     newNote.textContent = quill.getContents(); //here we get the content from the editor!
     newNote.date = today(new Date);
     newNote.favorite = false;
-
+    newNote.classTheme = selectedTheme;
     noteArray.push(newNote);
     setLocalStorage(noteArray);
 }
@@ -258,6 +335,7 @@ function updateNote() {
     objectID = findObject(noteToView, noteArray);
     objectID.title = inputTitle.value;
     objectID.textContent = quill.getContents(); //here we get the content from the editor!
+    objectID.classTheme = selectedTheme;
     setLocalStorage(noteArray);
     updateView();
 }
@@ -299,49 +377,9 @@ function toggleFavorite(objectID) {
 }
 
 
-// under construction
-document.getElementById("themeList").onchange = function() {
-    quillFunction(this.value);
- };
-
-function quillFunction(quillSwitchSelect = '1') {
-    var quillTemplate;
-  switch(quillSwitchSelect){
-
-    case '1':
-    
-    quillTemplate = document.createElement('div');
-    quillTemplate.innerHTML = "<p><br></p>";
-     
-    break;
-     
-    case '2':
-    
-    quill.root.classList.remove('halloweenTheme')
-    quill.root.classList.add('christmasTheme');
-    
- 
-     
-    break;
-
-    case '3':
-    quill.root.classList.remove('christmasTheme')
-    quill.root.classList.add('halloweenTheme');
-    
 
 
-    break;
 
-    case '4':
 
-    break;
-     
-    default:
-    console.log('Something went wrong!');
-     
-    break;
-     
-    }
-    console.log(quillTemplate.innerHTML);
-    quill.root.innerHTML = quillTemplate.innerHTML;
-};
+
+
