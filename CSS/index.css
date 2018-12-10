@@ -99,6 +99,22 @@ h1 {
     display: none;
  }
 
+ .editor-mode2 {
+    display: none;
+}
+
+.next2 {
+    display: none;
+}
+
+.fas fa-arrow-right {
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 16px;
+    color: #435971;
+}
 
 @media screen and (max-width: 922px) {
     .next {
@@ -120,6 +136,19 @@ h1 {
         height: 20px;
         border-radius: 15px;
      }
+
+     
+
+
+    .editor-mode {
+        display: none;
+        }
+        .editor-mode2 {
+        display: inline-block;
+        }
+        .next2 {
+            display: none;
+        }
 } 
 
 @media screen and (max-width: 470px) {
@@ -139,4 +168,15 @@ h1 {
         border-radius: 15px;
 
      }
+
+     .editor-mode {
+         display: none;
+     }
+
+     .editor-mode2 {
+         display: inline-block;
+     }
+     .next2 {
+        display: none;
+    }
 } 
