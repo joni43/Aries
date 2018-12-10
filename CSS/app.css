@@ -394,7 +394,9 @@ i {
     select{
         height: 44px;
         width: 44px;
-       
+    }
+    select:hover{
+        cursor: pointer;
     }
     #themeList{
         border: 2px solid rgb(59, 59, 59);
