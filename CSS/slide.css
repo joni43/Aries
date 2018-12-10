@@ -20,7 +20,7 @@
     background-color: rgb(0, 0, 0);
     opacity: 0.95;
     transition: all 500ms linear;
-   overflow: scroll;
+    overflow: scroll;
 }
 
 .folder-slide-open .document-handler {
