@@ -1,352 +1,142 @@
-
-body,html {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100%;;
-  background-color: white;
-}
-
-#q-logo {
-  position: absolute; 
-  z-index: 1;
-  float: left;
-  top: -5%;
-  margin-right: auto;
-  margin-left: 50px;
-  font-size: 3em;
-  font-family: 'Pacifico', cursive;
-  color:lightGrey;
-}
-
-.slideshow-container {
-  box-sizing: border-box;
-  position: inherit;
-  float: left;
-  width: 100%;
-  margin: 0 auto;
-}
-
-#button {
-  display: flex;
-  text-align: center;
-  margin: 0 auto;
-  height: 50px;
-  width: 150px;
-  margin-top: -100px;
-  border: none;
-  border-radius: 10px;
-  background-color: #435971;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-}
-
-.mySlides  {
+html,
+body {
+    background: #435971;
     box-sizing: border-box;
-    position: inherit;
-    z-index: 2;
-    background-color: white;
-    font-family: 'Raleway', sans-serif;
-    width: 80%;
     margin: 0 auto;
-    height: 600px;
-    border-radius: 10px;
-    bottom: -150px;
 }
 
-.col-8 {
-  box-sizing: border-box;
-  display: grid;
-  background-color: #435971;
-  width: 100%;
-  height: 710px;
-  float: left;
-  margin: 0 auto;
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0px 9px 24px 1px rgba(0,0,0,0.75);
+h1 {
+    font-size: 3rem;
 }
-
-#slide-header {
-  color: black;
-  text-align: center;
-  position: relative;
-  font-family: 'Pacifico', cursive;
-  letter-spacing: 2px;
-  font-size: 48px;
-  top: 5%;
+ img {
+    max-width: 100%;
+    width: auto;
 }
- 
-#editormodeimg {
-  display: block;
-  float: left;
-  max-width: 100%;
-  margin-left: 200px;
-  margin-top: 20px;
+ .grid-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
 }
-
-#editorimg {
-  display: block;
-  float: left;
-  max-width: 100%;
-  margin-left: 200px;
-  margin-top: 20px;
-  margin-bottom: 35px;
+ .grid-item {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+    grid-row: 3;
 }
-
-p {
-  display: block;
-  float: left;
-  font-size: 18px;
-  margin: 10px;
-  margin-top: 100px;
+ .index-page {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    margin: auto 1rem;
 }
-
-.paragraphs {
-  display: flex;
-  position: inherit;
-  align-content: center;
-  flex-direction: column;
+ .info-container {
+    box-sizing: border-box;
+    margin: 0 auto;
 }
-
-.infoimg {
-  display: flex;
-  flex-direction: column;
-  flex-flow: wrap;
-  align-content: center;
-  width: 25%;
+ .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
-
-p#page4 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-
+ .active,
+.dot:hover {
+    cursor: pointer;
+    background-color: #717171;
 }
-
-p#p1 {
-  display: block;
-  text-align: center; 
-  float: left;
-  font-size: 18px;
-  margin: 10px;
-  margin-top: -30;
-  
+ .dotted {
+    text-align: center;
 }
-
-p#p2 {
-  display: block;
-  text-align: center; 
-  float: left;
-  font-size: 18px;
-  margin: 10px;
-  
+ .slide-img {
+    margin: 0px 5px;
+    padding: 0px 5px;
 }
-
-p#p3 {
-  display: block;
-  text-align: center; 
-  font-size: 18px;
-  margin: 10px;
-  margin-top: -70px;
+ .slides,
+.fade {
+    padding: 20px;
+    margin: 20px;
 }
-p#p4 {
-  display: block;
-  text-align: center; 
-  font-size: 18px;
-  margin: 10px;
+ .prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 16px;
+    color: #435971;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
 }
-
-p#p5 {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  margin: 10px;
+ .slide-header {
+    font-family: 'Pacifico', cursive;
+}
+ .editor-mode-paragraph {
+    font-family: 'Raleway', sans-serif;
+}
+ .slide-paragraphs {
+    font-family: 'Raleway', sans-serif;
+}
+#button {
+    cursor: pointer;
+    background: #435971;
+    display: inline-block;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    width: 220px;
+    height: 30px;
+    border-radius: 15px;
 
 }
 
-
-#newnoteimg {
-  max-width: 50%;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-#savenoteimg {
-  max-width: 50%;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-#dotted {
-  margin-bottom: 100px;
-  margin: 0 auto;
-}
-
-.mySlides.fade section {
-  box-sizing: border-box;
-  background-color: rgba(250, 250, 250, 0.2);
-  text-align: left;
-  padding: 20px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  top: 35%;
-  text-align: center;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  font-family: 'Pacifico', cursive;
-  font-size: 48px;
-  top: 45%;
-  margin-right: 50px;
-  padding: 16px;
-  color:white;
-  transition: 0.5s ease;
-  border-radius: 0 3px 3px 0;
-}
+#nextBtn {
+    display: none;
+ }
 
 
-a.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-
-
-@media only screen and (max-width: 1200px) { /*mobile-phones */
-
-    * {
-      box-sizing: border-box;
+@media screen and (max-width: 922px) {
+    .next {
+        display: none;
+     }
+     
+     h1 {
+        font-size: 2rem;
     }
 
-    .col-8 {
-      width: 100%;
-    }
-  
-    .slideshow-container {
-      max-width: 90%;
-      margin: 0 auto;
+     #nextBtn {
+        cursor: pointer;
+        background: #435971;
+        display: inline-block;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        width: 100px;
+        height: 20px;
+        border-radius: 15px;
+     }
+} 
+
+@media screen and (max-width: 470px) {
+    h1 {
+        font-size: 2rem;
     }
 
+    #nextBtn {
+        cursor: pointer;
+        background: #435971;
+        display: inline-block;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        width: 100px;
+        height: 20px;
+        border-radius: 15px;
 
-    .mySlides  {
-      max-width: 100%;
-      display: none;
-      margin: 0 auto;
-      top: 200px;
-    }
-
-    .mySlides.fade p {
-      max-width: 100%;
-      margin: 0 auto;
-      top: 200px;
-
-    }
-
-    .mySlides.fade section {
-      width: 100%;
-      margin: 0;
-    }
-
-    #q-logo {
-      font-size: 2rem;
-      margin: 0 auto;
-      margin-left: 10px;
-      margin-top: 20px;
-    }
-
-    #slide-header {
-      font-size: 2rem;
-      top: 5rem;
-    }
-    #editormodeimg {
-      display: block;
-      float: left;
-      width: 100%;
-      margin: 0 auto;
-      padding-top: 80px;
-    }
-
-    #editorimg {
-      display: block;
-      float: left;
-      width: 100%;
-      margin: 0 auto;
-      padding-top: 80px;
-    }
-    .paragraphs p #p{
-      display: block;
-      float: left;
-      width: 50%;
-      margin: 0 auto;
-      padding-top: 80px;
-    }
-
-    p#p1.infoimg {
-      width: 50%;
-    }
-
-    p#p2.infoimg {
-      width: 50%;
-    }
-
-    p#p3.infoimg {
-      width: 50%;
-    }
-
-    p#p4.infoimg {
-      width: 50%;
-    }
-
-    
-    .infoimg p {
-      flex-flow: wrap;
-      flex-direction: row
-      font-size: 0.5rem;
-      display: flex;
-    }
-    
-    p {
-      width: 100%;
-      font-size: 1rem;
-      text-align: center;
-      padding: 20px;
-      margin-top: 70px;
-    }
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      font-family: 'Pacifico', cursive;
-      font-size: 48px;
-      top: 45%;
-      margin-right: 50px;
-      padding: 16px;
-      color:white;
-      transition: 0.5s ease;
-      border-radius: 0 3px 3px 0;
-    }
-    .dot {
-      display: block;
-      display: none;
-      flex-flow: row;
-    }
-}
+     }
+} 
