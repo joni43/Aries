@@ -122,7 +122,7 @@ img {
     padding: 20px;
 }
 
-#slide1btn {
+.slide1btn {
     cursor: pointer;
     background: #435971;
     display: inline-block;

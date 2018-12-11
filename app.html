@@ -10,8 +10,14 @@
 
     <!-- Stylesheets -->
     <!-- Google Fonts API -->
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Bree+Serif|Courgette|Encode+Sans+Condensed|Kaushan+Script|Lora|Ropa+Sans|Shadows+Into+Light"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bevan%7CCharmonman%7CDancing+Script%7CDokdo%7CFredericka+the+Great"
@@ -43,41 +49,36 @@
                     </div>
                 </div>
                 <!--here comes the logo-->
-                <div id="tool-menu-logo" class="tool-menu-item" alt="Quire-logo">Quire</div>
+                <div id="tool-menu-logo" class="tool-menu-item">Quire</div>
                 <!--here comes the editor buttons-->
-                <div class="tool-menu-item" title="New" id="new-document-btn" alt="documentButton"><i class="far fa-file-alt"></i></div>
-                <div class="tool-menu-item" title="Save document" id="btn-save" alt="saveButton"><i class="fas fa-save"></i></div>
-                <div class="tool-menu-item" title="Saved documents" id="btn-folder" alt="savedNotes"><i class="fas fa-folder"
-                        onclick="openSlide()"></i></div>
-                <div class="tool-menu-item" title="Print document" id="btn-print" alt="printButton"><i class="fas fa-print"></i></div>
+                <div class="tool-menu-item" title="New" id="new-document-btn"><i class="far fa-file-alt"></i></div>
+                <div class="tool-menu-item" title="Save document" id="btn-save"><i class="fas fa-save"></i></div>
+                <div class="tool-menu-item" title="Saved documents" id="btn-folder"><i class="fas fa-folder" onclick="openSlide()"></i></div>
+                <div class="tool-menu-item" title="Print document" id="btn-print"><i class="fas fa-print"></i></div>
 
 
 
 
                 <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
-                <div class="tool-menu-item-themes" id="default-theme-btn" title="Default theme" alt="defaultTheme"><i
-                        class="fas fa-dot-circle"></i></div>
-                <div class="tool-menu-item-themes" id="hallowen-theme-btn" title="Halloween theme" alt="halloweenTheme"><i
-                        class="fas fa-ghost"></i></div>
-                <div class="tool-menu-item-themes" id="birthday-theme-btn" title="Birthday theme" alt="bdayTheme"><i
-                        class="fas fa-birthday-cake"></i></div>
-                <div class="tool-menu-item-themes" id="christmas-theme-btn" title="Christmas theme" alt="xmasTheme"><i
-                        class="fas fa-air-freshener"></i></div>
+                <div class="tool-menu-item-themes" id="default-theme-btn" title="Default theme"><i class="fas fa-dot-circle"></i></div>
+                <div class="tool-menu-item-themes" id="hallowen-theme-btn" title="Halloween theme"><i class="fas fa-ghost"></i></div>
+                <div class="tool-menu-item-themes" id="birthday-theme-btn" title="Birthday theme"><i class="fas fa-birthday-cake"></i></div>
+                <div class="tool-menu-item-themes" id="christmas-theme-btn" title="Christmas theme"><i class="fas fa-air-freshener"></i></div>
 
 
-                <form action="">
+                <form>
                     <select id="themeList" title="Themes">
-                        <option value='1' alt="scripticon" title="Default theme">📜</option>
-                        <option class="emoji" value="2" alt="pumpkin" title="Halloween theme">🎃</option>
-                        <option value='3' alt="xmastree" title="Christmas theme">🎄</option>
-                        <option value='4' alt="bdaycake" title="Birthday theme">🎂</option>
+                        <option value='1' title="Default theme">📜</option>
+                        <option class="emoji" value="2" title="Halloween theme">🎃</option>
+                        <option value='3' title="Christmas theme">🎄</option>
+                        <option value='4' title="Birthday theme">🎂</option>
                     </select>
                 </form>
 
 
 
             </div>
-            </div>
+
         </nav>
         <div id="textEditorSection">
             <h2 class="headerTitle">Editor</h2>
@@ -110,9 +111,6 @@
     <!-- Local JS -->
     <script src="script/quill.js" async defer></script>
     <script src="script/app.js" async defer></script>
-</body>
-
-
 </body>
 
 </html>
