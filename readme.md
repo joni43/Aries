@@ -1,4 +1,4 @@
-[![image](https://i.imgur.com/N49s2zh.png)]
+[![Screenshot](project.png)]
 
 
 ## Synopsis
