@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>     
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/index.css">
     <title>Welcome to Quire</title>
-    <script  src="script/index.js"></script>
+    <script src="script/index.js"></script>
 </head>
 
 <body>
     <div class="index-page">
         <div class="info-container">
             <div class="mySlides fade gird-container">
-                <div grid-item>
+
+                <!-- <div grid-item>
                     <h1 class="slide-header">Välkommen till Quire</h1>
                 </div>
                 <div grid-item><img class="editor-mode" src="Graphics/appModeScreen.png" alt="">
                     <a class="next" onclick="plusSlides(1)">></a></div>
-                    <div grid-item><img class="editor-mode2" src="Graphics/appModeMobile.png" alt="">
-                        <a class="next2" onclick="plusSlides(1)">></a></div>
+                <div grid-item><img class="editor-mode2" src="Graphics/appModeMobile.png" alt="">
+                    <a class="next2" onclick="plusSlides(1)">></a></div>
                 <div grid-item>
                     <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
                         anteckningar,
@@ -30,19 +33,37 @@
                         Med Quire behöver du inte installera någon programvara,
                         den är kostnadsfri och finns i din webbläsare för att du ska komma åt appen
                         oavsett var du är eller vilken enhet du använder.</p>
-                        <a class="btn" id="nextBtn" onclick="plusSlides(1)">Nästa</a>
-                    </div>
+                    <a class="btn" id="nextBtn" onclick="plusSlides(1)">Nästa</a>
                 </div>
+            </div> -->
+                <h1 class="slide-header">Välkommen till Quire</h1>
+                <div class="editor-mode-slide1">
+                    <section class="editor-mode-section">
+                        <h2>Webbläsare</h2>
+                        <img src="Graphics/appModeScreen.png" alt="picture of app in browser mode">
+                    </section>
+                    <section class="editor-mode-section">
+                        <h2>Mobil</h2>
+                        <img src="Graphics/appModeMobile.png" alt="picture of app in mobile mode">
+                    </section>
+
+                </div>
+                <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
+                    anteckningar,
+                    presentationer och andra dokument online.
+                    Med Quire behöver du inte installera någon programvara,
+                    den är kostnadsfri och finns i din webbläsare för att du ska komma åt appen
+                    oavsett var du är eller vilken enhet du använder.</p>
+                <button class="btn" id="slide1btn" onclick="plusSlides(1)">Nästa</button>
             </div>
+
             <div class="mySlides fade grid-container">
 
-                <div grid-item>
+                <!-- <div grid-item>
                     <h1 class="slide-header">Såhär använder du Quire</h1>
                 </div>
-
                 <div grid-item><img class="editor-img" src="Graphics/editor.png" alt="">
                     <a class="next" onclick="plusSlides(1)">></a></div>
-
                 <div grid-item>
                     <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
                         Skriv dina anteckningar i fältet
@@ -50,44 +71,86 @@
                         välj bland alternativen i verktygsfältet ovanför och skriv med det nya formatet,
                         eller markera texten du skrivit och välj vilken ändring du vill göra.
                         Skriv en titel för ditt dokument i fältet ovanför verktygen som är märkt med ”titel”.</p>
-                        <a class="btn" id="nextBtn" onclick="plusSlides(1)">Nästa</a>
+                    <a class="btn" id="nextBtn" onclick="plusSlides(1)">Nästa</a>
+                </div> -->
+                <h1 class="slide-header">Så här använder du Quire's textredigerare</h1>
+                <div class="editor-mode-slide2">
+                    <section class="editor-mode-section">
+                        <img src="Graphics/editor.png" alt="picture of quire editor">
+                    </section>
                 </div>
+                <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
+                    Skriv dina anteckningar i fältet
+                    För att skapa en rubrik eller göra andra ändringar på texten -
+                    välj bland alternativen i verktygsfältet ovanför och skriv med det nya formatet,
+                    eller markera texten du skrivit och välj vilken ändring du vill göra.
+                    Skriv en titel för ditt dokument i fältet ovanför verktygen som är märkt med ”titel”.</p>
+                <a class="btn" id="slide1btn" onclick="plusSlides(1)">Nästa</a>
             </div>
             <div class="mySlides fade grid-container">
+                <h1 class="slide-header">Så här använder du Quire' menyknappar</h1>
+                <div class="editor-mode-slide3">
+                    <section class="editor-mode-section">
+                        <img class="editor-img" src="Graphics/menuBtns.png" alt="picture of the diffrent menu buttons, documet, disc, folder, printer">
+                        <p>
+                            <span id="p-style">Dokument</span>, där du skapar din nya anteckning.
+                        </p>
+                        <p>
+                            <span id="p-style">Disketten</span>, så lagras din anteckning.
+                        </p>
+                        <p>
+                            <span id="p-style">Mappen</span>, där kan du välja och redigera alla dina anteckningar.
+                        </p>
+                        <p>
+                            <span id="p-style">Skrivaren</span>, här kan du skriva ut dina anteckningar
+                        </p>
+                    </section>
+                    <section class="editor-mode-section">
+                        <img class="editor-img" src="Graphics/themeBtns.png" alt="picture of theme buttons ring, ghost, cake, tree">
+                        <p>
+                            <span id="p-style">Ringen</span>, Default tema
+                        </p>
+                        <p>
+                            <span id="p-style">Spöket</span>, Halloween tema
+                        </p>
+                        <p>
+                            <span id="p-style">Tårta</span>, Födelsedags tema
+                        </p>
+                        <p>
+                            <span id="p-style">Trädet</span>, Jul tema
+                        </p>
+                    </section>
 
-                <div grid-item>
-                    <h1 class="slide-header">Välkommen till Quire</h1>
-                    <p class="slide-paragraphs">För att skapa ett nytt dokument, klicka på <img class="slide-img" src="Graphics/newnote.png"
-                            alt="
-                            quire"> ikonen.</p>
                 </div>
 
-                <div grid-item>
-                    <p class="slide-paragraphs"> För att spara dina anteckningar, klicka på <img class="slide-img" src="Graphics/savenote.png"
-                            alt="quire"> ikonen.</p>
-                            
-                </div>
+                <!-- 
+            <img class="editor-img" src="Graphics/menuBtns.png" alt="">
+             <img class="editor-img" src="Graphics/themeBtns.png" alt="">
+            <p class="editor-mode-paragraph">
+                Med hjälp av Themes kan du skapa enkla dokument genom en snabb genväg. Välj det som passar ditt
+                tillfälle.
+                I menyn hittar du <span id="p-style">Dokument</span>, där du skapar din nya anteckning.
+                När du vill spara klickar du på <span id="p-style">Disketten</span>, så lagras din anteckning.
+                Dina sparade anteckningar hittar du i <span id="p-style">Mappen</span>, där kan du välja och redigera
+                alla dina anteckningar.
+                Vill du skriva ut något viktigt? Klicka på <span id="p-style">Skrivaren</span>.
+            </p> -->
+                <button id="button">Ok, ta mig till appen!</button>
 
                 <div grid-item>
-                    <p class="slide-paragraphs">För att skriva ut ditt dokument, klicka på <img class="slide-img" src="Graphics/print.png"
-                            alt="quire"> ikonen.</p>
-                            
-                </div>
 
-                <p class="slide-paragraphs"> Dina sparade anteckningar ligger i menyn bredvid textredigeraren.</p>
-                <p class="slide-paragraphs">Klicka på den sparade anteckningen för att ta fram den igen.</p>
-                <button id="button" >Ok, ta mig till appen!</button>
-            </div>
-            <div class="dotted">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
+
+                </div>
+                <div class="dotted">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 
-    <script  src="script/index.js"></script>
+    <script src="script/index.js"></script>
 
 </body>
 

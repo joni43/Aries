@@ -1,11 +1,12 @@
 /* CSS Reset */
 
 * {
-    padding: 0 ;
+    padding: 0;
     margin: 0;
 }
 
-html,body {
+html,
+body {
     margin: 0 auto;
     padding: 0 auto;
     width: 100%;
@@ -17,44 +18,44 @@ html,body {
 main {
     display: flex;
     flex-direction: row;
-    justify-content:stretch;
+    justify-content: stretch;
     height: 100%;
 }
 
 .headerTitle {
-    font-family: 'Roboto', sans-serif ;
+    font-family: 'Roboto', sans-serif;
     font-size: 36px;
-    color:rgb(0, 0, 0) ;
+    color: rgb(0, 0, 0);
     margin: 1% 4% 0 4%;
     text-shadow: none;
     display: none;
-
 }
 
 .SavedNoteTitle {
-    font-family: 'Roboto', sans-serif ;
+    font-family: 'Roboto', sans-serif;
     font-size: 36px;
-    color:rgb(255, 255, 255) ;
-    margin: 4.5%;
+    color: rgb(255, 255, 255);
+    margin: 3% 0% 1% 3%;
     text-shadow: none;
-
 }
+
 /*nav section*/
 
 nav {
     background: #435971;
     max-width: 250px;
     height: 100%;
-    
 }
 
-#themeList{
-
+#themeList {
+    width: 55px;
     display: none;
     border: none;
     background-color: #D4D4D4;
     appearance: none;
-
+    border-radius: 5px;
+    align-items: center;
+    font-size: 30px;
 }
 
 #tool-menu-logo {
@@ -83,7 +84,6 @@ nav {
 
 #hamburger-menu:hover {
     background-color: #4ED7F9;
-
 }
 
 #hamburger-menu:active {
@@ -109,18 +109,16 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* margin: 3% 1% 0 3%; */
+    background: #435971;
 }
 
-
-.tool-menu-item{
-
+.tool-menu-item {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color:#D4D4D4;
+    background-color: #D4D4D4;
     border: 2px solid rgb(59, 59, 59);
     margin: 4px;
     border-radius: 5px;
@@ -136,21 +134,19 @@ nav {
     width: 70px;
     height: 70px;
     color: #D4D4D4;
-    background-color:#D4D4D4;
+    background-color: #D4D4D4;
     border: 2px solid rgb(59, 59, 59);
     border-radius: 5px;
     margin: 4px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     color: rgb(53, 53, 53);
-    
 }
 
 
 .tool-menu-item:hover {
     cursor: pointer;
     background-color: #4ED7F9;
-
 }
 
 .tool-menu-item:active {
@@ -160,7 +156,6 @@ nav {
 .tool-menu-item-themes:hover {
     cursor: pointer;
     background-color: rgb(176, 102, 206);
-
 }
 
 .tool-menu-item-themes:active {
@@ -172,8 +167,6 @@ i.fas.fa {
     color: white;
 }
 
-
-
 #btn-save:hover {
     background-color: rgb(27, 214, 111);
 }
@@ -182,57 +175,48 @@ i.fas.fa {
     background-color: rgb(74, 214, 137);
 }
 
-
-
 i {
     font-size: 40px;
 }
 
 /*text-editor section*/
 
-#textEditorSection{
-
+#textEditorSection {
     width: 100%;
-
-  
 }
-#input-Title{
 
-    border:none;
+#input-Title {
+    border: none;
     border-color: white;
     font-size: 20px;
     margin: 2.6% 4% 1% 4%;
 }
 
 #textarea-container {
-
     height: 100%;
     max-height: 840px;
     margin: 0% 4% 0% 4%;
-
 }
-#editor{
+
+#editor {
     width: 100%;
-    height: 90%;
-    
+    height: 80%;
 }
 
 /*doucument-handler section*/
 #document-handler {
     background-color: rgb(0, 0, 0);
-   
+
 }
 
 #document-handler-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
-    margin: 10% 5% 0 5%;
+    margin: 0 5% 0 5%;
 }
 
 .document-handler-item {
-    
     padding: 0;
     margin: 0px 5px 20px 5px;
     width: 115px;
@@ -253,8 +237,6 @@ i {
     content: url(/Graphics/documentHover.png);
 }
 
-
-
 .item-title {
 
     vertical-align: bottom;
@@ -263,7 +245,6 @@ i {
     font-family: 'Roboto', sans-serif;
     margin-left: 2px;
     float: left;
-
 }
 
 .item-time {
@@ -272,7 +253,6 @@ i {
     margin: 5px 0px 0px 3px;
     text-transform: capitalize;
     font-family: 'Roboto', sans-serif;
-
 }
 
 .fa-trash-alt {
@@ -290,13 +270,11 @@ i {
     font-size: 16px !important;
     float: right;
     margin: 0px 5px !important;
-
 }
 
 .fa-trash-alt:hover {
     color: rgb(202, 0, 0);
     cursor: pointer;
-
 }
 
 .fa-star:hover {
@@ -304,55 +282,37 @@ i {
     cursor: pointer;
 }
 
-
-
-
-
 /*Big screen*/
-@media screen and (max-width:1545px){
-
-    .tool-menu-item {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-        margin: 4px;
-        font-size: 30px;
-        font-family: 'Roboto', sans-serif;
-        
-    }
-
-}
-
-
-
-@media screen and (min-width: 100px) and (max-width:750px){
+@media screen and (min-width: 100px) and (max-width:750px) {
 
     main {
-       
+
         flex-direction: column;
-       
+
     }
+
     nav {
         background: #435971;
         max-width: none;
         height: 70px;
         width: 100%;
     }
-    #themeList{
+
+    #themeList {
 
         display: inline-block;
-        margin: 30px 0px 0px 20px; 
+        margin: 30px 0px 0px 20px;
+
     }
-    #tool-menu-logo{
+
+    #tool-menu-logo {
         font-size: 1.7em;
         position: relative;
         margin-left: 0;
         height: 40px;
         width: 115px;
     }
+
     .tool-menu-item-themes {
         display: flex;
         justify-content: center;
@@ -378,43 +338,50 @@ i {
     .tool-menu-item-themes {
         display: none;
     }
-
-    #document-handler {
-        /* display: none; */
-        background-color: rgb(170, 170, 170);
-    }
-
 }
 
 
-@media screen and (max-width:750px){
+@media screen and (max-width:750px) {
 
     main {
-       
         flex-direction: column;
-       
     }
-    #new-document-btn, #btn-save, #btn-folder, #btn-print{
+
+    #new-document-btn,
+    #btn-save,
+    #btn-folder,
+    #btn-print {
         width: 40px;
         height: 40px;
     }
 
-    .fa-file-alt, .fa-save, .fa-folder, .fa-print{
+    .fa-file-alt,
+    .fa-save,
+    .fa-folder,
+    .fa-print {
         font-size: 30px;
     }
+
     nav {
         background: #435971;
         max-width: none;
         width: 100%;
         height: 100px;
     }
-    select{
+
+    select {
         height: 44px;
         width: 44px;
     }
-    #themeList{
+
+    select:hover {
+        cursor: pointer;
+    }
+
+    #themeList {
         border: 2px solid rgb(59, 59, 59);
         margin-top: 4px;
+        margin-bottom: 4px;
         margin-left: 3px;
     }
 
@@ -425,33 +392,19 @@ i {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
+        margin-top: 4%;
 
     }
-
-    
 
     .tool-menu-item-themes {
-
         display: none;
     }
-
-    #document-handler {
-
-    
-    /* display: none; */
-    
-        background-color: rgb(170, 170, 170);
-        
-    }
-
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:500px) {
 
     main {
-       
         flex-direction: column;
-       
     }
 
     nav {
@@ -459,9 +412,6 @@ i {
         max-width: none;
         width: 100%;
         height: 100px;
-        
-       
-       
     }
 
     #tool-menu-container {
@@ -471,15 +421,16 @@ i {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: start;
-    }
-    .tool-menu-item{
 
+    }
+
+    .tool-menu-item {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         width: 35px;
         height: 35px;
-        background-color:#D4D4D4;
+        background-color: #D4D4D4;
         border: 2px solid rgb(59, 59, 59);
         border-radius: 5px;
         font-size: 30px;
@@ -492,54 +443,61 @@ i {
     }
 
     .tool-menu-item-themes {
+        display: none;
+    }
+}
 
+@media screen and (max-width:385px) {
+
+    .tool-menu-item {
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+    }
+
+    #themeList {
+        margin: 1px;
+    }
+
+    #tool-menu-logo {
+        font-size: 24px;
+        width: 60px;
+        padding: none;
+        margin: none;
+    }
+}
+
+@media print {
+    * {
+        margin: 0 auto;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .ql-editor * {
+        visibility: visible;
+
+    }
+
+    .ql-editor {
+        text-align: center;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 3000px;
+        /* margin-left: 5%; */
+    }
+
+    p {
+        text-align: left;
+    }
+
+    nav {
         display: none;
     }
 
     #document-handler {
-
-    
-    display: none;
-    
-        background-color: rgb(170, 170, 170);
-        
+        display: none;
     }
-
 }
-
-
-@media print {
-    *{
-        margin: 0 auto;
-
-    }
-    body * {
-      visibility: hidden;
-    }
-     .ql-editor * {
-      visibility: visible;
-
-    }
-     .ql-editor {
-      text-align: center;
-      margin: 0 auto;
-      overflow: hidden ;
-      height:3000px;
-      /* margin-left: 5%; */
-
-    }
-
-    p{
-        text-align: left;
-    }
-
-    nav{
-        display: none;
-    }
-     #document-handler{
-        display: none;
-    }
-  }
-    
-
-  
