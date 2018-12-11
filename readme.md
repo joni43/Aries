@@ -1,6 +1,6 @@
-[![image](https://imgur.com/a/gv08dYH)
+[![image](https://i.imgur.com/N49s2zh.png)](https://sigopt.com)
 
-###Teamprojekt 1
+#Teamprojekt 1
 Quire
 FE18, KYH
 
