@@ -52,11 +52,12 @@ nav {
     width: 55px;
     display: none;
     border: none;
-    background-color: #D4D4D4;
+    background-color: #D4D4D4;;
     appearance: none;
     border-radius: 5px;
     align-items: center;
     font-size: 30px;
+    
 }
 
 #tool-menu-logo {
@@ -64,16 +65,17 @@ nav {
     font-size: 35px;
     color: white;
     width: 150px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #435971;
     border: none;
+    outline: none;
 }
 
 #tool-menu-themes-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Pacifico', cursive;
     font-size: 30px;
     color: white;
     width: 150px;
-    background-color: rgba(49, 41, 41, 0.212);
+    background-color: #435971;
     border: none;
     cursor: default;
 }
@@ -140,7 +142,7 @@ nav {
     border-radius: 5px;
     margin: 4px;
     font-size: 30px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Wire One', sans-serif;
     color: rgb(53, 53, 53);
 }
 
@@ -323,7 +325,7 @@ i {
         background-color: #D4D4D4;
         margin: 4px;
         font-size: 18px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Wire One', sans-serif;
     }
 
     #tool-menu-container {
@@ -444,7 +446,7 @@ i {
         border: 2px solid rgb(59, 59, 59);
         border-radius: 5px;
         font-size: 30px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Wire One', sans-serif;
         color: rgb(53, 53, 53);
     }
 
