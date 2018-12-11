@@ -3,6 +3,11 @@
 
 ## Synopsis
 
+Projektarbete i frontendutveckling-utbildning. Projektet innebar att arbeta utifrån Scrum genom att att använda olika projektmetoder.
+
+Länk till trello för få en inblick över proccesen under arbetet.
+https://trello.com/b/EFhEZjK1/aries
+
 En anteckningsbok i webbläsaren som är responsiv för både mobiler och datorer.
 
 
