@@ -9,7 +9,8 @@ h1 {
     font-size: 3rem;
 }
 
-h2, p {
+h2,
+p {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -177,7 +178,7 @@ img {
     display: inline-block;
     font-size: 48px;
     font-weight: normal;
-    padding: auto;
+    /* padding: auto; */
     color: #435971;
 }
 
