@@ -12,7 +12,7 @@ En anteckningsbok i webbläsaren som är responsiv för både mobiler och datore
 
 
 ## Contributors
-Utvecklarna som har skapat applicationen.
+Utvecklarna som har skapat applikationen.
 
 | Utvecklare  | Github repo |
 | ------------- | ------------- |
