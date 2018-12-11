@@ -6,9 +6,9 @@
     z-index: 1;
     color: white;
     background-color: rgb(0, 0, 0);
-    transition: all 500ms linear;
-    -webkit-transition: all 500ms linear;
-    -moz-transition: all 500ms linear;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
 }
 
 .folder-slide-open {
@@ -20,9 +20,9 @@
     color: white;
     background-color: rgb(0, 0, 0);
     opacity: 0.95;
-    transition: all 500ms linear;
-    -webkit-transition: all 500ms linear;
-    -moz-transition: all 500ms linear;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
     overflow: scroll;
 }
 
