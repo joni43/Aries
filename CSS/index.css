@@ -9,6 +9,12 @@ h1 {
     font-size: 3rem;
 }
 
+h2, p {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
 img {
     max-width: 100%;
     width: auto;
