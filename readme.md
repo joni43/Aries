@@ -1,4 +1,4 @@
-[![Screenshot](project.png)]
+![Screenshot](project.png)
 
 
 ## Synopsis
