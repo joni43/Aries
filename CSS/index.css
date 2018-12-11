@@ -177,7 +177,7 @@ img {
     display: inline-block;
     font-size: 48px;
     font-weight: normal;
-    padding: auto;
+    padding: 0;
     color: #435971;
 }
 
