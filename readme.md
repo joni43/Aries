@@ -1,6 +1,6 @@
-[![image](https://sigopt.com/static/img/SigOpt_logo_horiz.png?raw=true)](https://sigopt.com)
+[![image](https://imgur.com/a/gv08dYH)
 
-#Teamprojekt 1
+###Teamprojekt 1
 Quire
 FE18, KYH
 
@@ -18,7 +18,7 @@ Personerna som har skapat applicationen.
 <li>Jonathan Tod - https://github.com/jontod</li>
 <li>Jonathan Nilsson - https://github.com/joni43</li>
 <li>Jennie Nordlund - https://github.com/madelennie</li>
-</li>Stavros Tsirlidis -  https://github.com/StavrosTsirlidis24</li>
+<li>Stavros Tsirlidis -  https://github.com/StavrosTsirlidis24</li>
 </ul>
 
 
