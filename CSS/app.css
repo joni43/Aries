@@ -522,11 +522,11 @@ i {
         text-align: center;
         margin: 0 auto;
         overflow: hidden;
-        height: 3000px;
+        height: auto;
         /* margin-left: 5%; */
     }
 
-    p {
+    p,ol,li,h2,h3,h4 {
         text-align: left;
     }
 
