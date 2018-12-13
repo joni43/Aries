@@ -379,10 +379,16 @@ i {
     }
 
     #themeList {
-        border: 2px solid rgb(59, 59, 59);
+         border: 2px solid rgb(59, 59, 59);
         margin-top: 4px;
         margin-bottom: 4px;
         margin-left: 3px;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
     }
 
     #tool-menu-container {
