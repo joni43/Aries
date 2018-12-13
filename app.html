@@ -55,29 +55,18 @@
                 <div class="tool-menu-item" title="Save document" id="btn-save"><i class="fas fa-save"></i></div>
                 <div class="tool-menu-item" title="Saved documents" id="btn-folder"><i class="fas fa-folder" onclick="openSlide()"></i></div>
                 <div class="tool-menu-item" title="Print document" id="btn-print"><i class="fas fa-print"></i></div>
-
-
-
-
-                <div class="tool-menu-item-themes" id="tool-menu-themes-title">Themes</div>
-                <div class="tool-menu-item-themes" id="default-theme-btn" title="Default theme"><i class="fas fa-dot-circle"></i></div>
-                <div class="tool-menu-item-themes" id="hallowen-theme-btn" title="Halloween theme"><i class="fas fa-ghost"></i></div>
-                <div class="tool-menu-item-themes" id="birthday-theme-btn" title="Birthday theme"><i class="fas fa-birthday-cake"></i></div>
-                <div class="tool-menu-item-themes" id="christmas-theme-btn" title="Christmas theme"><i class="fas fa-air-freshener"></i></div>
-
-
-                <form>
-                    <select id="themeList" title="Themes">
-                        <option value='1' title="Default theme">📜</option>
-                        <option class="emoji" value="2" title="Halloween theme">🎃</option>
-                        <option value='3' title="Christmas theme">🎄</option>
-                        <option value='4' title="Birthday theme">🎂</option>
-                    </select>
-                </form>
-
-
+                <div id="themlistContainer">
+                    <div class="tool-menu-item" id="bar-themelist-btn" title="Theme menu button"><i class="fas fa-palette"></i></div>
+                        <div id="themListMenu" class="themListMenuClose"  title="theme menu">
+                        <div class="tool-menu-item" id="default-themelist-btn" title="Default theme"><i class="fas fa-dot-circle"></i></div>
+                        <div class="tool-menu-item" id="hallowen-themelist-btn" title="Halloween theme"><i class="fas fa-ghost"></i></div>
+                        <div class="tool-menu-item" id="birthday-themelist-btn" title="Birthday theme"><i class="fas fa-birthday-cake"></i></div>
+                        <div class="tool-menu-item" id="christmas-themelist-btn" title="Christmas theme"><i class="fas fa-air-freshener"></i></div>
+                    </div>  
+                </div>
 
             </div>
+          
 
         </nav>
         <div id="textEditorSection">

@@ -6,10 +6,18 @@ let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
 
-const defaultThemebtn = document.getElementById("default-theme-btn");
-const hallowenThemebtn = document.getElementById("hallowen-theme-btn");
-const birthdayThemebtn = document.getElementById("birthday-theme-btn");
-const christmasThemebtn = document.getElementById("christmas-theme-btn");
+
+
+const barThemeListBtn = document.getElementById("bar-themelist-btn");
+const defaultthemelistbtn = document.getElementById("default-themelist-btn");
+const hallowenthemelistbtn = document.getElementById("hallowen-themelist-btn");
+const birthdaythemelistbtn = document.getElementById("birthday-themelist-btn");
+const christmasthemelistbtn = document.getElementById("christmas-themelist-btn");
+
+
+const themeDroplistMenu = document.getElementById("themListMenu");
+
+let themelistopen = false;
 
 let selectedTheme;
 
@@ -44,8 +52,8 @@ window.onclick = function (event) {
         quill.setContents(noteToView.textContent);
         inputTitle.value = (noteToView.title);
         noteToView = event.target.parentElement.id;
-
         closeSlide();
+        
         //If the traschcan button is pressed, delete the attached document 
     } else if (event.target.className === 'fas fa-trash-alt') {
         noteToView = findObject(event.target.parentElement.parentElement.id, noteArray);
@@ -54,30 +62,46 @@ window.onclick = function (event) {
 
     }
 }
-//
-defaultThemebtn.onclick = function () {
+
+
+
+/*theme list in mobile version*/
+defaultthemelistbtn.onclick = function () {
     cleanThemes();
     selectedTheme = 'defaultTheme';
     quill.root.classList.add(selectedTheme);
 }
 
-hallowenThemebtn.onclick = function () {
+hallowenthemelistbtn.onclick = function () {
     cleanThemes();
     selectedTheme = 'halloweenTheme';
     quill.root.classList.add(selectedTheme);
 }
 
-christmasThemebtn.onclick = function () {
+christmasthemelistbtn.onclick = function () {
     cleanThemes();
     selectedTheme = 'christmasTheme';
     quill.root.classList.add(selectedTheme);
 }
 
-birthdayThemebtn.onclick = function () {
+birthdaythemelistbtn.onclick = function () {
     cleanThemes();
     selectedTheme = 'birthdayTheme';
     quill.root.classList.add(selectedTheme);
 }
+
+//theme list drop list
+barThemeListBtn.onclick= function(){
+    
+    if (themelistopen == true) {
+        themeDroplistMenu.className = "themListMenuClose";
+        themelistopen =false;
+    }else {
+        themelistopen = true;
+        themeDroplistMenu.className = "themListMenuOpen";
+    }   
+}
+
 
 /* removes all the themes from the quill*/
 function cleanThemes() {
@@ -87,43 +111,9 @@ function cleanThemes() {
     quill.root.classList.remove('birthdayTheme')
 }
 
-document.getElementById("themeList").onchange = function () {
 
-    switch (this.value) {
 
-        case '1':
-            cleanThemes();
-            selectedTheme = 'defaultTheme';
-            quill.root.classList.add(selectedTheme);
-            console.log("1");
-            break;
 
-        case '2':
-            cleanThemes();
-            selectedTheme = 'halloweenTheme';
-            quill.root.classList.add(selectedTheme);
-            console.log("2");
-            break;
-
-        case '3':
-            cleanThemes();
-            selectedTheme = 'christmasTheme';
-            quill.root.classList.add(selectedTheme);
-            console.log("3");
-            break;
-
-        case '4':
-            cleanThemes();
-            selectedTheme = 'birthdayTheme';
-            quill.root.classList.add(selectedTheme);
-            console.log("4");
-            break;
-
-    }
-
-};
-
-//function quillFunction(quillSwitchSelect = '1') {
 
 
 /* Uppdates the document handler view by putting the innerHTML to empty and the create the notes again

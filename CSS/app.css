@@ -121,7 +121,7 @@ nav {
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: #D4D4D4;
+    background-color: rgb(230, 230, 230);
     border: 2px solid rgb(59, 59, 59);
     margin: 4px;
     border-radius: 5px;
@@ -130,21 +130,6 @@ nav {
     color: rgb(53, 53, 53);
 }
 
-.tool-menu-item-themes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    height: 70px;
-    color: #D4D4D4;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
-    border-radius: 5px;
-    margin: 4px;
-    font-size: 30px;
-    font-family: 'Wire One', sans-serif;
-    color: rgb(53, 53, 53);
-}
 
 
 .tool-menu-item:hover {
@@ -180,6 +165,38 @@ i.fas.fa {
 
 i {
     font-size: 40px;
+}
+
+#themlistContainer{
+
+    z-index: 999;
+}
+
+.themListMenuClose{
+    display: none;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+}
+
+.themListMenuOpen{
+    display: flex;
+    flex-direction: column;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+}
+
+
+
+
+#default-themelist-btn:hover,
+#hallowen-themelist-btn:hover,
+#birthday-themelist-btn:hover,
+#christmas-themelist-btn:hover{
+
+    
+    background-color: rgb(175, 121, 224);
 }
 
 /*text-editor section*/
@@ -297,6 +314,7 @@ i {
     nav {
         background: #435971;
         max-width: none;
+
         height: 70px;
         width: 100%;
     }
@@ -307,6 +325,7 @@ i {
         margin: 30px 0px 0px 20px;
 
     }
+    
 
     #tool-menu-logo {
         font-size: 1.7em;
@@ -316,17 +335,7 @@ i {
         width: 115px;
     }
 
-    .tool-menu-item-themes {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        background-color: #D4D4D4;
-        margin: 4px;
-        font-size: 18px;
-        font-family: 'Wire One', sans-serif;
-    }
+   
 
     #tool-menu-container {
         max-width: 350px;
@@ -353,7 +362,12 @@ i {
     #new-document-btn,
     #btn-save,
     #btn-folder,
-    #btn-print {
+    #btn-print,
+    #bar-themelist-btn,
+    #default-themelist-btn,
+    #hallowen-themelist-btn,
+    #birthday-themelist-btn,
+    #christmas-themelist-btn {
         width: 40px;
         height: 40px;
     }
@@ -361,7 +375,12 @@ i {
     .fa-file-alt,
     .fa-save,
     .fa-folder,
-    .fa-print {
+    .fa-print,
+    .fa-palette,
+    .fa-ghost,
+    .fa-dot-circle,
+    .fa-birthday-cake,
+    .fa-air-freshener {
         font-size: 30px;
     }
 
