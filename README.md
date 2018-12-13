@@ -1,4 +1,4 @@
-![https://i.imgur.com/N49s2zh.png]
+![img](https://i.imgur.com/N49s2zh.png)
 
 
 ## Synopsis
