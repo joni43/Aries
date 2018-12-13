@@ -1,14 +1,15 @@
 /* CSS Reset */
 
-* {
+/* * {
     padding: 0;
     margin: 0;
-}
+} */
 
 html,
 body {
     margin: 0 auto;
-    padding: 0 auto;
+    /* padding: 0 auto; */
+    padding: 0;
     width: 100%;
     height: 100%;
     font-family: sans-serif;
@@ -52,28 +53,30 @@ nav {
     width: 55px;
     display: none;
     border: none;
-    background-color: #D4D4D4;
+    background-color: #D4D4D4;;
     appearance: none;
     border-radius: 5px;
     align-items: center;
     font-size: 30px;
+    
 }
 
 #tool-menu-logo {
     font-family: 'Pacifico', cursive;
-    font-size: 35px;
+    font-size: 42px;
     color: white;
     width: 150px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #435971;
     border: none;
+    outline: none;
 }
 
 #tool-menu-themes-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Pacifico', cursive;
     font-size: 30px;
     color: white;
     width: 150px;
-    background-color: rgba(49, 41, 41, 0.212);
+    background-color: #435971;
     border: none;
     cursor: default;
 }
@@ -119,7 +122,7 @@ nav {
     align-items: center;
     width: 70px;
     height: 70px;
-    background-color: #D4D4D4;
+    background-color: rgb(230, 230, 230);
     border: 2px solid rgb(59, 59, 59);
     margin: 4px;
     border-radius: 5px;
@@ -128,21 +131,6 @@ nav {
     color: rgb(53, 53, 53);
 }
 
-.tool-menu-item-themes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    height: 70px;
-    color: #D4D4D4;
-    background-color: #D4D4D4;
-    border: 2px solid rgb(59, 59, 59);
-    border-radius: 5px;
-    margin: 4px;
-    font-size: 30px;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(53, 53, 53);
-}
 
 
 .tool-menu-item:hover {
@@ -164,7 +152,7 @@ nav {
 }
 
 i.fas.fa {
-    font-weight: none;
+    /* font-weight: none; */
     color: white;
 }
 
@@ -178,6 +166,42 @@ i.fas.fa {
 
 i {
     font-size: 40px;
+}
+
+#themlistContainer{
+
+    z-index: 999;
+}
+
+.themListMenuClose{
+    display: none;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+}
+
+.themListMenuOpen{
+    display: flex;
+    flex-direction: column;
+    transition: 500ms linear;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+}
+
+
+#hallowen-themelist-btn:hover{
+    background-color: orange;
+}
+#birthday-themelist-btn:hover{
+    background-color: rgb(255, 220, 100);
+}
+
+#christmas-themelist-btn:hover{
+    background-color: rgb(0, 180, 0);
+}
+
+#default-themelist-btn:hover{
+    background-color: rgb(175, 121, 224);
 }
 
 /*text-editor section*/
@@ -305,6 +329,7 @@ i {
         margin: 30px 0px 0px 20px;
 
     }
+    
 
     #tool-menu-logo {
         font-size: 1.7em;
@@ -314,17 +339,7 @@ i {
         width: 115px;
     }
 
-    .tool-menu-item-themes {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        background-color: #D4D4D4;
-        margin: 4px;
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
-    }
+   
 
     #tool-menu-container {
         max-width: 350px;
@@ -351,7 +366,12 @@ i {
     #new-document-btn,
     #btn-save,
     #btn-folder,
-    #btn-print {
+    #btn-print,
+    #bar-themelist-btn,
+    #default-themelist-btn,
+    #hallowen-themelist-btn,
+    #birthday-themelist-btn,
+    #christmas-themelist-btn {
         width: 40px;
         height: 40px;
     }
@@ -359,7 +379,12 @@ i {
     .fa-file-alt,
     .fa-save,
     .fa-folder,
-    .fa-print {
+    .fa-print,
+    .fa-palette,
+    .fa-ghost,
+    .fa-dot-circle,
+    .fa-birthday-cake,
+    .fa-air-freshener {
         font-size: 30px;
     }
 
@@ -375,23 +400,26 @@ i {
     select {
         height: 44px;
         width: 44px;
+        display: none;
     }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+    }
+
 
     select:hover {
         cursor: pointer;
     }
 
     #themeList {
-         border: 2px solid rgb(59, 59, 59);
+        border: 2px solid rgb(59, 59, 59);
         margin-top: 4px;
         margin-bottom: 4px;
         margin-left: 3px;
-    }
-    select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 1px;
-        text-overflow: '';
     }
 
     #tool-menu-container {
@@ -443,7 +471,7 @@ i {
         border: 2px solid rgb(59, 59, 59);
         border-radius: 5px;
         font-size: 30px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Wire One', sans-serif;
         color: rgb(53, 53, 53);
     }
 
@@ -471,8 +499,8 @@ i {
     #tool-menu-logo {
         font-size: 24px;
         width: 60px;
-        padding: none;
-        margin: none;
+        /*  padding: none;
+        margin: none; */
     }
 }
 

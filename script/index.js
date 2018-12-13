@@ -1,23 +1,10 @@
-
-siteVisited = document.cookie;
-// moves to app.html when cookie is true
-if (siteVisited === "true"){
-  window.location = "app.html";
- } 
-
-
-var slideIndex = 1;
+//Start slideIndex
+let slideIndex = 1;
+//Start slideshow
 showSlides(slideIndex);
-btnButton = document.getElementById("button");
 
-
-window.onload = function(){
-
-  
-}
-
-btnButton.onclick = function(){
-  
+let btnButton = document.getElementById("button");
+btnButton.onclick = function () {
   document.cookie = true;
   window.location.href = "app.html";
 }
