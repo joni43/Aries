@@ -11,7 +11,13 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/index.css">
     <title>Welcome to Quire</title>
-    <script src="script/index.js"></script>
+    <script>
+        let boolCookie = (/true/i).test(document.cookie);
+        if (boolCookie) {
+            window.location = "app.html";
+        }
+    </script>
+    <!-- <script src="script/index.js"></script> -->
 </head>
 
 <body>
@@ -29,7 +35,7 @@
                         <img src="Graphics/appModeMobile.png" alt="picture of app in mobile mode">
                     </section>
 
-                <!-- Divs, classes with img:src and paragraphs -->    
+                    <!-- Divs, classes with img:src and paragraphs -->
                 </div>
                 <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
                     anteckningar,
