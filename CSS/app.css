@@ -188,14 +188,18 @@ i {
 }
 
 
+#hallowen-themelist-btn:hover{
+    background-color: orange;
+}
+#birthday-themelist-btn:hover{
+    background-color: rgb(255, 220, 100);
+}
 
-
-#default-themelist-btn:hover,
-#hallowen-themelist-btn:hover,
-#birthday-themelist-btn:hover,
 #christmas-themelist-btn:hover{
+    background-color: rgb(0, 180, 0);
+}
 
-    
+#default-themelist-btn:hover{
     background-color: rgb(175, 121, 224);
 }
 
