@@ -1,4 +1,4 @@
-[Screenshot](https://i.imgur.com/N49s2zh.png)
+![https://i.imgur.com/N49s2zh.png]
 
 
 ## Synopsis
