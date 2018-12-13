@@ -5,7 +5,6 @@ const closeSlideBtn = document.getElementById("closeButton");
 let noteArray = getLocalStorage();
 let noteToView;
 let inputTitle = document.getElementById("input-Title");
-console.log(inputTitle)
 
 
 
@@ -43,7 +42,7 @@ window.onclick = function (event) {
         toggleFavorite(noteToViewFav);
 
 
-        //If documents are selected open in the editor and put title
+        //If documents are selected open in the editor and put title    
     } else if (event.target.parentElement.classList.contains('document-handler-item')) {
 
         cleanThemes();
@@ -217,7 +216,6 @@ Makes Title shorter and add ... (dots)
 */
 
 function shortTitle(title) {
-    console.log('title',title)
     let shortendTitle = title.length;
     if (shortendTitle > 8) {
         title = title.slice(0, 8) + "...";
@@ -259,7 +257,6 @@ function createNote(array) {
     for (let i = 0; i < array.length; i++) {
         id = array[i].id;
         title = array[i].title;
-        console.log('sort title', title)
         textContent = array[i].textContent;
         favorite = array[i].favorite;
         date = array[i].date;
