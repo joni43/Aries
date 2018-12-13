@@ -1,13 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>Welcome to Quire</title>
+    <script>
+        let boolCookie = (/true/i).test(document.cookie);
+        if (boolCookie) {
+            window.location = "app.html";
+        }
+    </script>
+    <!-- <script src="script/index.js"></script> -->
 </head>
+
 <body>
-    
+    <div class="index-page">
+        <div class="info-container">
+            <div class="mySlides fade gird-container">
+                <h1 class="slide-header">Välkommen till Quire</h1>
+                <div class="editor-mode-slide1">
+                    <section class="editor-mode-section">
+                        <h2>Webbläsare</h2>
+                        <img src="Graphics/appModeScreen.png" alt="picture of app in browser mode">
+                    </section>
+                    <section class="editor-mode-section">
+                        <h2>Mobil</h2>
+                        <img src="Graphics/appModeMobile.png" alt="picture of app in mobile mode">
+                    </section>
+
+                    <!-- Divs, classes with img:src and paragraphs -->
+                </div>
+                <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
+                    anteckningar,
+                    presentationer och andra dokument online.
+                    Med Quire behöver du inte installera någon programvara,
+                    den är kostnadsfri och finns i din webbläsare för att du ska komma åt appen
+                    oavsett var du är eller vilken enhet du använder.</p>
+                <button class="btn slide1btn" onclick="plusSlides(1)">Nästa</button>
+            </div>
+
+            <div class="mySlides fade grid-container">
+                <h1 class="slide-header">Så här använder du Quire's textredigerare</h1>
+                <div class="editor-mode-slide2">
+                    <section class="editor-mode-section">
+                        <h2>Quire Editor</h2>
+                        <img src="Graphics/editor.png" alt="picture of quire editor">
+                    </section>
+                </div>
+                <p class="editor-mode-paragraph">Quire är en textredigerare som låter dig skriva och spara
+                    Skriv dina anteckningar i fältet
+                    För att skapa en rubrik eller göra andra ändringar på texten -
+                    välj bland alternativen i verktygsfältet ovanför och skriv med det nya formatet,
+                    eller markera texten du skrivit och välj vilken ändring du vill göra.
+                    Skriv en titel för ditt dokument i fältet ovanför verktygen som är märkt med ”titel”.</p>
+                <a class="btn slide1btn" onclick="plusSlides(1)">Nästa</a>
+            </div>
+            <div class="mySlides fade grid-container">
+                <h1 class="slide-header">Så här använder du Quire's meny- och temaknappar</h1>
+                <div class="editor-mode-slide3">
+                    <section class="editor-mode-section">
+                        <h2>Menyknappar</h2>
+                        <img class="editor-img" src="Graphics/menuBtns.png" alt="picture of the diffrent menu buttons, documet, disc, folder, printer">
+                        <p>
+                            <span class="p-style">Dokument</span>, där du skapar din nya anteckning.
+                        </p>
+                        <p>
+                            <span class="p-style">Disketten</span>, så lagras din anteckning.
+                        </p>
+                        <p>
+                            <span class="p-style">Mappen</span>, där kan du välja och redigera alla dina anteckningar.
+                        </p>
+                        <p>
+                            <span class="p-style">Skrivaren</span>, här kan du skriva ut dina anteckningar
+                        </p>
+                    </section>
+                    <section class="editor-mode-section">
+                        <h2>Temaknappar</h2>
+                        <img class="editor-img" src="Graphics/themeBtns.png" alt="picture of theme buttons ring, ghost, cake, tree">
+                        <p>
+                            <span class="p-style">Ringen</span>, Default tema
+                        </p>
+                        <p>
+                            <span class="p-style">Spöket</span>, Halloween tema
+                        </p>
+                        <p>
+                            <span class="p-style">Tårta</span>, Födelsedags tema
+                        </p>
+                        <p>
+                            <span class="p-style">Trädet</span>, Jul tema
+                        </p>
+                    </section>
+                </div>
+                <!-- The slidefunction on bottom of the slideshow -->
+                <button id="button">Ok, ta mig till appen!</button>
+                <div class="dotted">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/index.js"></script>
+
 </body>
+
 </html>

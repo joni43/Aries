@@ -1,0 +1,271 @@
+html,
+body {
+    background: #435971;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2,
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
+    grid-row: 3;
+}
+
+.index-page {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    margin: auto 1rem;
+}
+
+.info-container {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    cursor: pointer;
+    background-color: #717171;
+}
+
+.dotted {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slide-img {
+    margin: 0px 5px;
+    padding: 0px 5px;
+}
+
+.slides,
+.fade {
+    padding: 20px;
+    margin: 20px;
+}
+
+#p-style {
+    font-weight: bold;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 16px;
+    color: #435971;
+    transition: 0.5s ease;
+}
+
+.slide-header {
+    font-family: 'Pacifico', cursive;
+}
+
+.editor-mode-slide1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+
+.editor-mode-slide1 img {
+    border: 1px solid black;
+    border-radius: 15px
+}
+
+.editor-mode-slide2 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly
+}
+
+.editor-mode-slide3 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly
+}
+
+.editor-mode-section {
+    padding: 20px;
+}
+
+.slide1btn {
+    cursor: pointer;
+    background: #435971;
+    display: inline-block;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    width: 100px;
+    height: 20px;
+    border-radius: 15px;
+}
+
+.editor-mode-paragraph {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+
+.slide-paragraphs {
+    font-family: 'Raleway', sans-serif;
+}
+
+#button {
+    cursor: pointer;
+    background: #435971;
+    display: inline-block;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    width: 220px;
+    height: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+}
+
+#nextBtn {
+    display: none;
+}
+
+.editor-mode2 {
+    display: none;
+}
+
+.next2 {
+    display: none;
+}
+
+#rightArrow {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: normal;
+    /* padding: auto; */
+    color: #435971;
+}
+
+@media screen and (max-width: 922px) {
+    .next {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #nextBtn {
+        cursor: pointer;
+        background: #435971;
+        display: inline-block;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        width: 100px;
+        height: 20px;
+        border-radius: 15px;
+    }
+
+    .editor-mode-slide1 {
+        /*  display: none; */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode-slide2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode-slide3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode2 {
+        display: inline-block;
+    }
+
+    .next2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #nextBtn {
+        cursor: pointer;
+        background: #435971;
+        display: inline-block;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        width: 100px;
+        height: 20px;
+        border-radius: 15px;
+
+    }
+
+    .editor-mode-slide1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode-slide2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode-slide3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editor-mode2 {
+        display: inline-block;
+    }
+
+    .next2 {
+        display: none;
+    }
+}
