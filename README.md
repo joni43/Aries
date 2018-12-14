@@ -12,6 +12,9 @@ https://trello.com/b/EFhEZjK1/aries
 
 En anteckningsbok i webbläsaren som är responsiv för både mobiler och datorer.
 
+En anteckningsbok i webbläsaren som är responsiv för både mobiler och datorer. Skapat genom enbart använding av HTML5 & CSS3 och  javascript utan ramverk eller bibliotek.
+
+Första releasen av denna produkt innehav ej några server eller backend, så alla dina anteckingar sparas i din webbläsare lokalt.
 
 ## Contributors
 Utvecklarna som har skapat applikationen.
