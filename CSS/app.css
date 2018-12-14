@@ -1,14 +1,8 @@
 /* CSS Reset */
 
-/* * {
-    padding: 0;
-    margin: 0;
-} */
-
 html,
 body {
     margin: 0 auto;
-    /* padding: 0 auto; */
     padding: 0;
     width: 100%;
     height: 100%;
@@ -81,31 +75,6 @@ nav {
     cursor: default;
 }
 
-#hamburger-menu {
-    background-color: rgb(43, 184, 219);
-    display: none;
-}
-
-#hamburger-menu:hover {
-    background-color: #4ED7F9;
-}
-
-#hamburger-menu:active {
-    background-color: rgb(150, 218, 235);
-}
-
-.hamburger-container {
-    display: block;
-}
-
-.hamburger-line {
-    width: 45px;
-    height: 7px;
-    border-radius: 2px;
-    margin: 7px 10px 7px 10px;
-    background-color: rgb(70, 70, 70);
-}
-
 #tool-menu-container {
     min-width: 200px;
     max-width: 200px;
@@ -152,7 +121,6 @@ nav {
 }
 
 i.fas.fa {
-    /* font-weight: none; */
     color: white;
 }
 
@@ -219,7 +187,6 @@ i {
 
 #textarea-container {
     height: 80%;
-    /* max-height: 840px; */
     margin: 0% 4% 0% 4%;
 }
 
@@ -286,7 +253,6 @@ i {
     font-size: 16px !important;
     float: right;
     margin: 2px 10px 0px 0px;
-
 }
 
 .fa-star {
@@ -311,9 +277,7 @@ i {
 @media screen and (min-width: 100px) and (max-width:750px) {
 
     main {
-
         flex-direction: column;
-
     }
 
     nav {
@@ -324,10 +288,8 @@ i {
     }
 
     #themeList {
-
         display: inline-block;
         margin: 30px 0px 0px 20px;
-
     }
     
 
@@ -499,8 +461,6 @@ i {
     #tool-menu-logo {
         font-size: 24px;
         width: 60px;
-        /*  padding: none;
-        margin: none; */
     }
 }
 
@@ -523,7 +483,6 @@ i {
         margin: 0 auto;
         overflow: hidden;
         height: auto;
-        /* margin-left: 5%; */
     }
 
     p,ol,li,h2,h3,h4 {

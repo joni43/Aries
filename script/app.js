@@ -16,9 +16,7 @@ const christmasthemelistbtn = document.getElementById("christmas-themelist-btn")
 
 
 const themeDroplistMenu = document.getElementById("themListMenu");
-
 let themelistopen = false;
-
 let selectedTheme;
 
 

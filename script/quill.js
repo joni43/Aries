@@ -1,9 +1,9 @@
 // quill.js
 // Quill documentation: https://quilljs.com/
 
-// Variabeln toolbarOptions används i quill-konstruktorn
-// Anger vad som ska ingå i tool-bar 
-// Tool-bar funktionaliteten finns redan i quills biblotek.
+// The toolbarOptions variable is used in the quill constructor
+// Indicates what should be included in the toolbar
+// Toolbar functionality is already in quill library.
 
 let toolbarOptions = [
   
@@ -13,8 +13,8 @@ let toolbarOptions = [
   [{ 'header': [1, 2, 3, false] }]
 ];
 
-// Konstruktor, skapar ett objekt av klassen Quill
-// med parametrar som är fördefinierade i Quill-bibloteket.
+// Constructor, creates an object of the class Quill
+// with parameters predefined in the Quill library.
 // targets ID editor (<div id="editor">)
 let quill = new Quill('#editor', {
   modules: { toolbar: toolbarOptions, },
