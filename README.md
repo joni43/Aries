@@ -26,3 +26,9 @@ Utvecklarna som har skapat applikationen.
 | Jonathan Nilsson  | https://github.com/joni43  |
 | Jenni Nordlund  | https://github.com/madelennie  |
 | Stavros Tsirlidis  | https://github.com/StavrosTsirlidis24  |
+
+
+## Resources
+
+Quill Rich Text Editor
+https://quilljs.com
