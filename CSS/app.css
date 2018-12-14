@@ -53,12 +53,13 @@ nav {
     width: 55px;
     display: none;
     border: none;
-    background-color: #D4D4D4;;
+    background-color: #D4D4D4;
+    ;
     appearance: none;
     border-radius: 5px;
     align-items: center;
     font-size: 30px;
-    
+
 }
 
 #tool-menu-logo {
@@ -168,19 +169,19 @@ i {
     font-size: 40px;
 }
 
-#themlistContainer{
+#themlistContainer {
 
     z-index: 999;
 }
 
-.themListMenuClose{
+.themListMenuClose {
     display: none;
     transition: 500ms linear;
     -webkit-transition: 500ms linear;
     -moz-transition: 500ms linear;
 }
 
-.themListMenuOpen{
+.themListMenuOpen {
     display: flex;
     flex-direction: column;
     transition: 500ms linear;
@@ -189,18 +190,19 @@ i {
 }
 
 
-#hallowen-themelist-btn:hover{
+#hallowen-themelist-btn:hover {
     background-color: orange;
 }
-#birthday-themelist-btn:hover{
+
+#birthday-themelist-btn:hover {
     background-color: rgb(255, 220, 100);
 }
 
-#christmas-themelist-btn:hover{
+#christmas-themelist-btn:hover {
     background-color: rgb(0, 180, 0);
 }
 
-#default-themelist-btn:hover{
+#default-themelist-btn:hover {
     background-color: rgb(175, 121, 224);
 }
 
@@ -329,7 +331,7 @@ i {
         margin: 30px 0px 0px 20px;
 
     }
-    
+
 
     #tool-menu-logo {
         font-size: 1.7em;
@@ -339,7 +341,7 @@ i {
         width: 115px;
     }
 
-   
+
 
     #tool-menu-container {
         max-width: 350px;
@@ -394,9 +396,11 @@ i {
         width: 100%;
         height: 100px;
     }
-    #editor{
+
+    #editor {
         height: 350px;
     }
+
     select {
         height: 44px;
         width: 44px;
@@ -505,8 +509,13 @@ i {
 }
 
 @media print {
+    @page {
+        margin: 0;
+    }
+
     * {
         margin: 0 auto;
+
     }
 
     body * {
@@ -526,7 +535,12 @@ i {
         /* margin-left: 5%; */
     }
 
-    p,ol,li,h2,h3,h4 {
+    p,
+    ol,
+    li,
+    h2,
+    h3,
+    h4 {
         text-align: left;
     }
 
